@@ -338,6 +338,20 @@ footer span{color:var(--sky);}
 .modal{background:#fff;border-radius:15px;padding:30px 34px;width:460px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(26,46,74,0.22);animation:slideUp .3s ease;}
 .modal.wide{width:540px;}
 .modal.preview-modal{width:700px;background:#111;}
+.fp{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.96);flex-direction:column;}
+.fp.open{display:flex;}
+.fp-hdr{display:flex;justify-content:space-between;align-items:center;padding:13px 20px;background:rgba(0,0,0,0.5);flex-shrink:0;border-bottom:1px solid rgba(255,255,255,0.08);}
+.fp-ttl{color:#e0e8f0;font-size:13.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%;}
+.fp-cls{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);color:#fff;font-size:13px;font-weight:700;padding:7px 18px;border-radius:7px;cursor:pointer;transition:all .2s;}
+.fp-cls:hover{background:rgba(255,255,255,0.2);}
+.fp-bdy{flex:1;display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto;}
+.fp-bdy img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;}
+.fp-bdy iframe{width:100%;height:100%;border:none;border-radius:6px;}
+.fp-noprev{color:#999;font-size:13.5px;text-align:center;padding:50px 20px;}
+.fp-noprev .fp-ico{font-size:50px;margin-bottom:12px;opacity:.45;}
+/* FYP customize controls */
+.fyp-owner-bar{display:none;gap:7px;margin-top:16px;flex-wrap:wrap;}
+.owner-mode .fyp-owner-bar{display:flex;}
 @keyframes slideUp{from{transform:translateY(26px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:18px;}
 .preview-modal h3{color:#fff;}
@@ -458,7 +472,7 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
     <div class="sec-head reveal"><div class="sec-eyebrow">Who I Am</div><h2 class="sec-title">About <em>Umair Ahmad</em></h2><p class="sec-desc">A detail-driven Mechanical BIM Engineer with real international project experience, strong simulation background, and technical depth GCC employers look for.</p></div>
     <div class="about-grid">
       <div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-b"></div>Professional Profile</div><p>I am a <strong>Mechanical BIM Engineer</strong> and <strong>MEP Revit Modeler & Detailer</strong> with professional experience at <strong>BIMTEQ</strong>, serving American clients in Houston USA. I model, coordinate, and detail full MEP systems — HVAC ducting, chilled water, ventilation, and plumbing — at <strong>LOD 400–450</strong>.</p></div>
+        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-b"></div>Professional Profile</div><p>I am a <strong>Mechanical BIM Engineer</strong> and <strong>MEP Revit Modeler & Detailer</strong> with professional experience at <strong>BIMSERV | BIMTEQ</strong>, serving American clients in Houston USA. I model, coordinate, and detail full MEP systems — HVAC ducting, chilled water, ventilation, and plumbing — at <strong>LOD 400–450</strong>.</p></div>
         <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-t"></div>HVAC Ducting & Piping</div><p>Specialized in <strong>HVAC Ducting Modeling & Detailing</strong> and <strong>Piping Systems Design</strong> using <strong>Revit MEP</strong>. I develop accurate 3D duct layouts, piping networks (chilled water, supply, drainage), and coordinate all systems to eliminate clashes before construction.</p></div>
         <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-g"></div>BIM Coordination & Clash Detection</div><p>Using <strong>Navisworks</strong>, I perform full multidisciplinary BIM coordination — identifying and resolving clashes between mechanical, electrical, plumbing, architectural, and structural models.</p></div>
         <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-l"></div>Simulation & Engineering Analysis</div><p>Beyond BIM — strong skills in <strong>SolidWorks</strong> (Advanced: 3D modeling, FEA), <strong>ANSYS</strong> (Advanced: structural, thermal, CFD/CFX), <strong>ABAQUS</strong> (Intermediate: explicit dynamics), and <strong>COMSOL Multiphysics</strong> (Intermediate: multiphase CFD).</p></div>
@@ -478,7 +492,7 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="container">
-    <div class="sec-head reveal"><div class="sec-eyebrow">Work History</div><h2 class="sec-title">Professional <em>Experience</em></h2><p class="sec-desc">International project exposure through US-based BIM/MEP work at BIMTEQ, plus engineering internships at Pakistan's leading industrial facilities.</p></div>
+    <div class="sec-head reveal"><div class="sec-eyebrow">Work History</div><h2 class="sec-title">Professional <em>Experience</em></h2><p class="sec-desc">International project exposure through US-based BIM/MEP work at BIMSERV | BIMTEQ, plus engineering internships at Pakistan's leading industrial facilities.</p></div>
     <div class="exp-timeline">
       <!-- OWNER CONTROLS for Experience -->
       <div class="owner-ctrl reveal">
@@ -640,14 +654,14 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
 
 <div class="mo" id="expMo"><div class="modal wide"><h3 id="expMoTitle">Add Experience</h3>
   <div class="fg"><label>Job Title *</label><input type="text" id="expRole" placeholder="e.g. BIM Engineer"></div>
-  <div class="fg"><label>Company & Location</label><input type="text" id="expCo" placeholder="e.g. BIMTEQ — Lahore, Pakistan"></div>
+  <div class="fg"><label>Company & Location</label><input type="text" id="expCo" placeholder="e.g. BIMSERV | BIMTEQ — Lahore, Pakistan"></div>
   <div class="fg"><label>Date Range</label><input type="text" id="expDate" placeholder="e.g. Aug 2025 – May 2026"></div>
   <div class="fg"><label>Bullet Points (one per line)</label><textarea id="expBullets" placeholder="Developed MEP BIM models up to LOD 400&#10;Performed clash detection using Navisworks" style="min-height:100px;"></textarea></div>
   <div class="fg"><label>Tags (comma separated)</label><input type="text" id="expTags" placeholder="e.g. Revit MEP, Navisworks, HVAC"></div>
   <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('expMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveExp()">Save</button></div>
 </div></div>
 
-<div class="mo" id="previewMo"><div class="modal preview-modal"><h3 id="prevTitle" style="color:#fff;margin-bottom:12px;"></h3><div class="preview-body" id="prevBody"></div><div class="modal-btns" style="margin-top:14px;"><button class="mbtn mbtn-cancel" onclick="closeMo('previewMo')">Close</button></div></div></div>
+<!-- preview now uses fullscreen viewer -->
 
 <script>
 // ══════════════════════════════════
@@ -746,7 +760,7 @@ function renderHeroStats() {
 // ══════════════════════════════════
 let experiences = [
   {
-    id:1, role:'BIM Engineer', company:'BIMTEQ — Lahore, Pakistan · American Houston HQ (USA)',
+    id:1, role:'BIM Engineer', company:'BIMSERV | BIMTEQ — Lahore, Pakistan · American Houston HQ (USA)',
     date:'Aug 2025 – May 2026',
     bullets:[
       'Developed <strong>MEP BIM models up to LOD 400–450</strong> in Revit MEP — HVAC ducting, chilled water, ventilation, and plumbing for multi-floor US healthcare and commercial projects.',
@@ -895,15 +909,70 @@ function renderTabs() {
   renderHeroStats();
 }
 
+let fypData = {
+  title: 'Design & Fabrication of an Affordable Hybrid Food Dehydrator',
+  sub: 'Solar / DC / AC Powered · IoT Monitored · Arduino & ESP8266',
+  desc: 'Developed a low-cost Hybrid Food Dehydrator to reduce post-harvest losses. Runs on solar energy daytime; electric heater activates automatically during cloudy or nighttime. <strong>Servo-controlled shading mechanism</strong> regulates heat automatically. <strong>IoT monitoring</strong> via Arduino & ESP8266 gives real-time temperature & humidity through mobile interface. Full 3D model designed in SolidWorks.',
+  tags: ['Solar Energy','IoT','Arduino','ESP8266','SolidWorks','Servo Control','Fabrication'],
+  files: [],
+};
+let fypFilesData = [];
+
 function renderFYP() {
+  const filesHtml = fypData.files.length ? `<div class="pcard-files-section" style="border-radius:10px;overflow:hidden;margin-top:14px;">${fypData.files.map(f=>`
+    <div class="pcard-file-item" onclick="previewFile('${escQ(f.name)}','${f.type}','${f.data}')">
+      <span class="pcard-file-icon">${fileIcon(f.type)}</span>
+      <span class="pcard-file-name">${f.name}</span>
+      <button class="pcard-file-preview-btn">👁 Preview</button>
+    </div>`).join('')}</div>` : '';
   return `<div class="fyp-wrap">
     <div class="pcard-num">FYDP · Final Year Design Project — B.Sc. Mechanical Engineering</div>
-    <div class="pcard-name" style="font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:7px;">Design & Fabrication of an Affordable Hybrid Food Dehydrator</div>
-    <div class="pcard-sub" style="font-size:11px;color:var(--teal);font-weight:600;margin-bottom:13px;">Solar / DC / AC Powered · IoT Monitored · Arduino & ESP8266</div>
-    <div class="pcard-desc" style="font-size:12.5px;color:var(--text);line-height:1.8;">Developed a low-cost Hybrid Food Dehydrator to reduce post-harvest losses. Runs on solar energy daytime; electric heater activates automatically during cloudy or nighttime. <strong>Servo-controlled shading mechanism</strong> regulates heat automatically. <strong>IoT monitoring</strong> via Arduino & ESP8266 gives real-time temperature & humidity through mobile interface. Full 3D model designed in SolidWorks.</div>
-    <div class="fyp-tags"><span class="fyp-tag">Solar Energy</span><span class="fyp-tag">IoT</span><span class="fyp-tag">Arduino</span><span class="fyp-tag">ESP8266</span><span class="fyp-tag">SolidWorks</span><span class="fyp-tag">Servo Control</span><span class="fyp-tag">Fabrication</span></div>
+    <div class="pcard-name" style="font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:7px;">${fypData.title}</div>
+    <div class="pcard-sub" style="font-size:11px;color:var(--teal);font-weight:600;margin-bottom:13px;">${fypData.sub}</div>
+    <div class="pcard-desc" style="font-size:12.5px;color:var(--text);line-height:1.8;">${fypData.desc}</div>
+    <div class="fyp-tags">${fypData.tags.map(t=>`<span class="fyp-tag">${t}</span>`).join('')}</div>
+    ${filesHtml}
+    <div class="fyp-owner-bar">
+      <button class="oc-btn oc-edit" onclick="openFypModal()">✏️ Edit Project</button>
+      <button class="oc-btn oc-add" onclick="document.getElementById('fypFilesBtn').click()">📎 Upload Files</button>
+      <input type="file" id="fypFilesBtn" accept="*/*" multiple style="display:none" onchange="uploadFypFiles(this)">
+    </div>
   </div>`;
 }
+
+function openFypModal() {
+  document.getElementById('fypTitle').value = fypData.title;
+  document.getElementById('fypSub').value = fypData.sub;
+  document.getElementById('fypDesc').value = fypData.desc.replace(/<[^>]+>/g,'');
+  document.getElementById('fypTagsInp').value = fypData.tags.join(', ');
+  fypFilesData = [...fypData.files];
+  document.getElementById('fypFileList').innerHTML = fypFilesData.map(f=>`<div>${fileIcon(f.type)} ${f.name}</div>`).join('');
+  document.getElementById('fypFiles').value = '';
+  document.getElementById('fypMo').classList.add('open');
+}
+function handleFypFiles(input) {
+  Array.from(input.files).forEach(f=>{
+    const r=new FileReader();
+    r.onload=e=>{fypFilesData.push({name:f.name,type:f.type,data:e.target.result});document.getElementById('fypFileList').innerHTML=fypFilesData.map(fd=>`<div>${fileIcon(fd.type)} ${fd.name}</div>`).join('');};
+    r.readAsDataURL(f);
+  });
+}
+function uploadFypFiles(input) {
+  Array.from(input.files).forEach(f=>{
+    const r=new FileReader();
+    r.onload=e=>{fypData.files.push({name:f.name,type:f.type,data:e.target.result});renderTabs();};
+    r.readAsDataURL(f);
+  });
+}
+function saveFYP() {
+  fypData.title = document.getElementById('fypTitle').value.trim() || fypData.title;
+  fypData.sub = document.getElementById('fypSub').value.trim();
+  fypData.desc = document.getElementById('fypDesc').value.trim();
+  fypData.tags = document.getElementById('fypTagsInp').value.split(',').map(t=>t.trim()).filter(Boolean);
+  fypData.files = [...fypFilesData];
+  closeMo('fypMo'); renderTabs();
+}
+function escQ(s){return s.replace(/'/g,"&#39;");}
 
 function renderPCard(p,tabId) {
   const filesHtml = p.files&&p.files.length ? `<div class="pcard-files-section">${p.files.map(f=>`
@@ -1018,17 +1087,24 @@ function delProject(id,tabId){
 
 // FILE PREVIEW
 function previewFile(name,type,data) {
-  document.getElementById('prevTitle').textContent=name;
-  const body=document.getElementById('prevBody');
-  if(type.includes('image')){
-    body.innerHTML=`<img src="${data}" alt="${name}" style="max-width:100%;max-height:65vh;border-radius:8px;">`;
-  } else if(type.includes('pdf')){
-    body.innerHTML=`<iframe src="${data}" style="width:100%;height:65vh;border:none;border-radius:8px;"></iframe>`;
+  document.getElementById('fpTitle').textContent = name;
+  const body = document.getElementById('fpBody');
+  if (type && type.includes('image')) {
+    body.innerHTML = `<img src="${data}" alt="${name}">`;
+  } else if (type && type.includes('pdf')) {
+    body.innerHTML = `<iframe src="${data}"></iframe>`;
   } else {
-    body.innerHTML=`<div class="no-prev">📎 Preview not available for this file type.<br><span style="font-size:11px;opacity:.6;">${name}</span></div>`;
+    body.innerHTML = `<div class="fp-noprev"><div class="fp-ico">📎</div>Preview not available for this file type.<br><span style="font-size:11px;opacity:.5;">${name}</span></div>`;
   }
-  document.getElementById('previewMo').classList.add('open');
+  document.getElementById('fpViewer').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
+function closeFP() {
+  document.getElementById('fpViewer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close fullscreen on Escape key
+document.addEventListener('keydown', e => { if(e.key==='Escape') { closeFP(); } });
 
 // ══════════════════════════════════
 // PROJECT WORK GALLERY
@@ -1232,5 +1308,24 @@ renderCertImgs();
 renderPW();
 setTimeout(()=>{const sb=document.querySelector('.skill-bars-grid');if(sb)sbo.observe(sb);},300);
 </script>
+
+<!-- FULLSCREEN PREVIEW (replaces old small modal) -->
+<div class="fp" id="fpViewer">
+  <div class="fp-hdr">
+    <div class="fp-ttl" id="fpTitle"></div>
+    <button class="fp-cls" onclick="closeFP()">✕ Close</button>
+  </div>
+  <div class="fp-bdy" id="fpBody"></div>
+</div>
+
+<!-- FYP EDIT MODAL -->
+<div class="mo" id="fypMo"><div class="modal wide"><h3>Edit Final Year Project</h3>
+  <div class="fg"><label>Project Title *</label><input type="text" id="fypTitle" placeholder="Project name"></div>
+  <div class="fg"><label>Sub-label</label><input type="text" id="fypSub" placeholder="e.g. Solar / DC / AC Powered · IoT Monitored"></div>
+  <div class="fg"><label>Description</label><textarea id="fypDesc" style="min-height:110px;" placeholder="Project description..."></textarea></div>
+  <div class="fg"><label>Tags (comma separated)</label><input type="text" id="fypTagsInp" placeholder="e.g. Solar Energy, IoT, Arduino"></div>
+  <div class="fg"><label>Upload Files (Images, PDF, DOCX, XLSX, PPTX — multiple)</label><div class="upload-zone" onclick="document.getElementById('fypFiles').click()"><p>Click to upload <span>or drag & drop</span></p><div class="file-types">Any file type · Multiple files</div><div class="file-list-preview" id="fypFileList"></div></div><input type="file" id="fypFiles" accept="*/*" multiple style="display:none" onchange="handleFypFiles(this)"></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('fypMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveFYP()">Save Changes</button></div>
+</div></div>
 </body>
 </html>
