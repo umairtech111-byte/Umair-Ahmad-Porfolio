@@ -6,276 +6,305 @@
 <title>Umair Ahmad — MEP Revit Modeler & BIM Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#f0f4f8; --bg2:#e8eef5; --white:#ffffff;
-  --navy:#1a2e4a; --navy2:#243b55;
-  --sky:#2980b9; --teal:#16a085; --gold:#e67e22;
-  --lavender:#8e44ad; --red:#c0392b;
-  --text:#2c3e50; --muted:#7f8c8d;
-  --border:rgba(41,128,185,0.18);
-  --shadow:0 4px 24px rgba(26,46,74,0.08);
-  --shadow2:0 8px 40px rgba(26,46,74,0.13);
-}
+:root{--bg:#f0f4f8;--bg2:#e8eef5;--white:#fff;--navy:#1a2e4a;--navy2:#243b55;--sky:#2980b9;--teal:#16a085;--gold:#e67e22;--lav:#8e44ad;--red:#c0392b;--text:#2c3e50;--muted:#7f8c8d;--border:rgba(41,128,185,0.18);--sh:0 4px 24px rgba(26,46,74,0.08);--sh2:0 8px 40px rgba(26,46,74,0.13);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
 ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--sky);border-radius:3px;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:14px 48px;background:rgba(255,255,255,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 2px 20px rgba(41,128,185,0.07);}
-.nav-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);display:flex;align-items:center;gap:8px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:13px 44px;background:rgba(255,255,255,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 2px 18px rgba(41,128,185,0.07);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);display:flex;align-items:center;gap:7px;}
 .nav-logo .dot{width:7px;height:7px;background:var(--sky);border-radius:50%;}
 .nav-links{display:flex;gap:3px;list-style:none;flex-wrap:wrap;}
-.nav-links a{color:var(--muted);font-size:11.5px;font-weight:600;text-decoration:none;letter-spacing:0.6px;text-transform:uppercase;padding:6px 11px;border-radius:6px;transition:all 0.2s;}
+.nav-links a{color:var(--muted);font-size:11px;font-weight:600;text-decoration:none;letter-spacing:0.5px;text-transform:uppercase;padding:6px 10px;border-radius:6px;transition:all 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--sky);background:rgba(41,128,185,0.08);}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:110px 56px 70px;background:linear-gradient(135deg,#deeaf7 0%,#e8f1fb 50%,#d6e8f5 100%);}
 .bg-icons{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
-.bg-icon{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;padding:4px 10px;border-radius:4px;opacity:0.13;letter-spacing:1px;border:1px solid currentColor;animation:floatSoft 15s ease-in-out infinite;}
-.bi-1{top:8%;left:5%;color:#e74c3c;animation-delay:0s;animation-duration:12s;}
+.bg-icon{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;padding:4px 10px;border-radius:4px;opacity:0.12;letter-spacing:1px;border:1px solid currentColor;animation:floatSoft 15s ease-in-out infinite;}
+.bi-1{top:8%;left:5%;color:#e74c3c;animation-duration:12s;}
 .bi-2{top:15%;left:22%;color:#2ecc71;animation-delay:1s;animation-duration:14s;}
 .bi-3{top:6%;left:45%;color:#3498db;animation-delay:2s;animation-duration:11s;}
-.bi-4{top:20%;left:68%;color:#f39c12;animation-delay:0.5s;animation-duration:16s;}
+.bi-4{top:20%;left:68%;color:#f39c12;animation-delay:.5s;animation-duration:16s;}
 .bi-5{top:5%;left:82%;color:#9b59b6;animation-delay:3s;animation-duration:13s;}
 .bi-6{top:40%;left:3%;color:#1abc9c;animation-delay:1.5s;animation-duration:15s;}
 .bi-7{top:55%;left:18%;color:#e67e22;animation-delay:2.5s;animation-duration:12s;}
-.bi-8{top:38%;left:78%;color:#3498db;animation-delay:0.8s;animation-duration:17s;}
+.bi-8{top:38%;left:78%;color:#3498db;animation-delay:.8s;animation-duration:17s;}
 .bi-9{top:65%;left:60%;color:#2ecc71;animation-delay:4s;animation-duration:14s;}
 .bi-10{top:75%;left:88%;color:#e74c3c;animation-delay:1.2s;animation-duration:11s;}
 .bi-11{top:80%;left:30%;color:#f39c12;animation-delay:3.5s;animation-duration:13s;}
 .bi-12{top:88%;left:55%;color:#9b59b6;animation-delay:2s;animation-duration:16s;}
-.bi-13{top:50%;left:40%;color:#1abc9c;animation-delay:0.3s;animation-duration:18s;}
+.bi-13{top:50%;left:40%;color:#1abc9c;animation-delay:.3s;animation-duration:18s;}
 .bi-14{top:30%;left:90%;color:#3498db;animation-delay:5s;animation-duration:12s;}
-@keyframes floatSoft{0%,100%{transform:translateY(0px);opacity:0.10;}33%{transform:translateY(-18px);opacity:0.18;}66%{transform:translateY(10px);opacity:0.08;}}
+@keyframes floatSoft{0%,100%{transform:translateY(0);opacity:.10;}33%{transform:translateY(-18px);opacity:.18;}66%{transform:translateY(10px);opacity:.08;}}
 .bg-lines{position:absolute;inset:0;pointer-events:none;}
-.bg-lines svg{width:100%;height:100%;opacity:0.05;}
-.hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center;width:100%;}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sky);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:18px;}
-.hero-tag::before{content:'';display:block;width:26px;height:1.5px;background:var(--sky);}
-.hero-name{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,68px);line-height:1.08;color:var(--navy);margin-bottom:6px;}
+.bg-lines svg{width:100%;height:100%;opacity:.05;}
+.hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:center;width:100%;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--sky);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px;}
+.hero-tag::before{content:'';display:block;width:24px;height:1.5px;background:var(--sky);}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,66px);line-height:1.08;color:var(--navy);margin-bottom:6px;}
 .hero-name span{color:var(--sky);font-style:italic;}
-.hero-titles{margin:14px 0 24px;display:flex;flex-direction:column;gap:6px;}
-.hero-title-line{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;color:var(--navy2);}
-.icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
-.icon-blue{background:rgba(52,152,219,0.15);}
-.icon-teal{background:rgba(26,188,156,0.15);}
-.icon-gold{background:rgba(230,126,34,0.15);}
-.hero-desc{font-size:13.5px;color:var(--muted);line-height:1.75;max-width:500px;margin-bottom:32px;}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;}
-.btn{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border-radius:8px;font-size:12.5px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all 0.25s;}
-.btn-sky{background:var(--sky);color:#fff;box-shadow:0 4px 18px rgba(41,128,185,0.35);}
+.hero-titles{margin:12px 0 22px;display:flex;flex-direction:column;gap:6px;}
+.hero-title-line{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--navy2);}
+.icon{width:27px;height:27px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+.icon-blue{background:rgba(52,152,219,0.14);}
+.icon-teal{background:rgba(26,188,156,0.14);}
+.icon-gold{background:rgba(230,126,34,0.14);}
+.hero-desc{font-size:13px;color:var(--muted);line-height:1.75;max-width:500px;margin-bottom:28px;}
+.hero-btns{display:flex;gap:9px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .25s;}
+.btn-sky{background:var(--sky);color:#fff;box-shadow:0 4px 16px rgba(41,128,185,0.32);}
 .btn-sky:hover{background:#1f6391;transform:translateY(-2px);}
-.btn-outline{background:rgba(255,255,255,0.75);color:var(--navy);border:1.5px solid rgba(41,128,185,0.25);}
+.btn-outline{background:rgba(255,255,255,0.78);color:var(--navy);border:1.5px solid rgba(41,128,185,0.22);}
 .btn-outline:hover{background:#fff;transform:translateY(-2px);}
-.hero-card{background:rgba(255,255,255,0.82);border:1px solid rgba(41,128,185,0.18);border-radius:16px;padding:26px;backdrop-filter:blur(10px);box-shadow:0 8px 32px rgba(41,128,185,0.10);}
-.hero-card-title{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--sky);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(41,128,185,0.12);}
-.kw-chip{display:inline-block;font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:20px;margin:3px;}
+
+/* HERO CARD */
+.hero-card{background:rgba(255,255,255,0.84);border:1px solid rgba(41,128,185,0.18);border-radius:16px;padding:24px;backdrop-filter:blur(10px);box-shadow:0 8px 30px rgba(41,128,185,0.10);}
+.hero-card-title{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--sky);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(41,128,185,0.12);display:flex;justify-content:space-between;align-items:center;}
+.kw-chips-area{min-height:40px;}
+.kw-chip{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:20px;margin:3px;}
+.kw-chip .kw-del{background:none;border:none;cursor:pointer;font-size:11px;color:inherit;opacity:0.6;padding:0 0 0 2px;line-height:1;display:none;}
+.owner-mode .kw-chip .kw-del{display:inline;}
 .kw-bim{background:rgba(52,152,219,0.1);color:#2980b9;border:1px solid rgba(52,152,219,0.22);}
 .kw-hvac{background:rgba(26,188,156,0.1);color:#16a085;border:1px solid rgba(26,188,156,0.22);}
 .kw-sw{background:rgba(230,126,34,0.1);color:#d35400;border:1px solid rgba(230,126,34,0.22);}
 .kw-sim{background:rgba(142,68,173,0.1);color:#7d3c98;border:1px solid rgba(142,68,173,0.22);}
 .kw-std{background:rgba(192,57,43,0.08);color:#922b21;border:1px solid rgba(192,57,43,0.18);}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;}
-.hs{background:rgba(41,128,185,0.07);border-radius:10px;padding:12px;text-align:center;border:1px solid rgba(41,128,185,0.12);}
+
+/* HERO STATS - linked to projects */
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px;}
+.hs{background:rgba(41,128,185,0.07);border-radius:10px;padding:12px;text-align:center;border:1px solid rgba(41,128,185,0.12);cursor:pointer;transition:all .2s;text-decoration:none;display:block;}
+.hs:hover{background:rgba(41,128,185,0.12);border-color:var(--sky);}
 .hs-num{font-family:'Playfair Display',serif;font-size:26px;color:var(--sky);line-height:1;}
-.hs-label{font-size:9.5px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
-.scroll-down{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--muted);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;animation:nudge 2s ease-in-out infinite;}
-.scroll-down::after{content:'';display:block;width:1px;height:32px;background:rgba(41,128,185,0.2);}
+.hs-label{font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+
+.scroll-down{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--muted);font-size:9px;letter-spacing:2px;text-transform:uppercase;animation:nudge 2s ease-in-out infinite;}
+.scroll-down::after{content:'';display:block;width:1px;height:30px;background:rgba(41,128,185,0.2);}
 @keyframes nudge{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 
 /* SECTIONS */
-section{padding:80px 56px;}
+section{padding:78px 56px;}
 .container{max-width:1100px;margin:0 auto;}
 .sec-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--sky);margin-bottom:8px;}
 .sec-eyebrow::before{content:'';display:block;width:20px;height:1.5px;background:var(--sky);}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,40px);line-height:1.15;color:var(--navy);margin-bottom:10px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,38px);line-height:1.15;color:var(--navy);margin-bottom:10px;}
 .sec-title em{color:var(--sky);font-style:italic;}
-.sec-desc{font-size:14px;color:var(--muted);line-height:1.75;max-width:560px;}
-.sec-head{margin-bottom:44px;}
+.sec-desc{font-size:13.5px;color:var(--muted);line-height:1.75;max-width:560px;}
+.sec-head{margin-bottom:42px;}
 
 /* ABOUT */
 #about{background:var(--white);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-.about-block{margin-bottom:22px;}
-.about-block-title{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;}
-.about-block-title .dot{width:6px;height:6px;border-radius:50%;}
-.dot-blue{background:var(--sky);} .dot-teal{background:var(--teal);} .dot-gold{background:var(--gold);} .dot-lav{background:var(--lavender);}
-.about-block p{font-size:13.5px;color:var(--muted);line-height:1.8;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.about-block{margin-bottom:20px;}
+.about-block-title{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.8px;margin-bottom:7px;}
+.abt-dot{width:6px;height:6px;border-radius:50%;}
+.dot-b{background:var(--sky);} .dot-t{background:var(--teal);} .dot-g{background:var(--gold);} .dot-l{background:var(--lav);}
+.about-block p{font-size:13px;color:var(--muted);line-height:1.8;}
 .about-block p strong{color:var(--text);font-weight:600;}
-.cap-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;transition:all 0.2s;}
-.cap-card:hover{border-color:var(--sky);box-shadow:var(--shadow);transform:translateX(4px);}
-.cap-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
-.cap-title{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:3px;}
-.cap-desc{font-size:11.5px;color:var(--muted);line-height:1.6;}
-.info-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;}
-.info-pill{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:500;padding:5px 12px;border-radius:20px;background:var(--bg);border:1px solid var(--border);color:var(--text);}
+.cap-card{background:var(--bg);border:1px solid var(--border);border-radius:11px;padding:14px 16px;display:flex;gap:11px;align-items:flex-start;margin-bottom:10px;transition:all .2s;}
+.cap-card:hover{border-color:var(--sky);box-shadow:var(--sh);transform:translateX(3px);}
+.cap-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.cap-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.cap-desc{font-size:11px;color:var(--muted);line-height:1.6;}
+.info-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
+.info-pill{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:5px 11px;border-radius:20px;background:var(--bg);border:1px solid var(--border);color:var(--text);}
 
 /* EXPERIENCE */
 #experience{background:var(--bg2);}
-.exp-timeline{position:relative;padding-left:26px;}
+.exp-timeline{position:relative;padding-left:24px;}
 .exp-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--sky),var(--teal),transparent);}
-.exp-block{position:relative;margin-bottom:32px;}
-.exp-block::before{content:'';position:absolute;left:-32px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--sky);border:2.5px solid var(--bg2);box-shadow:0 0 0 3px rgba(41,128,185,0.18);}
-.exp-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:26px 30px;box-shadow:var(--shadow);transition:all 0.25s;}
-.exp-card:hover{border-color:var(--sky);box-shadow:var(--shadow2);}
+
+/* OWNER CONTROLS BAR */
+.owner-ctrl{display:none;align-items:center;gap:8px;padding:10px 16px;background:rgba(41,128,185,0.06);border:1px dashed rgba(41,128,185,0.25);border-radius:10px;margin-bottom:16px;flex-wrap:wrap;}
+.owner-mode .owner-ctrl{display:flex;}
+.oc-label{font-size:11px;font-weight:700;color:var(--sky);letter-spacing:.5px;flex:1;}
+.oc-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border-radius:7px;font-size:11.5px;font-weight:700;border:none;cursor:pointer;transition:all .2s;}
+.oc-add{background:var(--sky);color:#fff;}
+.oc-add:hover{background:#1f6391;}
+.oc-teal{background:var(--teal);color:#fff;}
+.oc-teal:hover{background:#138d75;}
+.oc-red{background:rgba(192,57,43,0.09);color:var(--red);border:1px solid rgba(192,57,43,0.2);}
+.oc-red:hover{background:rgba(192,57,43,0.16);}
+.oc-edit{background:rgba(230,126,34,0.1);color:var(--gold);border:1px solid rgba(230,126,34,0.22);}
+.oc-edit:hover{background:rgba(230,126,34,0.18);}
+
+.exp-block{position:relative;margin-bottom:28px;}
+.exp-block::before{content:'';position:absolute;left:-30px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--sky);border:2.5px solid var(--bg2);box-shadow:0 0 0 3px rgba(41,128,185,0.18);}
+.exp-card{background:var(--white);border:1px solid var(--border);border-radius:13px;padding:24px 28px;box-shadow:var(--sh);transition:all .25s;}
+.exp-card:hover{border-color:var(--sky);box-shadow:var(--sh2);}
 .exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:4px;}
 .exp-role{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);}
-.exp-badge{font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:4px 12px;border-radius:20px;border:1px solid var(--border);color:var(--sky);background:rgba(41,128,185,0.06);}
-.exp-company{font-size:12.5px;font-weight:700;color:var(--sky);margin-bottom:16px;}
-.exp-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.exp-list li{display:flex;gap:10px;font-size:13px;color:var(--muted);line-height:1.65;}
+.exp-badge{font-family:'JetBrains Mono',monospace;font-size:9px;padding:4px 11px;border-radius:20px;border:1px solid var(--border);color:var(--sky);background:rgba(41,128,185,0.06);}
+.exp-company{font-size:12px;font-weight:700;color:var(--sky);margin-bottom:14px;}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.exp-list li{display:flex;gap:9px;font-size:12.5px;color:var(--muted);line-height:1.65;position:relative;}
 .exp-list li::before{content:'▸';color:var(--teal);flex-shrink:0;margin-top:1px;}
 .exp-list li strong{color:var(--text);}
-.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
-.tag{font-family:'JetBrains Mono',monospace;font-size:9.5px;padding:3px 9px;border-radius:4px;background:rgba(41,128,185,0.07);border:1px solid rgba(41,128,185,0.18);color:var(--sky);}
-.intern-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
-.intern-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);}
-.intern-title{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:3px;}
-.intern-co{font-size:11.5px;color:var(--sky);font-weight:600;margin-bottom:7px;}
-.intern-desc{font-size:11.5px;color:var(--muted);line-height:1.6;}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 8px;border-radius:4px;background:rgba(41,128,185,0.07);border:1px solid rgba(41,128,185,0.16);color:var(--sky);}
+.intern-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:16px;}
+.intern-card{background:var(--white);border:1px solid var(--border);border-radius:11px;padding:16px 18px;box-shadow:var(--sh);}
+.intern-title{font-weight:700;font-size:12.5px;color:var(--navy);margin-bottom:3px;}
+.intern-co{font-size:11px;color:var(--sky);font-weight:600;margin-bottom:6px;}
+.intern-desc{font-size:11px;color:var(--muted);line-height:1.6;}
 
-/* ═══ PROJECTS SECTION ═══ */
+/* PROJECTS */
 #projects{background:var(--white);}
-.proj-tabs-wrapper{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
-.ptab{font-size:12px;font-weight:600;padding:8px 18px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:7px;}
+.proj-tabs-wrapper{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:30px;}
+.ptab{font-size:11.5px;font-weight:600;padding:7px 16px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;}
 .ptab:hover,.ptab.on{background:var(--sky);color:#fff;border-color:var(--sky);}
 .ptab .ptab-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
-.add-tab-btn{width:34px;height:34px;border-radius:8px;background:var(--teal);color:#fff;border:none;font-size:20px;font-weight:300;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(22,160,133,0.3);transition:all 0.2s;flex-shrink:0;}
-.add-tab-btn:hover{background:#138d75;transform:scale(1.08);}
+.add-tab-btn{width:32px;height:32px;border-radius:8px;background:var(--teal);color:#fff;border:none;font-size:19px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(22,160,133,0.28);transition:all .2s;flex-shrink:0;}
+.owner-mode .add-tab-btn{display:flex;}
+.add-tab-btn:hover{background:#138d75;transform:scale(1.07);}
 .tab-pane{display:none;}
 .tab-pane.on{display:block;}
-.tab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
-.tab-actions{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
-.tab-actions-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);}
-.tab-add-proj-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;background:var(--sky);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;box-shadow:0 3px 12px rgba(41,128,185,0.28);transition:all 0.2s;}
-.tab-add-proj-btn:hover{background:#1f6391;}
-.tab-del-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:7px;background:rgba(192,57,43,0.08);color:var(--red);font-size:11px;font-weight:700;border:1px solid rgba(192,57,43,0.2);cursor:pointer;transition:all 0.2s;}
-.tab-del-btn:hover{background:rgba(192,57,43,0.15);}
+.tab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:17px;}
 
-/* Project Card */
-.pcard{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.25s;}
-.pcard:hover{border-color:var(--sky);box-shadow:var(--shadow2);}
-.pcard-files{background:var(--bg2);padding:0;}
-.pcard-file-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);font-size:12px;}
-.pcard-file-icon{font-size:18px;flex-shrink:0;}
+/* PROJECT CARD */
+.pcard{background:var(--bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .25s;}
+.pcard:hover{border-color:var(--sky);box-shadow:var(--sh2);}
+.pcard-files-section{background:var(--bg2);padding:0;}
+.pcard-file-item{display:flex;align-items:center;gap:9px;padding:9px 13px;border-bottom:1px solid var(--border);font-size:11.5px;cursor:pointer;}
+.pcard-file-item:hover{background:rgba(41,128,185,0.05);}
+.pcard-file-icon{font-size:17px;flex-shrink:0;}
 .pcard-file-name{color:var(--text);font-weight:500;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.pcard-file-dl{font-size:11px;color:var(--sky);font-weight:700;text-decoration:none;padding:2px 8px;border-radius:4px;background:rgba(41,128,185,0.09);}
-.pcard-body{padding:18px 20px;}
-.pcard-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--sky);letter-spacing:2px;margin-bottom:6px;}
-.pcard-name{font-weight:700;font-size:13.5px;color:var(--navy);margin-bottom:4px;line-height:1.4;}
-.pcard-sub{font-size:11px;color:var(--teal);font-weight:600;margin-bottom:8px;}
-.pcard-desc{font-size:12px;color:var(--muted);line-height:1.6;}
-.pcard-actions{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-top:1px solid var(--border);}
-.pcard-upload-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;background:var(--sky);color:#fff;font-size:11px;font-weight:700;border:none;cursor:pointer;transition:all 0.2s;}
+.pcard-file-preview-btn{font-size:10.5px;color:var(--sky);font-weight:700;padding:2px 7px;border-radius:4px;background:rgba(41,128,185,0.09);border:none;cursor:pointer;}
+.pcard-body{padding:16px 18px;}
+.pcard-num{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--sky);letter-spacing:2px;margin-bottom:5px;}
+.pcard-name{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:3px;line-height:1.4;}
+.pcard-sub{font-size:10.5px;color:var(--teal);font-weight:600;margin-bottom:7px;}
+.pcard-desc{font-size:11.5px;color:var(--muted);line-height:1.6;}
+.pcard-owner-actions{display:none;justify-content:space-between;align-items:center;padding:9px 13px;border-top:1px solid var(--border);gap:6px;flex-wrap:wrap;}
+.owner-mode .pcard-owner-actions{display:flex;}
+.pcard-upload-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:6px;background:var(--sky);color:#fff;font-size:10.5px;font-weight:700;border:none;cursor:pointer;transition:all .2s;}
 .pcard-upload-btn:hover{background:#1f6391;}
-.pcard-del-btn{font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 8px;border-radius:4px;transition:all 0.2s;}
-.pcard-del-btn:hover{color:var(--red);background:rgba(192,57,43,0.08);}
+.pcard-edit-btn{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:6px;background:rgba(230,126,34,0.1);color:var(--gold);font-size:10.5px;font-weight:700;border:1px solid rgba(230,126,34,0.2);cursor:pointer;transition:all .2s;}
+.pcard-edit-btn:hover{background:rgba(230,126,34,0.18);}
+.pcard-del-btn{font-size:10.5px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 7px;border-radius:4px;transition:all .2s;}
+.pcard-del-btn:hover{color:var(--red);background:rgba(192,57,43,0.07);}
 
 /* FYP */
-.fyp-section{background:linear-gradient(135deg,#e8f4fd 0%,#d6eaf8 50%,#e8f1fb 100%);border:1px solid rgba(41,128,185,0.2);border-radius:16px;padding:32px 36px;margin-bottom:16px;}
-.fyp-section .pcard-num{color:var(--sky);}
-.fyp-section .pcard-name{color:var(--navy);font-size:20px;margin-bottom:8px;}
-.fyp-section .pcard-sub{color:var(--teal);margin-bottom:14px;}
-.fyp-section .pcard-desc{color:var(--text);font-size:13px;line-height:1.8;}
-.fyp-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
-.fyp-tag{background:rgba(41,128,185,0.1);border:1px solid rgba(41,128,185,0.2);color:var(--sky);font-size:11px;padding:4px 11px;border-radius:20px;font-weight:600;}
-.fyp-files{margin-top:16px;display:flex;flex-direction:column;gap:8px;}
-.fyp-upload-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;background:var(--sky);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;margin-top:12px;transition:all 0.2s;}
-.fyp-upload-btn:hover{background:#1f6391;}
+.fyp-wrap{background:linear-gradient(135deg,#e8f4fd 0%,#d6eaf8 50%,#eaf4fb 100%);border:1px solid rgba(41,128,185,0.2);border-radius:16px;padding:30px 34px;margin-bottom:14px;}
+.fyp-wrap .pcard-num{color:var(--sky);}
+.fyp-wrap .pcard-name{color:var(--navy);font-size:19px;margin-bottom:7px;}
+.fyp-wrap .pcard-sub{color:var(--teal);margin-bottom:13px;}
+.fyp-wrap .pcard-desc{color:var(--text);font-size:12.5px;line-height:1.8;}
+.fyp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.fyp-tag{background:rgba(41,128,185,0.1);border:1px solid rgba(41,128,185,0.2);color:var(--sky);font-size:10.5px;padding:3px 10px;border-radius:20px;font-weight:600;}
+.fyp-files-list{display:flex;flex-direction:column;gap:7px;margin-top:14px;}
 
 /* PROJECT WORK GALLERY */
 #projectwork{background:var(--bg2);}
-.pw-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:32px;}
-.pw-add-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;background:var(--teal);color:#fff;font-size:12.5px;font-weight:700;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(22,160,133,0.3);transition:all 0.2s;}
+.pw-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;margin-bottom:30px;}
+.pw-add-btn{display:none;align-items:center;gap:6px;padding:9px 20px;border-radius:8px;background:var(--teal);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;box-shadow:0 3px 12px rgba(22,160,133,0.28);transition:all .2s;}
+.owner-mode .pw-add-btn{display:inline-flex;}
 .pw-add-btn:hover{background:#138d75;transform:translateY(-2px);}
-.pw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
-.pw-item{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:all 0.25s;}
-.pw-item:hover{box-shadow:var(--shadow2);transform:translateY(-3px);}
-.pw-item-img{width:100%;height:190px;object-fit:cover;display:block;}
-.pw-item-img-ph{width:100%;height:190px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg),var(--bg2));color:var(--muted);font-size:38px;}
-.pw-item-body{padding:16px 18px;}
-.pw-item-cat{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
-.pw-item-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:7px;}
-.pw-item-desc{font-size:12px;color:var(--muted);line-height:1.6;}
-.pw-item-actions{display:flex;justify-content:flex-end;padding:0 18px 14px;}
-.pw-del-btn{font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 8px;border-radius:4px;transition:all 0.2s;}
-.pw-del-btn:hover{color:var(--red);background:rgba(192,57,43,0.08);}
-.pw-empty{grid-column:1/-1;text-align:center;padding:52px 20px;color:var(--muted);font-size:13.5px;}
-.pw-empty .big-icon{font-size:44px;margin-bottom:10px;opacity:0.35;}
+.pw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;}
+.pw-item{background:var(--white);border:1px solid var(--border);border-radius:13px;overflow:hidden;box-shadow:var(--sh);transition:all .25s;}
+.pw-item:hover{box-shadow:var(--sh2);transform:translateY(-3px);}
+.pw-item-img{width:100%;height:180px;object-fit:cover;display:block;cursor:pointer;}
+.pw-item-img-ph{width:100%;height:180px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg),var(--bg2));color:var(--muted);font-size:36px;}
+.pw-item-body{padding:14px 16px;}
+.pw-item-cat{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+.pw-item-title{font-weight:700;font-size:13.5px;color:var(--navy);margin-bottom:6px;}
+.pw-item-desc{font-size:11.5px;color:var(--muted);line-height:1.6;}
+.pw-item-actions{display:none;justify-content:flex-end;gap:6px;padding:0 16px 12px;}
+.owner-mode .pw-item-actions{display:flex;}
+.pw-del-btn{font-size:10.5px;color:var(--muted);background:none;border:none;cursor:pointer;padding:3px 7px;border-radius:4px;transition:all .2s;}
+.pw-del-btn:hover{color:var(--red);}
+.pw-edit-btn{font-size:10.5px;color:var(--gold);background:rgba(230,126,34,0.09);border:1px solid rgba(230,126,34,0.2);cursor:pointer;padding:3px 8px;border-radius:4px;font-weight:700;transition:all .2s;}
+.pw-edit-btn:hover{background:rgba(230,126,34,0.16);}
+.pw-empty{grid-column:1/-1;text-align:center;padding:48px 20px;color:var(--muted);font-size:13px;}
+.pw-empty .big-icon{font-size:42px;margin-bottom:9px;opacity:.34;}
 
 /* SKILLS */
 #skills{background:var(--white);}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-bottom:40px;}
-.scat-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px 22px;transition:all 0.25s;}
-.scat-card:hover{border-color:var(--sky);box-shadow:var(--shadow);}
-.scat-head{display:flex;align-items:center;gap:9px;margin-bottom:12px;}
-.scat-icon{font-size:19px;width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;}
-.scat-name{font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.8px;}
+.skills-cats-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:10px;}
+.skills-cats-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:16px;margin-bottom:38px;}
+.scat-card{background:var(--bg);border:1px solid var(--border);border-radius:13px;padding:19px 21px;transition:all .25s;}
+.scat-card:hover{border-color:var(--sky);box-shadow:var(--sh);}
+.scat-head-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:11px;}
+.scat-head{display:flex;align-items:center;gap:8px;}
+.scat-icon{font-size:18px;width:35px;height:35px;border-radius:9px;display:flex;align-items:center;justify-content:center;}
+.scat-name{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.7px;}
+.scat-owner-btns{display:none;gap:4px;}
+.owner-mode .scat-owner-btns{display:flex;}
 .spills{display:flex;flex-wrap:wrap;gap:5px;}
-.sp{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;border:1px solid transparent;}
+.sp{font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:20px;border:1px solid transparent;display:inline-flex;align-items:center;gap:3px;}
 .sp-adv{background:rgba(41,128,185,0.1);border-color:rgba(41,128,185,0.22);color:var(--sky);}
 .sp-int{background:rgba(230,126,34,0.1);border-color:rgba(230,126,34,0.22);color:var(--gold);}
 .sp-std{background:rgba(26,188,156,0.1);border-color:rgba(26,188,156,0.22);color:var(--teal);}
 .sp-neu{background:rgba(26,46,74,0.05);border-color:rgba(26,46,74,0.1);color:var(--text);}
+.sp .sp-del{background:none;border:none;cursor:pointer;font-size:10px;color:inherit;opacity:0;padding:0;line-height:1;}
+.owner-mode .sp .sp-del{opacity:.55;}
+.owner-mode .sp .sp-del:hover{opacity:1;}
 
-/* Skill bars - CUSTOMIZABLE */
-.skill-bars-section{}
-.skill-bars-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px;}
-.skill-bars-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--navy);}
-.add-skill-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;background:var(--sky);color:#fff;font-size:12px;font-weight:700;border:none;cursor:pointer;transition:all 0.2s;}
+/* Skill bars */
+.skill-bars-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:9px;}
+.skill-bars-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);}
+.add-skill-btn{display:none;align-items:center;gap:5px;padding:7px 14px;border-radius:7px;background:var(--sky);color:#fff;font-size:11.5px;font-weight:700;border:none;cursor:pointer;transition:all .2s;}
+.owner-mode .add-skill-btn{display:inline-flex;}
 .add-skill-btn:hover{background:#1f6391;}
-.skill-bars-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;}
-.sbar{margin-bottom:14px;position:relative;}
-.sbar-top{display:flex;justify-content:space-between;margin-bottom:4px;font-size:12px;}
+.skill-bars-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;}
+.sbar{margin-bottom:13px;position:relative;padding-right:26px;}
+.sbar-top{display:flex;justify-content:space-between;margin-bottom:4px;font-size:11.5px;}
 .sbar-name{font-weight:600;color:var(--text);}
-.sbar-pct{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sky);}
+.sbar-pct{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--sky);}
 .sbar-track{height:5px;background:var(--bg2);border-radius:3px;overflow:hidden;}
 .sbar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--sky),var(--teal));width:0;transition:width 1.3s ease;}
-.sbar-del{position:absolute;right:-22px;top:0;background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;transition:all 0.2s;}
+.sbar-del{position:absolute;right:0;top:0;background:none;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:0;display:none;transition:all .2s;}
+.owner-mode .sbar-del{display:block;}
 .sbar-del:hover{color:var(--red);}
 
 /* EDUCATION */
 #education{background:var(--bg2);}
-.edu-certs{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
-.edu-sub-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:18px;}
-.edu-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:12px;transition:all 0.2s;}
-.edu-card:hover{border-color:var(--sky);box-shadow:var(--shadow);}
-.edu-deg{font-weight:700;font-size:13.5px;color:var(--navy);margin-bottom:4px;}
-.edu-sch{font-size:12px;color:var(--sky);font-weight:600;margin-bottom:7px;}
-.edu-row{display:flex;gap:14px;font-size:11.5px;color:var(--muted);}
+.edu-certs{display:grid;grid-template-columns:1fr 1fr;gap:34px;}
+.edu-sub-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:16px;}
+.edu-card{background:var(--white);border:1px solid var(--border);border-radius:11px;padding:18px 20px;margin-bottom:11px;transition:all .2s;}
+.edu-card:hover{border-color:var(--sky);box-shadow:var(--sh);}
+.edu-deg{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:3px;}
+.edu-sch{font-size:11.5px;color:var(--sky);font-weight:600;margin-bottom:6px;}
+.edu-row{display:flex;gap:13px;font-size:11px;color:var(--muted);}
 .edu-gpa{color:var(--gold);font-family:'JetBrains Mono',monospace;font-weight:700;}
-
-/* CERTS CUSTOMIZABLE */
-.certs-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
-.add-cert-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:7px;background:var(--sky);color:#fff;font-size:11.5px;font-weight:700;border:none;cursor:pointer;transition:all 0.2s;}
+.certs-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px;margin-bottom:13px;}
+.add-cert-btn{display:none;align-items:center;gap:4px;padding:6px 13px;border-radius:7px;background:var(--sky);color:#fff;font-size:11px;font-weight:700;border:none;cursor:pointer;transition:all .2s;}
+.owner-mode .add-cert-btn{display:inline-flex;}
 .add-cert-btn:hover{background:#1f6391;}
-.cert-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-bottom:8px;font-size:12px;transition:all 0.2s;}
+.cert-item{display:flex;justify-content:space-between;align-items:center;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:7px;padding:9px 12px;margin-bottom:7px;font-size:11.5px;transition:all .2s;}
 .cert-item:hover{border-color:var(--sky);}
-.cert-name{color:var(--text);flex:1;line-height:1.45;}
-.cert-yr{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);white-space:nowrap;font-weight:600;}
-.cert-del{background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;padding:2px 5px;border-radius:4px;transition:all 0.2s;flex-shrink:0;}
-.cert-del:hover{color:var(--red);}
+.cert-name{color:var(--text);flex:1;line-height:1.4;}
+.cert-yr{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--teal);white-space:nowrap;font-weight:600;}
+.cert-owner-btns{display:none;gap:4px;flex-shrink:0;}
+.owner-mode .cert-owner-btns{display:flex;}
+.cert-edit-btn{background:none;border:none;cursor:pointer;font-size:12px;color:var(--gold);padding:2px 4px;border-radius:3px;transition:all .2s;}
+.cert-edit-btn:hover{background:rgba(230,126,34,0.1);}
+.cert-del-btn{background:none;border:none;cursor:pointer;font-size:12px;color:var(--muted);padding:2px 4px;border-radius:3px;transition:all .2s;}
+.cert-del-btn:hover{color:var(--red);}
 
-/* CERT IMAGES */
-.cert-images-section{margin-top:28px;}
-.cert-images-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
-.cert-images-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);}
-.add-cert-img-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:7px;background:var(--teal);color:#fff;font-size:11.5px;font-weight:700;border:none;cursor:pointer;transition:all 0.2s;}
+/* Cert images */
+.cert-images-section{margin-top:26px;}
+.cert-images-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px;margin-bottom:14px;}
+.cert-images-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);}
+.add-cert-img-btn{display:none;align-items:center;gap:4px;padding:6px 13px;border-radius:7px;background:var(--teal);color:#fff;font-size:11px;font-weight:700;border:none;cursor:pointer;transition:all .2s;}
+.owner-mode .add-cert-img-btn{display:inline-flex;}
 .add-cert-img-btn:hover{background:#138d75;}
-.cert-imgs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;}
-.cert-img-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all 0.2s;}
-.cert-img-card:hover{border-color:var(--sky);box-shadow:var(--shadow);}
-.cert-img-preview{width:100%;height:130px;object-fit:cover;display:block;}
-.cert-img-preview-ph{width:100%;height:130px;display:flex;align-items:center;justify-content:center;font-size:32px;background:var(--bg);}
-.cert-img-body{padding:10px 12px;}
-.cert-img-name{font-size:11.5px;font-weight:600;color:var(--navy);margin-bottom:2px;}
-.cert-img-type{font-size:10px;color:var(--muted);}
-.cert-img-actions{display:flex;justify-content:space-between;align-items:center;padding:6px 12px 10px;}
-.cert-img-dl{font-size:10.5px;color:var(--sky);font-weight:700;text-decoration:none;}
-.cert-img-del{font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;border-radius:4px;padding:2px 6px;transition:all 0.2s;}
+.cert-imgs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:13px;}
+.cert-img-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .2s;}
+.cert-img-card:hover{border-color:var(--sky);box-shadow:var(--sh);}
+.cert-img-thumb{width:100%;height:120px;object-fit:cover;display:block;cursor:pointer;}
+.cert-img-ph{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:30px;background:var(--bg);cursor:pointer;}
+.cert-img-body{padding:9px 11px;}
+.cert-img-name{font-size:11px;font-weight:600;color:var(--navy);margin-bottom:1px;}
+.cert-img-type{font-size:9.5px;color:var(--muted);}
+.cert-img-actions{display:none;justify-content:flex-end;gap:5px;padding:5px 11px 9px;}
+.owner-mode .cert-img-actions{display:flex;}
+.cert-img-del{font-size:10.5px;color:var(--muted);background:none;border:none;cursor:pointer;border-radius:4px;padding:2px 5px;transition:all .2s;}
 .cert-img-del:hover{color:var(--red);}
-.cert-empty{text-align:center;padding:30px 16px;color:var(--muted);font-size:12.5px;grid-column:1/-1;}
+.cert-empty{text-align:center;padding:28px;color:var(--muted);font-size:12px;grid-column:1/-1;}
 
 /* CONTACT */
 #contact{background:linear-gradient(135deg,#deeaf7 0%,#e8f1fb 100%);text-align:center;}
@@ -283,79 +312,83 @@ section{padding:80px 56px;}
 #contact .sec-eyebrow::before{background:var(--sky);}
 #contact .sec-title{color:var(--navy);}
 #contact .sec-desc{color:var(--muted);margin:0 auto;}
-.gcc-note{display:inline-flex;align-items:center;gap:9px;margin:20px 0 40px;background:rgba(255,255,255,0.8);border:1px solid rgba(41,128,185,0.2);border-radius:10px;padding:12px 22px;font-size:13.5px;color:var(--navy);box-shadow:0 2px 12px rgba(41,128,185,0.08);}
-.gcc-flags{font-size:19px;}
-.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:860px;margin:0 auto;}
-.ccard{background:rgba(255,255,255,0.85);border:1px solid rgba(41,128,185,0.18);border-radius:12px;padding:20px 14px;text-align:center;text-decoration:none;transition:all 0.25s;box-shadow:0 2px 10px rgba(41,128,185,0.07);}
-.ccard:hover{background:#fff;border-color:var(--sky);transform:translateY(-3px);box-shadow:0 8px 24px rgba(41,128,185,0.13);}
-.ccard-icon{font-size:24px;margin-bottom:8px;}
-.ccard-label{font-size:9px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
-.ccard-val{font-size:11.5px;color:var(--navy);font-weight:600;word-break:break-all;}
+.gcc-note{display:inline-flex;align-items:center;gap:8px;margin:18px 0 36px;background:rgba(255,255,255,0.8);border:1px solid rgba(41,128,185,0.2);border-radius:10px;padding:11px 20px;font-size:13px;color:var(--navy);box-shadow:0 2px 10px rgba(41,128,185,0.07);}
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;max-width:840px;margin:0 auto;}
+.ccard{background:rgba(255,255,255,0.86);border:1px solid rgba(41,128,185,0.17);border-radius:12px;padding:19px 13px;text-align:center;text-decoration:none;transition:all .25s;box-shadow:0 2px 9px rgba(41,128,185,0.07);}
+.ccard:hover{background:#fff;border-color:var(--sky);transform:translateY(-3px);box-shadow:0 7px 22px rgba(41,128,185,0.12);}
+.ccard-icon{font-size:23px;margin-bottom:7px;}
+.ccard-label{font-size:8.5px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
+.ccard-val{font-size:11px;color:var(--navy);font-weight:600;word-break:break-all;}
 
-/* FOOTER */
-footer{text-align:center;padding:22px 56px;background:#deeaf7;border-top:1px solid rgba(41,128,185,0.14);font-size:11.5px;color:var(--muted);}
+footer{text-align:center;padding:20px 56px;background:#deeaf7;border-top:1px solid rgba(41,128,185,0.13);font-size:11px;color:var(--muted);}
 footer span{color:var(--sky);}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
-/* ═══ MODALS ═══ */
+/* OWNER TOGGLE BUTTON */
+.owner-toggle{position:fixed;bottom:22px;right:22px;z-index:300;width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.15);transition:all .25s;}
+.owner-toggle.locked{background:var(--navy);}
+.owner-toggle.unlocked{background:var(--teal);}
+
+/* MODALS */
 .mo{display:none;position:fixed;inset:0;z-index:999;background:rgba(26,46,74,0.65);backdrop-filter:blur(7px);align-items:center;justify-content:center;}
 .mo.open{display:flex;}
-.modal{background:#fff;border-radius:16px;padding:32px 36px;width:460px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(26,46,74,0.22);animation:slideUp 0.3s ease;}
-.modal.wide{width:560px;}
-@keyframes slideUp{from{transform:translateY(28px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal h3{font-family:'Playfair Display',serif;font-size:21px;color:var(--navy);margin-bottom:20px;}
-.fg{margin-bottom:14px;}
-.fg label{display:block;font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:5px;}
-.fg input,.fg textarea,.fg select{width:100%;padding:10px 13px;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--text);transition:border-color 0.2s;}
+.modal{background:#fff;border-radius:15px;padding:30px 34px;width:460px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 24px 80px rgba(26,46,74,0.22);animation:slideUp .3s ease;}
+.modal.wide{width:540px;}
+.modal.preview-modal{width:700px;background:#111;}
+@keyframes slideUp{from{transform:translateY(26px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:18px;}
+.preview-modal h3{color:#fff;}
+.fg{margin-bottom:13px;}
+.fg label{display:block;font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px;}
+.fg input,.fg textarea,.fg select{width:100%;padding:10px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;color:var(--text);transition:border-color .2s;}
 .fg input:focus,.fg textarea:focus{outline:none;border-color:var(--sky);}
-.fg textarea{min-height:70px;resize:vertical;}
-.upload-zone{border:2px dashed var(--border);border-radius:10px;padding:22px;text-align:center;cursor:pointer;transition:all 0.2s;background:var(--bg);}
+.fg textarea{min-height:65px;resize:vertical;}
+.upload-zone{border:2px dashed var(--border);border-radius:9px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg);}
 .upload-zone:hover{border-color:var(--sky);background:rgba(41,128,185,0.04);}
-.upload-zone p{font-size:12.5px;color:var(--muted);}
+.upload-zone p{font-size:12px;color:var(--muted);}
 .upload-zone span{color:var(--sky);font-weight:600;}
-.upload-zone .file-types{font-size:10.5px;color:var(--muted);margin-top:4px;}
-#imgPrev{width:100%;max-height:130px;object-fit:cover;border-radius:8px;margin-top:8px;display:none;}
-.modal-btns{display:flex;gap:9px;margin-top:18px;}
-.mbtn{flex:1;padding:11px;border-radius:8px;font-size:12.5px;font-weight:700;border:none;cursor:pointer;transition:all 0.2s;}
-.mbtn-sky{background:var(--sky);color:#fff;}
-.mbtn-sky:hover{background:#1f6391;}
-.mbtn-cancel{background:var(--bg);color:var(--muted);border:1.5px solid var(--border);}
-.mbtn-cancel:hover{color:var(--text);}
+.file-types{font-size:10px;color:var(--muted);margin-top:3px;}
+.file-list-preview{margin-top:10px;display:flex;flex-direction:column;gap:5px;}
+.file-list-preview div{font-size:11px;color:var(--sky);display:flex;align-items:center;gap:5px;}
+.modal-btns{display:flex;gap:8px;margin-top:16px;}
+.mbtn{flex:1;padding:10px;border-radius:8px;font-size:12px;font-weight:700;border:none;cursor:pointer;transition:all .2s;}
+.mbtn-sky{background:var(--sky);color:#fff;} .mbtn-sky:hover{background:#1f6391;}
+.mbtn-cancel{background:var(--bg);color:var(--muted);border:1.5px solid var(--border);} .mbtn-cancel:hover{color:var(--text);}
 
-/* PASSWORD MODAL */
-.pwd-mo{display:none;position:fixed;inset:0;z-index:1000;background:rgba(26,46,74,0.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;}
+/* FILE PREVIEW MODAL */
+.preview-body{text-align:center;padding:10px 0;}
+.preview-body img{max-width:100%;max-height:60vh;border-radius:8px;object-fit:contain;}
+.preview-body iframe{width:100%;height:60vh;border:none;border-radius:8px;}
+.preview-body .no-prev{color:#aaa;font-size:13px;padding:40px 0;}
+.prev-name{color:#ccc;font-size:12px;margin-bottom:12px;}
+
+/* PASSWORD */
+.pwd-mo{display:none;position:fixed;inset:0;z-index:1000;background:rgba(26,46,74,0.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;}
 .pwd-mo.open{display:flex;}
-.pwd-box{background:#fff;border-radius:16px;padding:34px 38px;width:360px;max-width:94vw;box-shadow:0 24px 80px rgba(26,46,74,0.28);animation:slideUp 0.3s ease;text-align:center;}
-.pwd-box .lock-icon{font-size:40px;margin-bottom:12px;}
-.pwd-box h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);margin-bottom:5px;}
-.pwd-box p{font-size:12.5px;color:var(--muted);margin-bottom:20px;}
-.pwd-wrap{position:relative;margin-bottom:8px;}
-.pwd-wrap input{width:100%;padding:12px 42px 12px 16px;border-radius:10px;border:2px solid var(--border);font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:var(--bg);letter-spacing:3px;text-align:center;transition:border-color 0.2s;}
+.pwd-box{background:#fff;border-radius:15px;padding:32px 36px;width:350px;max-width:93vw;box-shadow:0 24px 80px rgba(26,46,74,0.26);animation:slideUp .3s ease;text-align:center;}
+.pwd-box .lk{font-size:38px;margin-bottom:10px;}
+.pwd-box h3{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:4px;}
+.pwd-box p{font-size:12px;color:var(--muted);margin-bottom:18px;}
+.pwd-wrap{position:relative;margin-bottom:7px;}
+.pwd-wrap input{width:100%;padding:11px 40px 11px 15px;border-radius:9px;border:2px solid var(--border);font-size:14px;font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:var(--bg);letter-spacing:3px;text-align:center;transition:border-color .2s;}
 .pwd-wrap input:focus{outline:none;border-color:var(--sky);}
-.pwd-wrap input.wrong{border-color:#e74c3c;animation:shake 0.4s ease;}
-.pwd-toggle{position:absolute;right:13px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:15px;color:var(--muted);}
-.pwd-err{font-size:11.5px;color:#e74c3c;margin-bottom:10px;min-height:16px;}
-.pwd-btns{display:flex;gap:9px;margin-top:4px;}
-.pwd-sub{flex:1;padding:12px;border-radius:9px;background:var(--sky);color:#fff;font-size:13.5px;font-weight:700;border:none;cursor:pointer;transition:all 0.2s;}
-.pwd-sub:hover{background:#1f6391;}
-.pwd-close{flex:0 0 auto;padding:12px 16px;border-radius:9px;background:var(--bg);color:var(--muted);border:1.5px solid var(--border);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;}
-.pwd-close:hover{color:var(--text);}
-.pwd-hint{font-size:10.5px;color:var(--muted);margin-top:12px;}
-.pwd-hint span{color:var(--sky);font-weight:600;}
+.pwd-wrap input.wrong{border-color:#e74c3c;animation:shake .4s ease;}
+.pwd-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:14px;color:var(--muted);}
+.pwd-err{font-size:11px;color:#e74c3c;margin-bottom:9px;min-height:15px;}
+.pwd-btns{display:flex;gap:8px;margin-top:3px;}
+.pwd-sub{flex:1;padding:11px;border-radius:9px;background:var(--sky);color:#fff;font-size:13px;font-weight:700;border:none;cursor:pointer;transition:all .2s;} .pwd-sub:hover{background:#1f6391;}
+.pwd-close{padding:11px 14px;border-radius:9px;background:var(--bg);color:var(--muted);border:1.5px solid var(--border);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;} .pwd-close:hover{color:var(--text);}
+.pwd-hint{font-size:10px;color:var(--muted);margin-top:10px;} .pwd-hint span{color:var(--sky);font-weight:600;}
 @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
-
-/* Range slider */
-input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
+input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
 .range-val{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--sky);font-weight:600;}
 
 @media(max-width:900px){
-  nav{padding:12px 16px;}
-  .nav-links a{padding:5px 8px;font-size:10.5px;}
-  section{padding:54px 18px;}
-  .hero{padding:96px 18px 54px;}
+  nav{padding:11px 14px;} .nav-links a{padding:5px 7px;font-size:10px;}
+  section{padding:52px 16px;} .hero{padding:94px 16px 52px;}
   .hero-inner,.about-grid,.edu-certs,.intern-row{grid-template-columns:1fr;}
   .skill-bars-grid{grid-template-columns:1fr;}
   .contact-cards{grid-template-columns:1fr 1fr;}
@@ -389,14 +422,7 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
     <div class="bg-icon bi-11">LOD 400</div><div class="bg-icon bi-12">ISO 19650</div>
     <div class="bg-icon bi-13">Piping</div><div class="bg-icon bi-14">Ducting</div>
   </div>
-  <div class="bg-lines">
-    <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#2980b9">
-      <path d="M0 200 H400 V500 H900 V300 H1400" stroke-width="2" stroke-dasharray="8 6"/>
-      <path d="M0 600 H300 V400 H700 V700 H1400" stroke-width="1.5" stroke-dasharray="6 8"/>
-      <circle cx="400" cy="200" r="8" fill="none" stroke-width="2"/>
-      <circle cx="900" cy="300" r="8" fill="none" stroke-width="2"/>
-    </svg>
-  </div>
+  <div class="bg-lines"><svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#2980b9"><path d="M0 200 H400 V500 H900 V300 H1400" stroke-width="2" stroke-dasharray="8 6"/><path d="M0 600 H300 V400 H700 V700 H1400" stroke-width="1.5" stroke-dasharray="6 8"/><circle cx="400" cy="200" r="8" fill="none" stroke-width="2"/><circle cx="900" cy="300" r="8" fill="none" stroke-width="2"/></svg></div>
   <div class="hero-inner">
     <div>
       <div class="hero-tag">✦ Portfolio — Umair Ahmad</div>
@@ -407,7 +433,7 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
         <div class="hero-title-line"><span class="icon icon-gold">🔧</span>HVAC Piping Modeler & Detailer</div>
         <div class="hero-title-line"><span class="icon icon-blue">📐</span>BIM Coordinator | Clash Detection Expert</div>
       </div>
-      <p class="hero-desc">Delivering precision <strong style="color:var(--navy)">MEP BIM models</strong>, HVAC ducting & piping layouts, and multidisciplinary coordination for international projects. Based in Pakistan · Open to <strong style="color:var(--sky)">UAE · KSA · Qatar</strong>.</p>
+      <p class="hero-desc">Delivering precision <strong style="color:var(--navy)">MEP BIM models</strong>, HVAC ducting & piping layouts, and multidisciplinary coordination for international projects. Open to <strong style="color:var(--sky)">UAE · KSA · Qatar</strong>.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-sky">⟶ Hire Me Now</a>
         <a href="#projects" class="btn btn-outline">View Projects</a>
@@ -415,22 +441,12 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
       </div>
     </div>
     <div class="hero-card">
-      <div class="hero-card-title">// Core Expertise</div>
-      <div>
-        <span class="kw-chip kw-bim">Revit MEP</span><span class="kw-chip kw-bim">Navisworks</span>
-        <span class="kw-chip kw-hvac">HVAC Ducting</span><span class="kw-chip kw-hvac">Piping Systems</span>
-        <span class="kw-chip kw-bim">BIM Coordination</span><span class="kw-chip kw-hvac">Clash Detection</span>
-        <span class="kw-chip kw-bim">Shop Drawings</span><span class="kw-chip kw-bim">LOD 300–450</span>
-        <span class="kw-chip kw-sw">SolidWorks</span><span class="kw-chip kw-sim">ANSYS</span>
-        <span class="kw-chip kw-sim">ABAQUS</span><span class="kw-chip kw-sim">COMSOL</span>
-        <span class="kw-chip kw-std">ISO 19650</span><span class="kw-chip kw-std">IFC / BEP</span>
+      <div class="hero-card-title">
+        <span>// Core Expertise</span>
+        <button class="oc-btn oc-add" style="display:none;font-size:10px;padding:4px 9px;" id="kwAddBtn" onclick="openKwModal()">＋ Add</button>
       </div>
-      <div class="hero-stats">
-        <div class="hs"><div class="hs-num">3+</div><div class="hs-label">BIM/MEP Projects</div></div>
-        <div class="hs"><div class="hs-num">6+</div><div class="hs-label">SolidWorks Projects</div></div>
-        <div class="hs"><div class="hs-num">3.53</div><div class="hs-label">CGPA UET Mardan</div></div>
-        <div class="hs"><div class="hs-num">7+</div><div class="hs-label">Certifications</div></div>
-      </div>
+      <div class="kw-chips-area" id="kwArea"></div>
+      <div class="hero-stats" id="heroStats"></div>
     </div>
   </div>
   <div class="scroll-down">Scroll</div>
@@ -439,30 +455,21 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <div class="sec-head reveal">
-      <div class="sec-eyebrow">Who I Am</div>
-      <h2 class="sec-title">About <em>Umair Ahmad</em></h2>
-      <p class="sec-desc">A detail-driven Mechanical BIM Engineer with real international project experience, strong simulation background, and technical depth GCC employers look for.</p>
-    </div>
+    <div class="sec-head reveal"><div class="sec-eyebrow">Who I Am</div><h2 class="sec-title">About <em>Umair Ahmad</em></h2><p class="sec-desc">A detail-driven Mechanical BIM Engineer with real international project experience, strong simulation background, and technical depth GCC employers look for.</p></div>
     <div class="about-grid">
       <div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="dot dot-blue"></div>Professional Profile</div><p>I am a <strong>Mechanical BIM Engineer</strong> and <strong>MEP Revit Modeler & Detailer</strong> with professional experience at <strong>BIMTEQ</strong>, serving American clients in Houston USA. I model, coordinate, and detail full MEP systems — HVAC ducting, chilled water, ventilation, and plumbing — at <strong>LOD 400–450</strong>.</p></div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="dot dot-teal"></div>HVAC Ducting & Piping</div><p>Specialized in <strong>HVAC Ducting Modeling & Detailing</strong> and <strong>Piping Systems Design</strong> using <strong>Revit MEP</strong>. I develop accurate 3D duct layouts, piping networks (chilled water, supply, drainage), and coordinate all systems to eliminate clashes before construction.</p></div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="dot dot-gold"></div>BIM Coordination & Clash Detection</div><p>Using <strong>Navisworks</strong>, I perform full multidisciplinary BIM coordination — identifying and resolving clashes between mechanical, electrical, plumbing, architectural, and structural models. I produce clash detection reports and coordinate with all discipline teams.</p></div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="dot dot-lav"></div>Simulation & Engineering Analysis</div><p>Beyond BIM — strong skills in <strong>SolidWorks</strong> (Advanced: 3D modeling, FEA), <strong>ANSYS</strong> (Advanced: structural, thermal, CFD/CFX), <strong>ABAQUS</strong> (Intermediate: explicit dynamics), and <strong>COMSOL Multiphysics</strong> (Intermediate: multiphase CFD).</p></div>
-        <div class="info-pills reveal">
-          <span class="info-pill">📍 Peshawar, Pakistan</span>
-          <span class="info-pill">🎓 B.Sc. Mechanical Engineering — UET Mardan</span>
-          <span class="info-pill">🌐 Open: UAE · KSA · Qatar</span>
-          <span class="info-pill">🗣️ English · Urdu · Pashto</span>
-        </div>
+        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-b"></div>Professional Profile</div><p>I am a <strong>Mechanical BIM Engineer</strong> and <strong>MEP Revit Modeler & Detailer</strong> with professional experience at <strong>BIMTEQ</strong>, serving American clients in Houston USA. I model, coordinate, and detail full MEP systems — HVAC ducting, chilled water, ventilation, and plumbing — at <strong>LOD 400–450</strong>.</p></div>
+        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-t"></div>HVAC Ducting & Piping</div><p>Specialized in <strong>HVAC Ducting Modeling & Detailing</strong> and <strong>Piping Systems Design</strong> using <strong>Revit MEP</strong>. I develop accurate 3D duct layouts, piping networks (chilled water, supply, drainage), and coordinate all systems to eliminate clashes before construction.</p></div>
+        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-g"></div>BIM Coordination & Clash Detection</div><p>Using <strong>Navisworks</strong>, I perform full multidisciplinary BIM coordination — identifying and resolving clashes between mechanical, electrical, plumbing, architectural, and structural models.</p></div>
+        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-l"></div>Simulation & Engineering Analysis</div><p>Beyond BIM — strong skills in <strong>SolidWorks</strong> (Advanced: 3D modeling, FEA), <strong>ANSYS</strong> (Advanced: structural, thermal, CFD/CFX), <strong>ABAQUS</strong> (Intermediate: explicit dynamics), and <strong>COMSOL Multiphysics</strong> (Intermediate: multiphase CFD).</p></div>
+        <div class="info-pills reveal"><span class="info-pill">📍 Peshawar, Pakistan</span><span class="info-pill">🎓 B.Sc. Mechanical Engineering — UET Mardan</span><span class="info-pill">🌐 Open: UAE · KSA · Qatar</span><span class="info-pill">🗣️ English · Urdu · Pashto</span></div>
       </div>
       <div class="reveal">
         <div class="cap-card"><div class="cap-icon" style="background:rgba(41,128,185,0.1)">🏗️</div><div><div class="cap-title">MEP Revit Modeling & Detailing</div><div class="cap-desc">Full MEP system models in Revit MEP — mechanical, electrical, plumbing — developed to LOD 300–450 with accurate families, parameters, and detailing for fabrication and construction.</div></div></div>
         <div class="cap-card"><div class="cap-icon" style="background:rgba(26,188,156,0.1)">🌬️</div><div><div class="cap-title">HVAC Ducting Modeling & Detailing</div><div class="cap-desc">Layout, sizing, and 3D detailing of supply, return, and exhaust duct systems. Includes VAV boxes, AHU connections, and coordination with ceiling and structural elements.</div></div></div>
         <div class="cap-card"><div class="cap-icon" style="background:rgba(230,126,34,0.1)">🔧</div><div><div class="cap-title">Piping Modeling & Detailing</div><div class="cap-desc">Chilled water, condenser water, domestic water supply, drainage, and fire protection piping — fully modeled with slopes, hangers, and coordination clearances.</div></div></div>
-        <div class="cap-card"><div class="cap-icon" style="background:rgba(142,68,173,0.1)">🔍</div><div><div class="cap-title">Clash Detection & BIM Coordination</div><div class="cap-desc">Navisworks-based clash detection across all disciplines. Systematic identification, reporting, and resolution of hard and soft clashes — supporting coordinated construction documents.</div></div></div>
-        <div class="cap-card"><div class="cap-icon" style="background:rgba(192,57,43,0.1)">📐</div><div><div class="cap-title">Shop Drawing Preparation</div><div class="cap-desc">MEP shop drawings, spool drawings, and coordination drawings from BIM models — ready for fabrication and site teams, meeting project standards and specifications.</div></div></div>
+        <div class="cap-card"><div class="cap-icon" style="background:rgba(142,68,173,0.1)">🔍</div><div><div class="cap-title">Clash Detection & BIM Coordination</div><div class="cap-desc">Navisworks-based clash detection across all disciplines. Systematic identification, reporting, and resolution of hard and soft clashes for coordinated construction documents.</div></div></div>
+        <div class="cap-card"><div class="cap-icon" style="background:rgba(192,57,43,0.1)">📐</div><div><div class="cap-title">Shop Drawing Preparation</div><div class="cap-desc">MEP shop drawings, spool drawings, and coordination drawings from BIM models — ready for fabrication and site teams, meeting project standards.</div></div></div>
       </div>
     </div>
   </div>
@@ -473,24 +480,12 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
   <div class="container">
     <div class="sec-head reveal"><div class="sec-eyebrow">Work History</div><h2 class="sec-title">Professional <em>Experience</em></h2><p class="sec-desc">International project exposure through US-based BIM/MEP work at BIMTEQ, plus engineering internships at Pakistan's leading industrial facilities.</p></div>
     <div class="exp-timeline">
-      <div class="exp-block reveal">
-        <div class="exp-card">
-          <div class="exp-top"><div class="exp-role">BIM Engineer</div><div class="exp-badge">Aug 2025 – May 2026</div></div>
-          <div class="exp-company">BIMTEQ — Lahore, Pakistan · American Houston HQ (USA)</div>
-          <ul class="exp-list">
-            <li><span>Developed <strong>MEP BIM models up to LOD 400–450</strong> in Revit MEP — HVAC ducting, chilled water, ventilation, and plumbing for multi-floor US healthcare and commercial projects.</span></li>
-            <li><span>Performed <strong>HVAC ducting modeling & detailing</strong> — supply, return, and exhaust duct layouts, VAV connections, coordination with architectural and structural elements.</span></li>
-            <li><span>Modeled and detailed <strong>piping systems</strong> — chilled water, condenser water, domestic water supply, drainage with proper slopes, clearances, and hanger placements.</span></li>
-            <li><span>Executed <strong>clash detection & BIM coordination</strong> using Navisworks — identified and resolved 100+ hard/soft clashes across MEP disciplines.</span></li>
-            <li><span>Prepared detailed <strong>MEP shop drawings & coordination drawings</strong> to support fabrication, installation, and site execution for US construction teams.</span></li>
-          </ul>
-          <div class="tag-row"><span class="tag">Revit MEP</span><span class="tag">Navisworks</span><span class="tag">HVAC Ducting</span><span class="tag">Piping Systems</span><span class="tag">Clash Detection</span><span class="tag">BIM Coordination</span><span class="tag">Shop Drawings</span><span class="tag">LOD 400–450</span></div>
-        </div>
+      <!-- OWNER CONTROLS for Experience -->
+      <div class="owner-ctrl reveal">
+        <span class="oc-label">⚙ Experience Controls</span>
+        <button class="oc-btn oc-add" onclick="openExpModal('add')">＋ Add Experience</button>
       </div>
-      <div class="intern-row reveal">
-        <div class="intern-card"><div class="intern-title">Pakistan Locomotive Factory</div><div class="intern-co">Risalpur · Aug 2023 · 1 Month</div><div class="intern-desc">Hands-on exposure to large-scale mechanical systems and industrial engineering operations.</div></div>
-        <div class="intern-card"><div class="intern-title">Aircraft Rebuild Factory — PAC Kamra</div><div class="intern-co">PAC Kamra · Jul–Aug 2024 · 2 Weeks</div><div class="intern-desc">Insight into precision engineering and quality systems at Pakistan's leading aeronautical complex.</div></div>
-      </div>
+      <div id="expList"></div>
     </div>
   </div>
 </section>
@@ -501,7 +496,7 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
     <div class="sec-head reveal"><div class="sec-eyebrow">Technical Work</div><h2 class="sec-title">Project <em>Portfolio</em></h2><p class="sec-desc">Full record of BIM/MEP projects, SolidWorks designs, simulations, and more. Add new categories and projects anytime.</p></div>
     <div class="proj-tabs-wrapper reveal">
       <div id="tabsRow" style="display:flex;gap:6px;flex-wrap:wrap;"></div>
-      <button class="add-tab-btn" onclick="openTabModal()" title="Add new project category">＋</button>
+      <button class="add-tab-btn" onclick="openTabModal()" title="Add new category">＋</button>
     </div>
     <div id="tabPanes"></div>
   </div>
@@ -511,10 +506,10 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
 <section id="projectwork">
   <div class="container">
     <div class="pw-header">
-      <div class="reveal"><div class="sec-eyebrow">Visual Gallery</div><h2 class="sec-title">Projects <em>Work</em></h2><p class="sec-desc">Upload your project screenshots, drawings, and files here anytime.</p></div>
-      <button class="pw-add-btn reveal" onclick="openPWModal()">＋ Add Project Image</button>
+      <div class="reveal"><div class="sec-eyebrow">Visual Gallery</div><h2 class="sec-title">Projects <em>Work</em></h2><p class="sec-desc">Upload your project screenshots, drawings, and files.</p></div>
+      <button class="pw-add-btn" onclick="openPWModal()">＋ Add Project Image</button>
     </div>
-    <div class="pw-grid" id="pwGrid"><div class="pw-empty"><div class="big-icon">🖼️</div><p>No images yet. Click <strong>"＋ Add Project Image"</strong> to upload your first project photo.</p></div></div>
+    <div class="pw-grid" id="pwGrid"><div class="pw-empty"><div class="big-icon">🖼️</div><p>No images yet. Owner can upload project images here.</p></div></div>
   </div>
 </section>
 
@@ -522,24 +517,22 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
 <section id="skills">
   <div class="container">
     <div class="sec-head reveal"><div class="sec-eyebrow">Technical Arsenal</div><h2 class="sec-title">Skills & <em>Software</em></h2></div>
-    <div class="skills-grid">
-      <div class="scat-card reveal"><div class="scat-head"><div class="scat-icon" style="background:rgba(41,128,185,0.1)">🏗️</div><div class="scat-name">BIM & MEP Tools</div></div><div class="spills"><span class="sp sp-adv">Revit MEP</span><span class="sp sp-adv">Navisworks</span><span class="sp sp-int">AutoCAD</span><span class="sp sp-std">BIM Coordination</span><span class="sp sp-std">Clash Detection</span><span class="sp sp-std">Shop Drawings</span><span class="sp sp-std">LOD 300–450</span></div></div>
-      <div class="scat-card reveal"><div class="scat-head"><div class="scat-icon" style="background:rgba(26,188,156,0.1)">🌬️</div><div class="scat-name">HVAC & Piping</div></div><div class="spills"><span class="sp sp-adv">HVAC Ducting Design</span><span class="sp sp-adv">HVAC Ducting Detailing</span><span class="sp sp-adv">Piping Modeling</span><span class="sp sp-adv">Piping Detailing</span><span class="sp sp-std">Chilled Water</span><span class="sp sp-std">Ventilation</span><span class="sp sp-std">Plumbing Networks</span></div></div>
-      <div class="scat-card reveal"><div class="scat-head"><div class="scat-icon" style="background:rgba(230,126,34,0.1)">⚙️</div><div class="scat-name">CAD / Simulation</div></div><div class="spills"><span class="sp sp-adv">SolidWorks</span><span class="sp sp-adv">ANSYS</span><span class="sp sp-int">ABAQUS</span><span class="sp sp-int">COMSOL</span><span class="sp sp-std">FEA Analysis</span><span class="sp sp-std">CFD Analysis</span><span class="sp sp-std">Motion Study</span></div></div>
-      <div class="scat-card reveal"><div class="scat-head"><div class="scat-icon" style="background:rgba(142,68,173,0.1)">📋</div><div class="scat-name">Standards & Soft Skills</div></div><div class="spills"><span class="sp sp-std">ISO 19650</span><span class="sp sp-std">IFC</span><span class="sp sp-std">BEP</span><span class="sp sp-adv">MS Excel</span><span class="sp sp-adv">MS Word</span><span class="sp sp-adv">MS PowerPoint</span><span class="sp sp-neu">Team Collaboration</span><span class="sp sp-neu">Problem Solving</span></div></div>
+    <!-- SKILL CATEGORIES -->
+    <div class="skills-cats-header">
+      <div class="skills-cats-title">Software Categories</div>
+      <button class="oc-btn oc-add" style="display:none;" id="addCatBtn" onclick="openCatModal()">＋ Add Category</button>
     </div>
+    <div class="skills-grid" id="skillsGrid"></div>
     <!-- SKILL BARS -->
-    <div class="skill-bars-section reveal" style="margin-top:36px;">
-      <div class="skill-bars-header">
-        <div class="skill-bars-title">Proficiency <em style="color:var(--sky)">Levels</em></div>
-        <button class="add-skill-btn" onclick="openSkillModal()">＋ Add Skill</button>
-      </div>
-      <div class="skill-bars-grid" id="skillBarsGrid"></div>
+    <div class="skill-bars-header">
+      <div class="skill-bars-title">Proficiency <em style="color:var(--sky)">Levels</em></div>
+      <button class="add-skill-btn" onclick="openSkillModal()">＋ Add Skill</button>
     </div>
+    <div class="skill-bars-grid" id="skillBarsGrid"></div>
   </div>
 </section>
 
-<!-- EDUCATION & CERTS -->
+<!-- EDUCATION -->
 <section id="education">
   <div class="container">
     <div class="sec-head reveal"><div class="sec-eyebrow">Academic Background</div><h2 class="sec-title">Education & <em>Certifications</em></h2></div>
@@ -551,20 +544,13 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
         <div class="edu-card"><div class="edu-deg">SSC — Science (Matric)</div><div class="edu-sch">Hira Public School & College, Peshawar</div><div class="edu-row"><span>2016 – 2018</span><span class="edu-gpa">997/1100 (90.63%)</span></div></div>
       </div>
       <div class="reveal">
-        <div class="certs-header">
-          <div class="edu-sub-title" style="margin-bottom:0">Certifications & Workshops</div>
-          <button class="add-cert-btn" onclick="openCertModal()">＋ Add</button>
-        </div>
+        <div class="certs-header"><div class="edu-sub-title" style="margin-bottom:0">Certifications & Workshops</div><button class="add-cert-btn" onclick="openCertModal()">＋ Add</button></div>
         <div id="certList"></div>
       </div>
     </div>
-    <!-- CERT IMAGES -->
     <div class="cert-images-section reveal">
-      <div class="cert-images-header">
-        <div class="cert-images-title">Certificate <em style="color:var(--sky)">Images & Files</em></div>
-        <button class="add-cert-img-btn" onclick="openCertImgModal()">＋ Upload Certificate</button>
-      </div>
-      <div class="cert-imgs-grid" id="certImgsGrid"><div class="cert-empty">No certificates uploaded yet. Click <strong>"＋ Upload Certificate"</strong> to add your certificate images or PDFs.</div></div>
+      <div class="cert-images-header"><div class="cert-images-title">Certificate <em style="color:var(--sky)">Images & Files</em></div><button class="add-cert-img-btn" onclick="openCertImgModal()">＋ Upload</button></div>
+      <div class="cert-imgs-grid" id="certImgsGrid"><div class="cert-empty">Owner can upload certificate images or PDFs here.</div></div>
     </div>
   </div>
 </section>
@@ -572,7 +558,7 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <div class="reveal"><div class="sec-eyebrow">Get In Touch</div><h2 class="sec-title">Let's <em>Connect</em></h2><p class="sec-desc" style="margin:0 auto">Available for BIM Engineer · MEP Revit Modeler · HVAC Ducting & Piping roles in the GCC region.</p><div style="text-align:center"><div class="gcc-note"><span class="gcc-flags">🇦🇪 🇸🇦 🇶🇦</span>Actively seeking opportunities in UAE · Saudi Arabia · Qatar</div></div></div>
+    <div class="reveal"><div class="sec-eyebrow">Get In Touch</div><h2 class="sec-title">Let's <em>Connect</em></h2><p class="sec-desc" style="margin:0 auto">Available for BIM Engineer · MEP Revit Modeler · HVAC Ducting & Piping roles in the GCC region.</p><div style="text-align:center"><div class="gcc-note"><span>🇦🇪 🇸🇦 🇶🇦</span>Actively seeking opportunities in UAE · Saudi Arabia · Qatar</div></div></div>
     <div class="contact-cards">
       <a class="ccard reveal" href="mailto:engr.umair.ahamd111@gmail.com"><div class="ccard-icon">✉️</div><div class="ccard-label">Email</div><div class="ccard-val">engr.umair.ahamd111@gmail.com</div></a>
       <a class="ccard reveal" href="https://wa.me/923088025062" target="_blank"><div class="ccard-icon">💬</div><div class="ccard-label">WhatsApp</div><div class="ccard-val">+92-308-8025062</div></a>
@@ -585,78 +571,93 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:4px;}
 </section>
 <footer><p>© 2026 <span>Umair Ahmad</span> · BIM Engineer · MEP Revit Modeler & Detailer · HVAC Ducting & Piping Specialist</p></footer>
 
+<!-- LOCK/UNLOCK BUTTON -->
+<button class="owner-toggle locked" id="ownerToggleBtn" onclick="toggleOwner()" title="Owner Login">🔒</button>
+
 <!-- PASSWORD MODAL -->
 <div class="pwd-mo" id="pwdMo">
   <div class="pwd-box">
-    <div class="lock-icon">🔐</div>
-    <h3>Owner Access Only</h3>
-    <p>Enter your password to make changes.</p>
-    <div class="pwd-wrap"><input type="password" id="pwdInp" placeholder="Password" onkeydown="if(event.key==='Enter')checkPwd()"><button class="pwd-toggle" onclick="togglePwd()">👁️</button></div>
+    <div class="lk">🔐</div>
+    <h3>Owner Access</h3>
+    <p>Enter your password to enable edit mode.</p>
+    <div class="pwd-wrap"><input type="password" id="pwdInp" placeholder="Password" onkeydown="if(event.key==='Enter')checkPwd()"><button class="pwd-toggle" onclick="togglePwdV()">👁️</button></div>
     <div class="pwd-err" id="pwdErr"></div>
-    <div class="pwd-btns"><button class="pwd-close" onclick="closePwd()">Cancel</button><button class="pwd-sub" onclick="checkPwd()">Unlock ⟶</button></div>
+    <div class="pwd-btns"><button class="pwd-close" onclick="closePwdModal()">Cancel</button><button class="pwd-sub" onclick="checkPwd()">Unlock ⟶</button></div>
     <div class="pwd-hint">Only <span>Umair Ahmad</span> can edit this portfolio.</div>
   </div>
 </div>
 
-<!-- ADD TAB MODAL -->
-<div class="mo" id="tabMo"><div class="modal"><h3>Add Project Category</h3><div class="fg"><label>Category Name</label><input type="text" id="tabName" placeholder="e.g. Revit Architecture, Civil Projects..."></div><div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('tabMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="addTab()">Add Category</button></div></div></div>
+<!-- MODALS -->
+<div class="mo" id="kwMo"><div class="modal"><h3>Add Keyword</h3><div class="fg"><label>Keyword Text *</label><input type="text" id="kwText" placeholder="e.g. Dynamo, Tekla, BIM 360..."></div><div class="fg"><label>Color Style</label><select id="kwType"><option value="kw-bim">Blue (BIM/Tools)</option><option value="kw-hvac">Green (HVAC/MEP)</option><option value="kw-sw">Orange (CAD/Design)</option><option value="kw-sim">Purple (Simulation)</option><option value="kw-std">Red (Standards)</option></select></div><div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('kwMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="addKw()">Add Keyword</button></div></div></div>
 
-<!-- ADD PROJECT MODAL -->
-<div class="mo" id="projMo"><div class="modal wide"><h3>Add Project</h3>
+<div class="mo" id="tabMo"><div class="modal"><h3>Add Project Category</h3><div class="fg"><label>Category Name *</label><input type="text" id="tabName" placeholder="e.g. Revit Architecture, Civil Projects..."></div><div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('tabMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="addTab()">Add Category</button></div></div></div>
+
+<div class="mo" id="projMo"><div class="modal wide"><h3 id="projMoTitle">Add Project</h3>
   <div class="fg"><label>Project Title *</label><input type="text" id="projTitle" placeholder="e.g. HCA Healthcare – Clearlake Campus"></div>
   <div class="fg"><label>Sub-label</label><input type="text" id="projSub" placeholder="e.g. 6-Floor Healthcare, USA"></div>
   <div class="fg"><label>Description</label><textarea id="projDesc" placeholder="Describe what you did..."></textarea></div>
-  <div class="fg"><label>Upload Files (Images, PDF, DOCX, XLSX, PPTX)</label><div class="upload-zone" onclick="document.getElementById('projFiles').click()"><p>Click to upload <span>or drag & drop</span></p><div class="file-types">JPG · PNG · PDF · DOCX · XLSX · PPTX · Any file</div><img id="imgPrev" src="" alt=""><div id="fileList" style="font-size:11.5px;color:var(--sky);margin-top:6px;"></div></div><input type="file" id="projFiles" accept="*/*" multiple style="display:none" onchange="handleProjFiles(this)"></div>
-  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('projMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="addProject()">Add Project</button></div>
+  <div class="fg"><label>Upload Files (Images, PDF, DOCX, XLSX, PPTX — multiple allowed)</label><div class="upload-zone" onclick="document.getElementById('projFiles').click()"><p>Click to upload <span>or drag & drop</span></p><div class="file-types">JPG · PNG · PDF · DOCX · XLSX · PPTX · Any file · Multiple files</div><div class="file-list-preview" id="projFileList"></div></div><input type="file" id="projFiles" accept="*/*" multiple style="display:none" onchange="handleProjFiles(this)"></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('projMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveProject()">Save Project</button></div>
 </div></div>
 
-<!-- UPLOAD FILES TO EXISTING PROJECT MODAL -->
 <div class="mo" id="uploadMo"><div class="modal"><h3>Upload Files to Project</h3>
-  <div class="fg"><label>Files (Images, PDF, DOCX, XLSX, PPTX, etc.)</label><div class="upload-zone" onclick="document.getElementById('upFiles').click()"><p>Click to upload <span>or drag & drop</span></p><div class="file-types">Any file type accepted</div><div id="upFileList" style="font-size:11.5px;color:var(--sky);margin-top:6px;"></div></div><input type="file" id="upFiles" accept="*/*" multiple style="display:none" onchange="handleUpFiles(this)"></div>
-  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('uploadMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveUpload()">Upload Files</button></div>
+  <div class="fg"><label>Files (Multiple files allowed)</label><div class="upload-zone" onclick="document.getElementById('upFiles').click()"><p>Click to upload <span>or drag & drop</span></p><div class="file-types">Any file type · Multiple files</div><div class="file-list-preview" id="upFileList"></div></div><input type="file" id="upFiles" accept="*/*" multiple style="display:none" onchange="handleUpFiles(this)"></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('uploadMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveUpload()">Upload</button></div>
 </div></div>
 
-<!-- PROJECT WORK MODAL -->
 <div class="mo" id="pwMo"><div class="modal"><h3>Add Project Image</h3>
   <div class="fg"><label>Title *</label><input type="text" id="pwTitle" placeholder="e.g. HCA Healthcare — HVAC Ducting"></div>
   <div class="fg"><label>Category</label><select id="pwCat"><option>BIM / MEP</option><option>HVAC Ducting</option><option>Piping Systems</option><option>SolidWorks</option><option>ANSYS / Simulation</option><option>ABAQUS</option><option>COMSOL</option><option>Final Year Project</option><option>Other</option></select></div>
-  <div class="fg"><label>Description</label><textarea id="pwDesc" placeholder="Write anything about this work..."></textarea></div>
-  <div class="fg"><label>Image</label><div class="upload-zone" onclick="document.getElementById('pwFile').click()"><p>Click to upload image <span>or drag & drop</span></p><img id="pwPrev" src="" style="width:100%;max-height:120px;object-fit:cover;border-radius:8px;margin-top:8px;display:none;"></div><input type="file" id="pwFile" accept="image/*" style="display:none" onchange="previewPW(this)"></div>
+  <div class="fg"><label>Description</label><textarea id="pwDesc" placeholder="Write about this work..."></textarea></div>
+  <div class="fg"><label>Image</label><div class="upload-zone" onclick="document.getElementById('pwFile').click()"><p>Click to upload <span>image</span></p><img id="pwPrev" src="" style="width:100%;max-height:110px;object-fit:cover;border-radius:7px;margin-top:7px;display:none;"></div><input type="file" id="pwFile" accept="image/*" style="display:none" onchange="previewPW(this)"></div>
   <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('pwMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="addPW()">Add to Gallery</button></div>
 </div></div>
 
-<!-- ADD SKILL MODAL -->
-<div class="mo" id="skillMo"><div class="modal"><h3>Add Skill to Proficiency Chart</h3>
+<div class="mo" id="skillMo"><div class="modal"><h3>Add Skill</h3>
   <div class="fg"><label>Skill Name *</label><input type="text" id="skillName" placeholder="e.g. Dynamo, Tekla, Primavera..."></div>
-  <div class="fg"><label>Proficiency Level: <span class="range-val" id="skillValDisplay">80%</span></label><input type="range" id="skillVal" min="10" max="100" value="80" oninput="document.getElementById('skillValDisplay').textContent=this.value+'%'"></div>
+  <div class="fg"><label>Proficiency: <span class="range-val" id="skillValDisp">80%</span></label><input type="range" id="skillVal" min="10" max="100" value="80" oninput="document.getElementById('skillValDisp').textContent=this.value+'%'"></div>
   <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('skillMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="addSkill()">Add Skill</button></div>
 </div></div>
 
-<!-- ADD CERT MODAL -->
-<div class="mo" id="certMo"><div class="modal"><h3>Add Certification</h3>
-  <div class="fg"><label>Certification Name *</label><input type="text" id="certName" placeholder="e.g. Autodesk Certified Professional..."></div>
-  <div class="fg"><label>Year / Date</label><input type="text" id="certYear" placeholder="e.g. Dec 2024"></div>
-  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('certMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="addCert()">Add Certification</button></div>
+<div class="mo" id="catMo"><div class="modal"><h3 id="catMoTitle">Add Skill Category</h3>
+  <div class="fg"><label>Category Name *</label><input type="text" id="catName" placeholder="e.g. BIM Tools, MEP Software..."></div>
+  <div class="fg"><label>Icon (emoji)</label><input type="text" id="catIcon" placeholder="e.g. 🔧 🏗️ 💡" maxlength="4"></div>
+  <div class="fg"><label>Skills (comma separated)</label><textarea id="catSkills" placeholder="e.g. Revit MEP, Navisworks, AutoCAD"></textarea></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('catMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveCat()">Save Category</button></div>
 </div></div>
 
-<!-- UPLOAD CERT IMAGE MODAL -->
-<div class="mo" id="certImgMo"><div class="modal"><h3>Upload Certificate Image or File</h3>
+<div class="mo" id="certMo"><div class="modal"><h3 id="certMoTitle">Add Certification</h3>
+  <div class="fg"><label>Certification Name *</label><input type="text" id="certName" placeholder="e.g. Autodesk Certified Professional..."></div>
+  <div class="fg"><label>Year / Date</label><input type="text" id="certYear" placeholder="e.g. Dec 2024"></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('certMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveCert()">Save</button></div>
+</div></div>
+
+<div class="mo" id="certImgMo"><div class="modal"><h3>Upload Certificate</h3>
   <div class="fg"><label>Certificate Name *</label><input type="text" id="ciName" placeholder="e.g. SolidWorks Workshop Certificate"></div>
-  <div class="fg"><label>File (Image or PDF)</label><div class="upload-zone" onclick="document.getElementById('ciFile').click()"><p>Click to upload <span>image or PDF</span></p><img id="ciPrev" src="" style="width:100%;max-height:120px;object-fit:cover;border-radius:8px;margin-top:8px;display:none;"><div id="ciFileName" style="font-size:11.5px;color:var(--sky);margin-top:6px;"></div></div><input type="file" id="ciFile" accept="image/*,application/pdf" style="display:none" onchange="handleCI(this)"></div>
+  <div class="fg"><label>Files (Images or PDFs — multiple)</label><div class="upload-zone" onclick="document.getElementById('ciFiles').click()"><p>Click to upload <span>images or PDFs</span></p><div class="file-types">Multiple files allowed</div><div class="file-list-preview" id="ciFileList"></div></div><input type="file" id="ciFiles" accept="image/*,application/pdf" multiple style="display:none" onchange="handleCI(this)"></div>
   <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('certImgMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="addCertImg()">Upload</button></div>
 </div></div>
 
-<script>
-// ══════════════════════════════════════════
-// PASSWORD
-// ══════════════════════════════════════════
-const PASS = 'UmairBIM2026'; // 🔐 Change this to your own password
-let unlocked = false;
-let pendingAction = null;
+<div class="mo" id="expMo"><div class="modal wide"><h3 id="expMoTitle">Add Experience</h3>
+  <div class="fg"><label>Job Title *</label><input type="text" id="expRole" placeholder="e.g. BIM Engineer"></div>
+  <div class="fg"><label>Company & Location</label><input type="text" id="expCo" placeholder="e.g. BIMTEQ — Lahore, Pakistan"></div>
+  <div class="fg"><label>Date Range</label><input type="text" id="expDate" placeholder="e.g. Aug 2025 – May 2026"></div>
+  <div class="fg"><label>Bullet Points (one per line)</label><textarea id="expBullets" placeholder="Developed MEP BIM models up to LOD 400&#10;Performed clash detection using Navisworks" style="min-height:100px;"></textarea></div>
+  <div class="fg"><label>Tags (comma separated)</label><input type="text" id="expTags" placeholder="e.g. Revit MEP, Navisworks, HVAC"></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('expMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveExp()">Save</button></div>
+</div></div>
 
-function requireAuth(action) {
-  if (unlocked) { action(); return; }
-  pendingAction = action;
+<div class="mo" id="previewMo"><div class="modal preview-modal"><h3 id="prevTitle" style="color:#fff;margin-bottom:12px;"></h3><div class="preview-body" id="prevBody"></div><div class="modal-btns" style="margin-top:14px;"><button class="mbtn mbtn-cancel" onclick="closeMo('previewMo')">Close</button></div></div></div>
+
+<script>
+// ══════════════════════════════════
+// PASSWORD & OWNER MODE
+// ══════════════════════════════════
+const PASS = 'UmairBIM2026'; // 🔐 Change this
+let isOwner = false;
+
+function toggleOwner() {
+  if (isOwner) { isOwner = false; applyOwnerMode(); return; }
   document.getElementById('pwdMo').classList.add('open');
   setTimeout(() => document.getElementById('pwdInp').focus(), 100);
 }
@@ -664,10 +665,10 @@ function checkPwd() {
   const v = document.getElementById('pwdInp').value;
   const inp = document.getElementById('pwdInp');
   if (v === PASS) {
-    unlocked = true;
-    setTimeout(() => { unlocked = false; }, 10*60*1000);
-    closePwd();
-    if (pendingAction) { pendingAction(); pendingAction = null; }
+    isOwner = true;
+    closePwdModal();
+    applyOwnerMode();
+    setTimeout(() => { isOwner = false; applyOwnerMode(); }, 30*60*1000);
   } else {
     inp.classList.add('wrong');
     document.getElementById('pwdErr').textContent = '❌ Incorrect password.';
@@ -675,402 +676,561 @@ function checkPwd() {
     setTimeout(() => inp.classList.remove('wrong'), 500);
   }
 }
-function closePwd() {
-  document.getElementById('pwdMo').classList.remove('open');
-  document.getElementById('pwdInp').value = '';
-  document.getElementById('pwdErr').textContent = '';
-}
-function togglePwd() {
-  const i = document.getElementById('pwdInp');
-  i.type = i.type === 'password' ? 'text' : 'password';
-}
-document.getElementById('pwdMo').addEventListener('click', e => { if (e.target === e.currentTarget) closePwd(); });
+function closePwdModal() { document.getElementById('pwdMo').classList.remove('open'); document.getElementById('pwdInp').value = ''; document.getElementById('pwdErr').textContent = ''; }
+function togglePwdV() { const i = document.getElementById('pwdInp'); i.type = i.type==='password'?'text':'password'; }
+document.getElementById('pwdMo').addEventListener('click', e => { if(e.target===e.currentTarget) closePwdModal(); });
 
-// ══════════════════════════════════════════
-// MODAL HELPERS
-// ══════════════════════════════════════════
-function openMo(id) { document.getElementById(id).classList.add('open'); }
+function applyOwnerMode() {
+  const btn = document.getElementById('ownerToggleBtn');
+  if (isOwner) {
+    document.body.classList.add('owner-mode');
+    btn.textContent = '🔓'; btn.classList.remove('locked'); btn.classList.add('unlocked');
+    document.getElementById('kwAddBtn').style.display = 'inline-flex';
+    document.getElementById('addCatBtn').style.display = 'inline-flex';
+  } else {
+    document.body.classList.remove('owner-mode');
+    btn.textContent = '🔒'; btn.classList.add('locked'); btn.classList.remove('unlocked');
+    document.getElementById('kwAddBtn').style.display = 'none';
+    document.getElementById('addCatBtn').style.display = 'none';
+  }
+}
+
 function closeMo(id) { document.getElementById(id).classList.remove('open'); }
-document.querySelectorAll('.mo').forEach(mo => {
-  mo.addEventListener('click', e => { if (e.target === mo) mo.classList.remove('open'); });
-});
+document.querySelectorAll('.mo').forEach(m => m.addEventListener('click', e => { if(e.target===m) m.classList.remove('open'); }));
 
-// ══════════════════════════════════════════
-// TABS / PROJECT CATEGORIES
-// ══════════════════════════════════════════
+// ══════════════════════════════════
+// KEYWORDS (Core Expertise)
+// ══════════════════════════════════
+let keywords = [
+  {id:1,text:'Revit MEP',cls:'kw-bim'},{id:2,text:'Navisworks',cls:'kw-bim'},
+  {id:3,text:'HVAC Ducting',cls:'kw-hvac'},{id:4,text:'Piping Systems',cls:'kw-hvac'},
+  {id:5,text:'BIM Coordination',cls:'kw-bim'},{id:6,text:'Clash Detection',cls:'kw-hvac'},
+  {id:7,text:'Shop Drawings',cls:'kw-bim'},{id:8,text:'LOD 300–450',cls:'kw-bim'},
+  {id:9,text:'SolidWorks',cls:'kw-sw'},{id:10,text:'ANSYS',cls:'kw-sim'},
+  {id:11,text:'ABAQUS',cls:'kw-sim'},{id:12,text:'COMSOL',cls:'kw-sim'},
+  {id:13,text:'ISO 19650',cls:'kw-std'},{id:14,text:'IFC / BEP',cls:'kw-std'},
+  {id:15,text:'AutoCAD',cls:'kw-hvac'},
+];
+function renderKw() {
+  document.getElementById('kwArea').innerHTML = keywords.map(k =>
+    `<span class="kw-chip ${k.cls}">${k.text}<button class="kw-del" onclick="delKw(${k.id})" title="Remove">✕</button></span>`
+  ).join('');
+}
+function openKwModal() { document.getElementById('kwMo').classList.add('open'); }
+function addKw() {
+  const t = document.getElementById('kwText').value.trim();
+  if (!t) return alert('Enter keyword text.');
+  keywords.push({ id: Date.now(), text: t, cls: document.getElementById('kwType').value });
+  document.getElementById('kwText').value = '';
+  closeMo('kwMo'); renderKw();
+}
+function delKw(id) { keywords = keywords.filter(k => k.id !== id); renderKw(); }
+
+// ══════════════════════════════════
+// HERO STATS — auto-linked to projects
+// ══════════════════════════════════
+function renderHeroStats() {
+  const el = document.getElementById('heroStats');
+  const rows = tabs.map(t => {
+    const count = (projects[t.id] || []).length + (t.id === 'fyp' ? 1 : 0);
+    return `<a class="hs" href="#projects" onclick="switchTab('${t.id}')">
+      <div class="hs-num">${count}</div>
+      <div class="hs-label">${t.name}</div>
+    </a>`;
+  });
+  el.innerHTML = rows.join('');
+}
+
+// ══════════════════════════════════
+// EXPERIENCE
+// ══════════════════════════════════
+let experiences = [
+  {
+    id:1, role:'BIM Engineer', company:'BIMTEQ — Lahore, Pakistan · American Houston HQ (USA)',
+    date:'Aug 2025 – May 2026',
+    bullets:[
+      'Developed <strong>MEP BIM models up to LOD 400–450</strong> in Revit MEP — HVAC ducting, chilled water, ventilation, and plumbing for multi-floor US healthcare and commercial projects.',
+      'Performed <strong>HVAC ducting modeling & detailing</strong> — supply, return, and exhaust duct layouts, VAV connections, coordination with architectural and structural elements.',
+      'Modeled and detailed <strong>piping systems</strong> — chilled water, condenser water, domestic water supply, drainage with proper slopes, clearances, and hanger placements.',
+      'Executed <strong>clash detection & BIM coordination</strong> using Navisworks — identified and resolved 100+ hard/soft clashes across MEP disciplines.',
+      'Prepared detailed <strong>MEP shop drawings & coordination drawings</strong> to support fabrication, installation, and site execution for US construction teams.',
+    ],
+    tags:['Revit MEP','Navisworks','HVAC Ducting','Piping Systems','Clash Detection','BIM Coordination','Shop Drawings','LOD 400–450'],
+    isInternship: false,
+  },
+  {
+    id:2, role:'Internship — Pakistan Locomotive Factory', company:'Risalpur',
+    date:'Aug 2023 · 1 Month',
+    bullets:['Hands-on exposure to large-scale mechanical systems and industrial engineering operations.'],
+    tags:['Mechanical Systems','Industrial Engineering'], isInternship: true,
+  },
+  {
+    id:3, role:'Internship — Aircraft Rebuild Factory (PAC Kamra)', company:'PAC Kamra',
+    date:'Jul–Aug 2024 · 2 Weeks',
+    bullets:["Insight into precision engineering and quality systems at Pakistan's leading aeronautical complex."],
+    tags:['Precision Engineering','Quality Systems'], isInternship: true,
+  },
+];
+let editExpId = null;
+function renderExp() {
+  const el = document.getElementById('expList');
+  el.innerHTML = experiences.map(exp => `
+    <div class="exp-block">
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">${exp.role}</div>
+          <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+            <div class="exp-badge">${exp.date}</div>
+            <div class="owner-ctrl" style="margin:0;padding:4px 8px;border-radius:6px;background:rgba(41,128,185,0.05);border:1px dashed rgba(41,128,185,0.2);display:none;gap:5px;">
+              <button class="oc-btn oc-edit" onclick="openExpModal('edit',${exp.id})" style="padding:3px 9px;font-size:10px;">✏️ Edit</button>
+              <button class="oc-btn oc-red" onclick="delExp(${exp.id})" style="padding:3px 9px;font-size:10px;">✕ Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="exp-company">${exp.company}</div>
+        <ul class="exp-list">${exp.bullets.map(b=>`<li><span>${b}</span></li>`).join('')}</ul>
+        <div class="tag-row">${exp.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>
+    </div>`).join('');
+  // Show owner inline controls when in owner mode
+  document.querySelectorAll('.exp-block .owner-ctrl').forEach(el => {
+    el.style.display = isOwner ? 'flex' : 'none';
+  });
+}
+function openExpModal(mode, id) {
+  editExpId = id || null;
+  const isEdit = mode === 'edit';
+  document.getElementById('expMoTitle').textContent = isEdit ? 'Edit Experience' : 'Add Experience';
+  if (isEdit) {
+    const exp = experiences.find(e => e.id === id);
+    document.getElementById('expRole').value = exp.role;
+    document.getElementById('expCo').value = exp.company;
+    document.getElementById('expDate').value = exp.date;
+    document.getElementById('expBullets').value = exp.bullets.join('\n');
+    document.getElementById('expTags').value = exp.tags.join(', ');
+  } else {
+    ['expRole','expCo','expDate','expBullets','expTags'].forEach(i => document.getElementById(i).value = '');
+  }
+  document.getElementById('expMo').classList.add('open');
+}
+function saveExp() {
+  const role = document.getElementById('expRole').value.trim();
+  if (!role) return alert('Enter job title.');
+  const data = {
+    role, company: document.getElementById('expCo').value.trim(),
+    date: document.getElementById('expDate').value.trim(),
+    bullets: document.getElementById('expBullets').value.split('\n').filter(b=>b.trim()),
+    tags: document.getElementById('expTags').value.split(',').map(t=>t.trim()).filter(Boolean),
+    isInternship: false,
+  };
+  if (editExpId) { const i = experiences.findIndex(e=>e.id===editExpId); experiences[i] = {...experiences[i],...data}; }
+  else { experiences.push({id:Date.now(),...data}); }
+  closeMo('expMo'); renderExp();
+}
+function delExp(id) { if(!confirm('Remove this experience?')) return; experiences=experiences.filter(e=>e.id!==id); renderExp(); }
+
+// ══════════════════════════════════
+// PROJECT TABS + CATEGORIES
+// ══════════════════════════════════
 let tabs = [
-  { id: 'bim', name: 'BIM / MEP Projects' },
-  { id: 'sw',  name: 'SolidWorks' },
-  { id: 'sim', name: 'ANSYS / ABAQUS / COMSOL' },
-  { id: 'fyp', name: 'Final Year Project' },
+  {id:'bim',name:'BIM / MEP Projects'},
+  {id:'sw',name:'SolidWorks'},
+  {id:'sim',name:'ANSYS / ABAQUS / COMSOL'},
+  {id:'fyp',name:'Final Year Project'},
 ];
 let projects = {
-  bim: [
-    { id:1, title:'HCA Healthcare – Clearlake Campus', sub:'6-Floor Healthcare, USA', desc:'Full MEP BIM coordination — HVAC ducting, chilled water, ventilation, and plumbing. Clash detection using Navisworks, resolved 100+ design conflicts. MEP shop drawings for fabrication. LOD 400–450.', files:[] },
-    { id:2, title:'Baytown Campus – Borden Street Building', sub:'4-Floor Renovation, USA', desc:'Coordinated 3D MEP models for renovation. Clash detection and coordination using Navisworks. HVAC/piping/electrical shop drawings for site installation.', files:[] },
-    { id:3, title:'New Caney I.S.D – Elementary School', sub:'1-Floor New Build, USA', desc:'HVAC and plumbing Revit modeling for a new elementary school. Model development, piping population, HVAC layout coordination per project drawings. Clash detection using Navisworks.', files:[] },
+  bim:[
+    {id:1,title:'HCA Healthcare – Clearlake Campus',sub:'6-Floor Healthcare, USA',desc:'Full MEP BIM coordination — HVAC ducting, chilled water, ventilation, plumbing. Clash detection using Navisworks, resolved 100+ conflicts. MEP shop drawings. LOD 400–450.',files:[]},
+    {id:2,title:'Baytown Campus – Borden Street Building',sub:'4-Floor Renovation, USA',desc:'3D MEP models for renovation — HVAC, plumbing, electrical. Clash detection, HVAC/piping/electrical shop drawings.',files:[]},
+    {id:3,title:'New Caney I.S.D – Elementary School',sub:'1-Floor New Build, USA',desc:'HVAC and plumbing Revit modeling. Model development, piping population, HVAC layout coordination. Clash detection using Navisworks.',files:[]},
   ],
-  sw: [
-    { id:4, title:'Steam Engine with Horizontal Beam & Centrifugal Pump', sub:'SolidWorks', desc:'Functional steam engine with mechanical linkages. Motion studies to simulate real-time operation.', files:[] },
-    { id:5, title:'Four-Cylinder Engine Model', sub:'SolidWorks', desc:'Detailed 4-cylinder engine assembly — pistons, crankshaft, connecting rods. Motion study for real-time simulation.', files:[] },
-    { id:6, title:'Functional 6-Cylinder Radial Engine', sub:'SolidWorks', desc:'Advanced 3D radial engine assembly. Piston-crank synchronization motion study.', files:[] },
-    { id:7, title:'Hybrid Food Dehydrator 3D Model (FYDP)', sub:'SolidWorks', desc:'3D model of Final Year Design Project — drying chamber, solar collector, food trays, frame, fan, blowers.', files:[] },
-    { id:8, title:'FEA Analysis on Stirling Engine', sub:'SolidWorks Simulation', desc:'Von Mises stress, strain, and nodal displacement analysis on Stirling engine components.', files:[] },
-    { id:9, title:'Shell & Tube Heat Exchanger — Design & CFD', sub:'SolidWorks + CFD', desc:'Complete heat exchanger design with CFD simulation — temperature, velocity, pressure profiles.', files:[] },
+  sw:[
+    {id:4,title:'Steam Engine with Horizontal Beam & Centrifugal Pump',sub:'SolidWorks',desc:'Functional steam engine with mechanical linkages. Motion studies to simulate real-time operation.',files:[]},
+    {id:5,title:'Four-Cylinder Engine Model',sub:'SolidWorks',desc:'Detailed 4-cylinder engine — pistons, crankshaft, connecting rods. Motion study for real-time simulation.',files:[]},
+    {id:6,title:'Functional 6-Cylinder Radial Engine',sub:'SolidWorks',desc:'Advanced 3D radial engine assembly. Piston-crank synchronization motion study.',files:[]},
+    {id:7,title:'Hybrid Food Dehydrator 3D Model (FYDP)',sub:'SolidWorks',desc:'3D model of Final Year Design Project — drying chamber, solar collector, food trays, frame, fan, blowers.',files:[]},
+    {id:8,title:'FEA Analysis on Stirling Engine',sub:'SolidWorks Simulation',desc:'Von Mises stress, strain, and nodal displacement on Stirling engine components.',files:[]},
+    {id:9,title:'Shell & Tube Heat Exchanger — Design & CFD',sub:'SolidWorks + CFD',desc:'Complete heat exchanger design with CFD simulation — temperature, velocity, pressure profiles.',files:[]},
   ],
-  sim: [
-    { id:10, title:'Static Structural Analysis on Beams', sub:'ANSYS', desc:'Stress distribution, deformation, and load-bearing capacity evaluation of beams.', files:[] },
-    { id:11, title:'Steady State Thermal Analysis on Plates', sub:'ANSYS', desc:'Heat distribution and thermal gradients assessment under constant temperature exposure.', files:[] },
-    { id:12, title:'Fluid Flow in Pipes & Ducts (CFX)', sub:'ANSYS CFX', desc:'Fluid dynamics simulation — flow velocity, pressure drop, turbulence in pipes and ducts.', files:[] },
-    { id:13, title:'Bullet Impact Simulation on Metal Plate', sub:'ABAQUS', desc:'High-velocity impact study — stress, deformation, failure behavior using explicit dynamics.', files:[] },
-    { id:14, title:'Microscale Droplet Formation — Dynamic CFD', sub:'COMSOL Multiphysics', desc:'1-second transient multiphase CFD of oil/water droplet formation — pressure, velocity, volume fraction.', files:[] },
+  sim:[
+    {id:10,title:'Static Structural Analysis on Beams',sub:'ANSYS',desc:'Stress distribution, deformation, and load-bearing capacity evaluation.',files:[]},
+    {id:11,title:'Steady State Thermal Analysis on Plates',sub:'ANSYS',desc:'Heat distribution and thermal gradients under constant temperature.',files:[]},
+    {id:12,title:'Fluid Flow in Pipes & Ducts (CFX)',sub:'ANSYS CFX',desc:'Fluid dynamics — flow velocity, pressure drop, turbulence in pipes and ducts.',files:[]},
+    {id:13,title:'Bullet Impact Simulation on Metal Plate',sub:'ABAQUS',desc:'High-velocity impact — stress, deformation, failure behavior using explicit dynamics.',files:[]},
+    {id:14,title:'Microscale Droplet Formation — Dynamic CFD',sub:'COMSOL',desc:'1-second transient multiphase CFD of oil/water droplet formation.',files:[]},
   ],
-  fyp: [],
+  fyp:[],
 };
+let activeTab='bim';
+let editProjId=null, editProjTab=null, currentUploadProjId=null;
+let projFilesData=[], upFilesData=[];
 
-let activeTab = 'bim';
-let currentUploadProjId = null;
-let currentUploadFiles = [];
+function fileIcon(type){
+  if(!type) return '📄';
+  if(type.includes('image')) return '🖼️';
+  if(type.includes('pdf')) return '📕';
+  if(type.includes('word')||type.includes('document')) return '📝';
+  if(type.includes('sheet')||type.includes('excel')) return '📊';
+  if(type.includes('presentation')||type.includes('powerpoint')) return '📊';
+  return '📎';
+}
 
 function renderTabs() {
   const row = document.getElementById('tabsRow');
+  row.innerHTML = tabs.map(t => `<button class="ptab${activeTab===t.id?' on':''}" onclick="switchTab('${t.id}')">${t.name}</button>`).join('');
   const panes = document.getElementById('tabPanes');
-  row.innerHTML = tabs.map(t => `<button class="ptab${activeTab===t.id?' on':''}" onclick="switchTab('${t.id}')"><span class="ptab-dot"></span>${t.name}</button>`).join('');
   panes.innerHTML = tabs.map(t => {
-    const isFYP = t.id === 'fyp';
-    const projs = projects[t.id] || [];
+    const isFYP = t.id==='fyp';
+    const projs = projects[t.id]||[];
     return `<div class="tab-pane${activeTab===t.id?' on':''}" id="tp-${t.id}">
-      <div class="tab-actions">
-        <div class="tab-actions-title">${t.name}</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button class="tab-add-proj-btn" onclick="requireAuth(()=>openProjModal('${t.id}'))">＋ Add Project</button>
-          ${tabs.length > 1 ? `<button class="tab-del-btn" onclick="requireAuth(()=>deleteTab('${t.id}'))">✕ Remove Tab</button>` : ''}
-        </div>
+      <div class="owner-ctrl" style="${isOwner?'':'display:none'}">
+        <span class="oc-label">⚙ ${t.name}</span>
+        <button class="oc-btn oc-add" onclick="openProjModal('add','${t.id}')">＋ Add Project</button>
+        ${tabs.length>1?`<button class="oc-btn oc-red" onclick="deleteTab('${t.id}')">✕ Remove Tab</button>`:''}
       </div>
-      ${isFYP && projs.length === 0 ? renderFYPDefault() : ''}
-      <div class="tab-grid" id="grid-${t.id}">${projs.map(p => renderProjCard(p, t.id)).join('')}</div>
+      ${isFYP ? renderFYP() : ''}
+      <div class="tab-grid">${projs.map(p=>renderPCard(p,t.id)).join('')}</div>
     </div>`;
   }).join('');
+  renderHeroStats();
 }
 
-function renderFYPDefault() {
-  return `<div class="fyp-section">
+function renderFYP() {
+  return `<div class="fyp-wrap">
     <div class="pcard-num">FYDP · Final Year Design Project — B.Sc. Mechanical Engineering</div>
-    <div class="pcard-name">Design & Fabrication of an Affordable Hybrid Food Dehydrator</div>
-    <div class="pcard-sub">Solar / DC / AC Powered · IoT Monitored · Arduino & ESP8266</div>
-    <div class="pcard-desc">Developed a low-cost Hybrid Food Dehydrator to reduce post-harvest losses. Runs on solar energy daytime; electric heater activates during cloudy/nighttime conditions. <strong>Servo-controlled shading mechanism</strong> regulates heat automatically. <strong>IoT monitoring</strong> via Arduino & ESP8266 gives real-time temperature & humidity through mobile interface. Full 3D model designed in SolidWorks.</div>
+    <div class="pcard-name" style="font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:7px;">Design & Fabrication of an Affordable Hybrid Food Dehydrator</div>
+    <div class="pcard-sub" style="font-size:11px;color:var(--teal);font-weight:600;margin-bottom:13px;">Solar / DC / AC Powered · IoT Monitored · Arduino & ESP8266</div>
+    <div class="pcard-desc" style="font-size:12.5px;color:var(--text);line-height:1.8;">Developed a low-cost Hybrid Food Dehydrator to reduce post-harvest losses. Runs on solar energy daytime; electric heater activates automatically during cloudy or nighttime. <strong>Servo-controlled shading mechanism</strong> regulates heat automatically. <strong>IoT monitoring</strong> via Arduino & ESP8266 gives real-time temperature & humidity through mobile interface. Full 3D model designed in SolidWorks.</div>
     <div class="fyp-tags"><span class="fyp-tag">Solar Energy</span><span class="fyp-tag">IoT</span><span class="fyp-tag">Arduino</span><span class="fyp-tag">ESP8266</span><span class="fyp-tag">SolidWorks</span><span class="fyp-tag">Servo Control</span><span class="fyp-tag">Fabrication</span></div>
-    <div class="fyp-files" id="fyp-files"></div>
-    <button class="fyp-upload-btn" onclick="requireAuth(()=>openUploadForFYP())">📎 Upload FYP Files</button>
   </div>`;
 }
 
-function renderProjCard(p, tabId) {
-  const filesHtml = p.files && p.files.length ? `<div class="pcard-files">${p.files.map(f => `
-    <div class="pcard-file-item">
+function renderPCard(p,tabId) {
+  const filesHtml = p.files&&p.files.length ? `<div class="pcard-files-section">${p.files.map(f=>`
+    <div class="pcard-file-item" onclick="previewFile('${f.name}','${f.type}','${f.data}')">
       <span class="pcard-file-icon">${fileIcon(f.type)}</span>
       <span class="pcard-file-name">${f.name}</span>
-      <a class="pcard-file-dl" href="${f.data}" download="${f.name}">⬇ Download</a>
+      <button class="pcard-file-preview-btn">👁 Preview</button>
     </div>`).join('')}</div>` : '';
   return `<div class="pcard" id="pc-${p.id}">
     ${filesHtml}
     <div class="pcard-body">
       <div class="pcard-num">${tabId.toUpperCase()}-${p.id}</div>
       <div class="pcard-name">${p.title}</div>
-      ${p.sub ? `<div class="pcard-sub">${p.sub}</div>` : ''}
+      ${p.sub?`<div class="pcard-sub">${p.sub}</div>`:''}
       <div class="pcard-desc">${p.desc}</div>
     </div>
-    <div class="pcard-actions">
-      <button class="pcard-upload-btn" onclick="requireAuth(()=>openUploadModal(${p.id}))">📎 Upload Files</button>
-      <button class="pcard-del-btn" onclick="requireAuth(()=>deleteProject(${p.id},'${tabId}'))">✕ Remove</button>
+    <div class="pcard-owner-actions">
+      <button class="pcard-upload-btn" onclick="openUploadModal(${p.id})">📎 Upload Files</button>
+      <button class="pcard-edit-btn" onclick="openProjModal('edit','${tabId}',${p.id})">✏️ Edit</button>
+      <button class="pcard-del-btn" onclick="delProject(${p.id},'${tabId}')">✕ Remove</button>
     </div>
   </div>`;
 }
 
-function fileIcon(type) {
-  if (!type) return '📄';
-  if (type.includes('image')) return '🖼️';
-  if (type.includes('pdf')) return '📕';
-  if (type.includes('word') || type.includes('document')) return '📝';
-  if (type.includes('sheet') || type.includes('excel') || type.includes('csv')) return '📊';
-  if (type.includes('presentation') || type.includes('powerpoint')) return '📊';
-  return '📎';
-}
+function switchTab(id) { activeTab=id; renderTabs(); }
 
-function switchTab(id) { activeTab = id; renderTabs(); }
-function openTabModal() { requireAuth(() => openMo('tabMo')); }
+function openTabModal() { document.getElementById('tabName').value=''; document.getElementById('tabMo').classList.add('open'); }
 function addTab() {
-  const name = document.getElementById('tabName').value.trim();
-  if (!name) return alert('Enter a category name.');
-  const id = 'tab_' + Date.now();
-  tabs.push({ id, name });
-  projects[id] = [];
-  activeTab = id;
-  closeMo('tabMo');
-  document.getElementById('tabName').value = '';
-  renderTabs();
+  const name=document.getElementById('tabName').value.trim();
+  if(!name) return alert('Enter a category name.');
+  const id='tab_'+Date.now();
+  tabs.push({id,name}); projects[id]=[];
+  activeTab=id; closeMo('tabMo'); renderTabs();
 }
 function deleteTab(id) {
-  if (!confirm('Remove this category and all its projects?')) return;
-  tabs = tabs.filter(t => t.id !== id);
-  delete projects[id];
-  activeTab = tabs[0]?.id || '';
-  renderTabs();
+  if(!confirm('Remove this category and all projects?')) return;
+  tabs=tabs.filter(t=>t.id!==id); delete projects[id];
+  activeTab=tabs[0]?.id||'bim'; renderTabs();
 }
 
-let currentProjTab = '';
-function openProjModal(tabId) { currentProjTab = tabId; openMo('projMo'); }
+function openProjModal(mode,tabId,projId) {
+  editProjTab=tabId; editProjId=projId||null;
+  const isEdit=mode==='edit';
+  document.getElementById('projMoTitle').textContent=isEdit?'Edit Project':'Add Project';
+  projFilesData=[];
+  document.getElementById('projFileList').innerHTML='';
+  document.getElementById('projFiles').value='';
+  if(isEdit){
+    const p=projects[tabId].find(p=>p.id===projId);
+    document.getElementById('projTitle').value=p.title;
+    document.getElementById('projSub').value=p.sub||'';
+    document.getElementById('projDesc').value=p.desc||'';
+    projFilesData=[...p.files];
+    document.getElementById('projFileList').innerHTML=projFilesData.map(f=>`<div>${fileIcon(f.type)} ${f.name}</div>`).join('');
+  } else {
+    ['projTitle','projSub','projDesc'].forEach(i=>document.getElementById(i).value='');
+  }
+  document.getElementById('projMo').classList.add('open');
+}
 
-let projFilesData = [];
 function handleProjFiles(input) {
-  projFilesData = [];
-  const fl = document.getElementById('fileList');
-  fl.innerHTML = '';
   Array.from(input.files).forEach(f => {
-    const reader = new FileReader();
-    reader.onload = e => {
-      projFilesData.push({ name: f.name, type: f.type, data: e.target.result });
-      fl.innerHTML = projFilesData.map(fd => `<div>• ${fd.name}</div>`).join('');
-      if (f.type.startsWith('image/')) {
-        const prev = document.getElementById('imgPrev');
-        prev.src = e.target.result; prev.style.display = 'block';
-      }
+    const reader=new FileReader();
+    reader.onload=e=>{
+      projFilesData.push({name:f.name,type:f.type,data:e.target.result});
+      document.getElementById('projFileList').innerHTML=projFilesData.map(fd=>`<div>${fileIcon(fd.type)} ${fd.name}</div>`).join('');
     };
     reader.readAsDataURL(f);
   });
 }
 
-function addProject() {
-  const title = document.getElementById('projTitle').value.trim();
-  if (!title) return alert('Enter a project title.');
-  const p = {
-    id: Date.now(),
-    title,
-    sub: document.getElementById('projSub').value.trim(),
-    desc: document.getElementById('projDesc').value.trim(),
-    files: [...projFilesData],
-  };
-  projects[currentProjTab].push(p);
-  projFilesData = [];
-  document.getElementById('projTitle').value = '';
-  document.getElementById('projSub').value = '';
-  document.getElementById('projDesc').value = '';
-  document.getElementById('projFiles').value = '';
-  document.getElementById('fileList').innerHTML = '';
-  document.getElementById('imgPrev').style.display = 'none';
-  closeMo('projMo');
-  renderTabs();
+function saveProject() {
+  const title=document.getElementById('projTitle').value.trim();
+  if(!title) return alert('Enter a project title.');
+  const data={title,sub:document.getElementById('projSub').value.trim(),desc:document.getElementById('projDesc').value.trim()};
+  if(editProjId){
+    const i=projects[editProjTab].findIndex(p=>p.id===editProjId);
+    projects[editProjTab][i]={...projects[editProjTab][i],...data,files:[...projFilesData]};
+  } else {
+    projects[editProjTab].push({id:Date.now(),...data,files:[...projFilesData]});
+  }
+  closeMo('projMo'); renderTabs();
 }
 
-function deleteProject(id, tabId) {
-  if (!confirm('Remove this project?')) return;
-  projects[tabId] = projects[tabId].filter(p => p.id !== id);
-  renderTabs();
+function openUploadModal(projId) {
+  currentUploadProjId=projId; upFilesData=[];
+  document.getElementById('upFileList').innerHTML='';
+  document.getElementById('upFiles').value='';
+  document.getElementById('uploadMo').classList.add('open');
 }
-
-// Upload files to existing project
-let upFilesData = [];
-function openUploadModal(projId) { currentUploadProjId = projId; upFilesData = []; document.getElementById('upFileList').innerHTML = ''; document.getElementById('upFiles').value = ''; openMo('uploadMo'); }
 function handleUpFiles(input) {
-  upFilesData = [];
-  Array.from(input.files).forEach(f => {
-    const reader = new FileReader();
-    reader.onload = e => {
-      upFilesData.push({ name: f.name, type: f.type, data: e.target.result });
-      document.getElementById('upFileList').innerHTML = upFilesData.map(fd => `<div>• ${fd.name}</div>`).join('');
+  Array.from(input.files).forEach(f=>{
+    const reader=new FileReader();
+    reader.onload=e=>{
+      upFilesData.push({name:f.name,type:f.type,data:e.target.result});
+      document.getElementById('upFileList').innerHTML=upFilesData.map(fd=>`<div>${fileIcon(fd.type)} ${fd.name}</div>`).join('');
     };
     reader.readAsDataURL(f);
   });
 }
 function saveUpload() {
-  for (const tabId in projects) {
-    const p = projects[tabId].find(p => p.id === currentUploadProjId);
-    if (p) { p.files.push(...upFilesData); break; }
+  for(const tabId in projects){
+    const p=projects[tabId].find(p=>p.id===currentUploadProjId);
+    if(p){ p.files.push(...upFilesData); break; }
   }
-  closeMo('uploadMo');
-  renderTabs();
+  closeMo('uploadMo'); renderTabs();
+}
+function delProject(id,tabId){
+  if(!confirm('Remove this project?')) return;
+  projects[tabId]=projects[tabId].filter(p=>p.id!==id); renderTabs();
 }
 
-function openUploadForFYP() { openMo('uploadMo'); currentUploadProjId = 'fyp'; }
+// FILE PREVIEW
+function previewFile(name,type,data) {
+  document.getElementById('prevTitle').textContent=name;
+  const body=document.getElementById('prevBody');
+  if(type.includes('image')){
+    body.innerHTML=`<img src="${data}" alt="${name}" style="max-width:100%;max-height:65vh;border-radius:8px;">`;
+  } else if(type.includes('pdf')){
+    body.innerHTML=`<iframe src="${data}" style="width:100%;height:65vh;border:none;border-radius:8px;"></iframe>`;
+  } else {
+    body.innerHTML=`<div class="no-prev">📎 Preview not available for this file type.<br><span style="font-size:11px;opacity:.6;">${name}</span></div>`;
+  }
+  document.getElementById('previewMo').classList.add('open');
+}
 
-// ══════════════════════════════════════════
+// ══════════════════════════════════
 // PROJECT WORK GALLERY
-// ══════════════════════════════════════════
-let pwItems = [];
-let pwImgData = null;
-function openPWModal() { requireAuth(() => openMo('pwMo')); }
-function previewPW(inp) {
-  const reader = new FileReader();
-  reader.onload = e => { pwImgData = e.target.result; const p = document.getElementById('pwPrev'); p.src = e.target.result; p.style.display = 'block'; };
-  reader.readAsDataURL(inp.files[0]);
+// ══════════════════════════════════
+let pwItems=[]; let pwImgData=null; let editPWId=null;
+function openPWModal(){editPWId=null;['pwTitle','pwDesc'].forEach(i=>document.getElementById(i).value='');document.getElementById('pwFile').value='';document.getElementById('pwPrev').style.display='none';pwImgData=null;document.getElementById('pwMo').classList.add('open');}
+function previewPW(inp){const r=new FileReader();r.onload=e=>{pwImgData=e.target.result;const p=document.getElementById('pwPrev');p.src=e.target.result;p.style.display='block';};r.readAsDataURL(inp.files[0]);}
+function addPW(){
+  const title=document.getElementById('pwTitle').value.trim();
+  if(!title) return alert('Enter a title.');
+  const item={id:Date.now(),title,cat:document.getElementById('pwCat').value,desc:document.getElementById('pwDesc').value.trim(),img:pwImgData};
+  pwItems.push(item); pwImgData=null; closeMo('pwMo'); renderPW();
 }
-function addPW() {
-  const title = document.getElementById('pwTitle').value.trim();
-  if (!title) return alert('Enter a title.');
-  pwItems.push({ id: Date.now(), title, cat: document.getElementById('pwCat').value, desc: document.getElementById('pwDesc').value.trim(), img: pwImgData });
-  pwImgData = null;
-  ['pwTitle','pwDesc'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('pwFile').value = '';
-  document.getElementById('pwPrev').style.display = 'none';
-  closeMo('pwMo');
-  renderPW();
-}
-function delPW(id) { requireAuth(() => { pwItems = pwItems.filter(i => i.id !== id); renderPW(); }); }
-function renderPW() {
-  const g = document.getElementById('pwGrid');
-  if (!pwItems.length) { g.innerHTML = '<div class="pw-empty"><div class="big-icon">🖼️</div><p>No images yet. Click <strong>"＋ Add Project Image"</strong> to upload.</p></div>'; return; }
-  g.innerHTML = pwItems.map(i => `<div class="pw-item">
-    ${i.img ? `<img class="pw-item-img" src="${i.img}" alt="${i.title}">` : '<div class="pw-item-img-ph">🖼️</div>'}
-    <div class="pw-item-body"><div class="pw-item-cat">${i.cat}</div><div class="pw-item-title">${i.title}</div>${i.desc ? `<div class="pw-item-desc">${i.desc}</div>` : ''}</div>
-    <div class="pw-item-actions"><button class="pw-del-btn" onclick="delPW(${i.id})">✕ Remove</button></div>
+function delPW(id){pwItems=pwItems.filter(i=>i.id!==id);renderPW();}
+function renderPW(){
+  const g=document.getElementById('pwGrid');
+  if(!pwItems.length){g.innerHTML='<div class="pw-empty"><div class="big-icon">🖼️</div><p>Owner can upload project images here.</p></div>';return;}
+  g.innerHTML=pwItems.map(i=>`<div class="pw-item">
+    ${i.img?`<img class="pw-item-img" src="${i.img}" alt="${i.title}" onclick="previewFile('${i.title}','image/jpeg','${i.img}')">`:'<div class="pw-item-img-ph">🖼️</div>'}
+    <div class="pw-item-body"><div class="pw-item-cat">${i.cat}</div><div class="pw-item-title">${i.title}</div>${i.desc?`<div class="pw-item-desc">${i.desc}</div>`:''}</div>
+    <div class="pw-item-actions"><button class="pw-edit-btn" onclick="">✏️ Edit</button><button class="pw-del-btn" onclick="delPW(${i.id})">✕ Remove</button></div>
   </div>`).join('');
 }
 
-// ══════════════════════════════════════════
-// SKILL BARS
-// ══════════════════════════════════════════
-let skills = [
-  { id:1, name:'Revit MEP', pct:95 },
-  { id:2, name:'Navisworks', pct:92 },
-  { id:3, name:'HVAC Ducting & Detailing', pct:90 },
-  { id:4, name:'Piping Modeling & Detailing', pct:88 },
-  { id:5, name:'SolidWorks', pct:90 },
-  { id:6, name:'ANSYS (FEA/CFD)', pct:85 },
-  { id:7, name:'AutoCAD', pct:78 },
-  { id:8, name:'ABAQUS / COMSOL', pct:72 },
+// ══════════════════════════════════
+// SKILL CATEGORIES
+// ══════════════════════════════════
+let skillCats=[
+  {id:1,icon:'🏗️',name:'BIM & MEP Tools',color:'rgba(41,128,185,0.1)',skills:[{t:'Revit MEP',c:'sp-adv'},{t:'Navisworks',c:'sp-adv'},{t:'AutoCAD',c:'sp-int'},{t:'BIM Coordination',c:'sp-std'},{t:'Clash Detection',c:'sp-std'},{t:'Shop Drawings',c:'sp-std'},{t:'LOD 300–450',c:'sp-std'}]},
+  {id:2,icon:'🌬️',name:'HVAC & Piping',color:'rgba(26,188,156,0.1)',skills:[{t:'HVAC Ducting Design',c:'sp-adv'},{t:'HVAC Ducting Detailing',c:'sp-adv'},{t:'Piping Modeling',c:'sp-adv'},{t:'Piping Detailing',c:'sp-adv'},{t:'Chilled Water',c:'sp-std'},{t:'Ventilation',c:'sp-std'},{t:'Plumbing Networks',c:'sp-std'}]},
+  {id:3,icon:'⚙️',name:'CAD / Simulation',color:'rgba(230,126,34,0.1)',skills:[{t:'SolidWorks',c:'sp-adv'},{t:'ANSYS',c:'sp-adv'},{t:'ABAQUS',c:'sp-int'},{t:'COMSOL',c:'sp-int'},{t:'FEA Analysis',c:'sp-std'},{t:'CFD Analysis',c:'sp-std'},{t:'Motion Study',c:'sp-std'}]},
+  {id:4,icon:'📋',name:'Standards & Soft Skills',color:'rgba(142,68,173,0.1)',skills:[{t:'ISO 19650',c:'sp-std'},{t:'IFC',c:'sp-std'},{t:'BEP',c:'sp-std'},{t:'MS Excel',c:'sp-adv'},{t:'MS Word',c:'sp-adv'},{t:'MS PowerPoint',c:'sp-adv'},{t:'Team Collaboration',c:'sp-neu'},{t:'Problem Solving',c:'sp-neu'}]},
 ];
-function renderSkills() {
-  const g = document.getElementById('skillBarsGrid');
-  g.innerHTML = skills.map((s,i) => `<div class="sbar" style="${i%2===1?'':''}">
-    <div class="sbar-top"><span class="sbar-name">${s.name}</span><span class="sbar-pct">${s.pct}%</span></div>
-    <div class="sbar-track"><div class="sbar-fill" id="sf-${s.id}" data-w="${s.pct}"></div></div>
-    <button class="sbar-del" onclick="requireAuth(()=>delSkill(${s.id}))" title="Remove">✕</button>
-  </div>`).join('');
-  setTimeout(() => skills.forEach(s => {
-    const el = document.getElementById('sf-' + s.id);
-    if (el) el.style.width = s.pct + '%';
-  }), 100);
-}
-function openSkillModal() { requireAuth(() => openMo('skillMo')); }
-function addSkill() {
-  const name = document.getElementById('skillName').value.trim();
-  if (!name) return alert('Enter a skill name.');
-  skills.push({ id: Date.now(), name, pct: parseInt(document.getElementById('skillVal').value) });
-  document.getElementById('skillName').value = '';
-  document.getElementById('skillVal').value = 80;
-  document.getElementById('skillValDisplay').textContent = '80%';
-  closeMo('skillMo');
-  renderSkills();
-}
-function delSkill(id) { skills = skills.filter(s => s.id !== id); renderSkills(); }
-
-// ══════════════════════════════════════════
-// CERTIFICATIONS
-// ══════════════════════════════════════════
-let certs = [
-  { id:1, name:'2-Day Workshop — 2D & 3D Modeling using SolidWorks', year:'Aug 2022' },
-  { id:2, name:'1-Day Workshop — Mechanical Workshop Technology', year:'Sep 2022' },
-  { id:3, name:'4th International Workshop on Functional Reverse Engineering', year:'Dec 2022' },
-  { id:4, name:'5th International Workshop on Functional Reverse Engineering', year:'Dec 2023' },
-  { id:5, name:'6th International Workshop on Functional Reverse Engineering', year:'Dec 2024' },
-  { id:6, name:'Student Volunteer — Orientation Ceremony, UET Mardan', year:'Sep 2024' },
-  { id:7, name:'Student Volunteer & Participant — Welcome Party, UET Mardan', year:'Oct 2024' },
-];
-function renderCerts() {
-  const el = document.getElementById('certList');
-  el.innerHTML = certs.map(c => `<div class="cert-item">
-    <span class="cert-name">${c.name}</span>
-    <span class="cert-yr">${c.year}</span>
-    <button class="cert-del" onclick="requireAuth(()=>delCert(${c.id}))" title="Remove">✕</button>
-  </div>`).join('');
-}
-function openCertModal() { requireAuth(() => openMo('certMo')); }
-function addCert() {
-  const name = document.getElementById('certName').value.trim();
-  if (!name) return alert('Enter a certification name.');
-  certs.push({ id: Date.now(), name, year: document.getElementById('certYear').value.trim() });
-  document.getElementById('certName').value = '';
-  document.getElementById('certYear').value = '';
-  closeMo('certMo');
-  renderCerts();
-}
-function delCert(id) { certs = certs.filter(c => c.id !== id); renderCerts(); }
-
-// ══════════════════════════════════════════
-// CERT IMAGES / FILES
-// ══════════════════════════════════════════
-let certImgs = [];
-let ciFileData = null;
-function openCertImgModal() { requireAuth(() => openMo('certImgMo')); }
-function handleCI(inp) {
-  const f = inp.files[0]; if (!f) return;
-  document.getElementById('ciFileName').textContent = '• ' + f.name;
-  const reader = new FileReader();
-  reader.onload = e => {
-    ciFileData = { name: f.name, type: f.type, data: e.target.result };
-    if (f.type.startsWith('image/')) { const p = document.getElementById('ciPrev'); p.src = e.target.result; p.style.display = 'block'; }
-  };
-  reader.readAsDataURL(f);
-}
-function addCertImg() {
-  const name = document.getElementById('ciName').value.trim();
-  if (!name) return alert('Enter a certificate name.');
-  certImgs.push({ id: Date.now(), name, file: ciFileData });
-  ciFileData = null;
-  document.getElementById('ciName').value = '';
-  document.getElementById('ciFile').value = '';
-  document.getElementById('ciPrev').style.display = 'none';
-  document.getElementById('ciFileName').textContent = '';
-  closeMo('certImgMo');
-  renderCertImgs();
-}
-function delCertImg(id) { requireAuth(() => { certImgs = certImgs.filter(c => c.id !== id); renderCertImgs(); }); }
-function renderCertImgs() {
-  const g = document.getElementById('certImgsGrid');
-  if (!certImgs.length) { g.innerHTML = '<div class="cert-empty">No certificates uploaded yet. Click <strong>"＋ Upload Certificate"</strong> to add.</div>'; return; }
-  g.innerHTML = certImgs.map(c => {
-    const isImg = c.file && c.file.type && c.file.type.startsWith('image/');
-    const isPDF = c.file && c.file.type && c.file.type.includes('pdf');
-    return `<div class="cert-img-card">
-      ${isImg ? `<img class="cert-img-preview" src="${c.file.data}" alt="${c.name}">` : `<div class="cert-img-preview-ph">${isPDF ? '📕' : '📎'}</div>`}
-      <div class="cert-img-body"><div class="cert-img-name">${c.name}</div><div class="cert-img-type">${c.file ? c.file.name : ''}</div></div>
-      <div class="cert-img-actions">
-        ${c.file ? `<a class="cert-img-dl" href="${c.file.data}" download="${c.file.name}">⬇ Download</a>` : '<span></span>'}
-        <button class="cert-img-del" onclick="delCertImg(${c.id})">✕</button>
+let editCatId=null;
+function renderSkillCats(){
+  document.getElementById('skillsGrid').innerHTML=skillCats.map(cat=>`
+    <div class="scat-card">
+      <div class="scat-head-row">
+        <div class="scat-head"><div class="scat-icon" style="background:${cat.color}">${cat.icon}</div><div class="scat-name">${cat.name}</div></div>
+        <div class="scat-owner-btns">
+          <button class="oc-btn oc-edit" style="padding:3px 8px;font-size:10px;" onclick="openCatModal('edit',${cat.id})">✏️</button>
+          <button class="oc-btn oc-red" style="padding:3px 8px;font-size:10px;" onclick="delCat(${cat.id})">✕</button>
+        </div>
       </div>
+      <div class="spills">${cat.skills.map((s,si)=>`<span class="sp ${s.c}">${s.t}<button class="sp-del" onclick="delSkillTag(${cat.id},${si})" title="Remove">✕</button></span>`).join('')}</div>
+    </div>`).join('');
+}
+function delSkillTag(catId,si){skillCats=skillCats.map(c=>c.id===catId?{...c,skills:c.skills.filter((_,i)=>i!==si)}:c);renderSkillCats();}
+function openCatModal(mode,id){
+  editCatId=id||null;
+  document.getElementById('catMoTitle').textContent=mode==='edit'?'Edit Category':'Add Skill Category';
+  if(mode==='edit'&&id){
+    const cat=skillCats.find(c=>c.id===id);
+    document.getElementById('catName').value=cat.name;
+    document.getElementById('catIcon').value=cat.icon;
+    document.getElementById('catSkills').value=cat.skills.map(s=>s.t).join(', ');
+  } else {
+    ['catName','catIcon','catSkills'].forEach(i=>document.getElementById(i).value='');
+  }
+  document.getElementById('catMo').classList.add('open');
+}
+function saveCat(){
+  const name=document.getElementById('catName').value.trim();
+  if(!name) return alert('Enter category name.');
+  const icon=document.getElementById('catIcon').value||'🔧';
+  const skills=document.getElementById('catSkills').value.split(',').map(s=>({t:s.trim(),c:'sp-std'})).filter(s=>s.t);
+  if(editCatId){skillCats=skillCats.map(c=>c.id===editCatId?{...c,name,icon,skills}:c);}
+  else{skillCats.push({id:Date.now(),icon,name,color:'rgba(41,128,185,0.1)',skills});}
+  closeMo('catMo');renderSkillCats();
+}
+function delCat(id){if(!confirm('Remove this category?'))return;skillCats=skillCats.filter(c=>c.id!==id);renderSkillCats();}
+
+// ══════════════════════════════════
+// SKILL BARS
+// ══════════════════════════════════
+let skills=[
+  {id:1,name:'Revit MEP',pct:95},{id:2,name:'Navisworks',pct:92},
+  {id:3,name:'HVAC Ducting & Detailing',pct:90},{id:4,name:'Piping Modeling & Detailing',pct:88},
+  {id:5,name:'SolidWorks',pct:90},{id:6,name:'ANSYS (FEA/CFD)',pct:85},
+  {id:7,name:'AutoCAD',pct:78},{id:8,name:'ABAQUS / COMSOL',pct:72},
+];
+function renderSkills(){
+  document.getElementById('skillBarsGrid').innerHTML=skills.map(s=>`
+    <div class="sbar">
+      <div class="sbar-top"><span class="sbar-name">${s.name}</span><span class="sbar-pct">${s.pct}%</span></div>
+      <div class="sbar-track"><div class="sbar-fill" id="sf-${s.id}" data-w="${s.pct}"></div></div>
+      <button class="sbar-del" onclick="delSkill(${s.id})" title="Remove">✕</button>
+    </div>`).join('');
+  setTimeout(()=>skills.forEach(s=>{const el=document.getElementById('sf-'+s.id);if(el)el.style.width=s.pct+'%';}),100);
+}
+function openSkillModal(){document.getElementById('skillMo').classList.add('open');}
+function addSkill(){
+  const name=document.getElementById('skillName').value.trim();
+  if(!name) return alert('Enter skill name.');
+  skills.push({id:Date.now(),name,pct:parseInt(document.getElementById('skillVal').value)});
+  document.getElementById('skillName').value='';
+  document.getElementById('skillVal').value=80;
+  document.getElementById('skillValDisp').textContent='80%';
+  closeMo('skillMo');renderSkills();
+}
+function delSkill(id){skills=skills.filter(s=>s.id!==id);renderSkills();}
+
+// ══════════════════════════════════
+// CERTIFICATIONS
+// ══════════════════════════════════
+let certs=[
+  {id:1,name:'2-Day Workshop — 2D & 3D Modeling using SolidWorks',year:'Aug 2022'},
+  {id:2,name:'1-Day Workshop — Mechanical Workshop Technology',year:'Sep 2022'},
+  {id:3,name:'4th International Workshop on Functional Reverse Engineering',year:'Dec 2022'},
+  {id:4,name:'5th International Workshop on Functional Reverse Engineering',year:'Dec 2023'},
+  {id:5,name:'6th International Workshop on Functional Reverse Engineering',year:'Dec 2024'},
+  {id:6,name:'Student Volunteer — Orientation Ceremony, UET Mardan',year:'Sep 2024'},
+  {id:7,name:'Student Volunteer & Participant — Welcome Party, UET Mardan',year:'Oct 2024'},
+];
+let editCertId=null;
+function renderCerts(){
+  document.getElementById('certList').innerHTML=certs.map(c=>`
+    <div class="cert-item">
+      <span class="cert-name">${c.name}</span>
+      <span class="cert-yr">${c.year}</span>
+      <div class="cert-owner-btns">
+        <button class="cert-edit-btn" onclick="openCertModal('edit',${c.id})">✏️</button>
+        <button class="cert-del-btn" onclick="delCert(${c.id})">✕</button>
+      </div>
+    </div>`).join('');
+}
+function openCertModal(mode,id){
+  editCertId=id||null;
+  document.getElementById('certMoTitle').textContent=mode==='edit'?'Edit Certification':'Add Certification';
+  if(mode==='edit'&&id){const c=certs.find(c=>c.id===id);document.getElementById('certName').value=c.name;document.getElementById('certYear').value=c.year;}
+  else{document.getElementById('certName').value='';document.getElementById('certYear').value='';}
+  document.getElementById('certMo').classList.add('open');
+}
+function saveCert(){
+  const name=document.getElementById('certName').value.trim();
+  if(!name) return alert('Enter certification name.');
+  const year=document.getElementById('certYear').value.trim();
+  if(editCertId){certs=certs.map(c=>c.id===editCertId?{...c,name,year}:c);}
+  else{certs.push({id:Date.now(),name,year});}
+  closeMo('certMo');renderCerts();
+}
+function delCert(id){certs=certs.filter(c=>c.id!==id);renderCerts();}
+
+// ══════════════════════════════════
+// CERT IMAGES
+// ══════════════════════════════════
+let certImgs=[]; let ciFilesData=[];
+function openCertImgModal(){ciFilesData=[];document.getElementById('ciName').value='';document.getElementById('ciFiles').value='';document.getElementById('ciFileList').innerHTML='';document.getElementById('certImgMo').classList.add('open');}
+function handleCI(inp){
+  Array.from(inp.files).forEach(f=>{
+    const r=new FileReader();
+    r.onload=e=>{ciFilesData.push({name:f.name,type:f.type,data:e.target.result});document.getElementById('ciFileList').innerHTML=ciFilesData.map(fd=>`<div>${fileIcon(fd.type)} ${fd.name}</div>`).join('');};
+    r.readAsDataURL(f);
+  });
+}
+function addCertImg(){
+  const name=document.getElementById('ciName').value.trim();
+  if(!name) return alert('Enter certificate name.');
+  ciFilesData.forEach(f=>certImgs.push({id:Date.now()+Math.random(),name,file:f}));
+  ciFilesData=[];closeMo('certImgMo');renderCertImgs();
+}
+function delCertImg(id){certImgs=certImgs.filter(c=>c.id!==id);renderCertImgs();}
+function renderCertImgs(){
+  const g=document.getElementById('certImgsGrid');
+  if(!certImgs.length){g.innerHTML='<div class="cert-empty">Owner can upload certificate images or PDFs here.</div>';return;}
+  g.innerHTML=certImgs.map(c=>{
+    const isImg=c.file&&c.file.type&&c.file.type.startsWith('image/');
+    const isPDF=c.file&&c.file.type&&c.file.type.includes('pdf');
+    return `<div class="cert-img-card">
+      ${isImg?`<img class="cert-img-thumb" src="${c.file.data}" alt="${c.name}" onclick="previewFile('${c.name}','${c.file.type}','${c.file.data}')">`:`<div class="cert-img-ph" onclick="previewFile('${c.name}','${c.file.type}','${c.file.data}')">${isPDF?'📕':'📎'}</div>`}
+      <div class="cert-img-body"><div class="cert-img-name">${c.name}</div><div class="cert-img-type">${c.file?c.file.name:''}</div></div>
+      <div class="cert-img-actions"><button class="cert-img-del" onclick="delCertImg(${c.id})">✕ Remove</button></div>
     </div>`;
   }).join('');
 }
 
-// ══════════════════════════════════════════
-// REVEAL + NAV + SKILL BAR OBSERVER
-// ══════════════════════════════════════════
-const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.07 });
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-
-const sbo = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.sbar-fill').forEach(b => b.style.width = b.dataset.w + '%'); } });
-}, { threshold: 0.2 });
-
-window.addEventListener('scroll', () => {
-  let cur = '';
-  document.querySelectorAll('section[id]').forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+// ══════════════════════════════════
+// REVEAL + NAV
+// ══════════════════════════════════
+const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.07});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+const sbo=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.sbar-fill').forEach(b=>b.style.width=b.dataset.w+'%');}),{threshold:.2});
+window.addEventListener('scroll',()=>{
+  let cur='';
+  document.querySelectorAll('section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id;});
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  // re-show exp owner controls
+  document.querySelectorAll('.exp-block .owner-ctrl').forEach(el=>el.style.display=isOwner?'flex':'none');
 });
 
-// ══════════════════════════════════════════
+// ══════════════════════════════════
 // INIT
-// ══════════════════════════════════════════
+// ══════════════════════════════════
+renderKw();
 renderTabs();
+renderExp();
+renderSkillCats();
 renderSkills();
 renderCerts();
 renderCertImgs();
 renderPW();
-
-setTimeout(() => {
-  const sbSection = document.querySelector('.skill-bars-section');
-  if (sbSection) sbo.observe(sbSection);
-}, 300);
+setTimeout(()=>{const sb=document.querySelector('.skill-bars-grid');if(sb)sbo.observe(sb);},300);
 </script>
 </body>
 </html>
