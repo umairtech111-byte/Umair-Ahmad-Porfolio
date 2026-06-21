@@ -14,7 +14,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:13px 44px;background:rgba(255,255,255,0.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 2px 18px rgba(41,128,185,0.07);}
-.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);display:flex;align-items:center;gap:7px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);display:flex;align-items:center;gap:9px;}.nav-logo span{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);font-weight:700;letter-spacing:0.2px;}
 .nav-logo .dot{width:7px;height:7px;background:var(--sky);border-radius:50%;}
 .nav-links{display:flex;gap:3px;list-style:none;flex-wrap:wrap;}
 .nav-links a{color:var(--muted);font-size:11px;font-weight:600;text-decoration:none;letter-spacing:0.5px;text-transform:uppercase;padding:6px 10px;border-radius:6px;transition:all 0.2s;}
@@ -83,6 +83,30 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .scroll-down{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--muted);font-size:9px;letter-spacing:2px;text-transform:uppercase;animation:nudge 2s ease-in-out infinite;}
 .scroll-down::after{content:'';display:block;width:1px;height:30px;background:rgba(41,128,185,0.2);}
 @keyframes nudge{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+
+/* ── EDITABLE BLOCKS ── */
+.eb{position:relative;}
+.eb-bar{display:none;position:absolute;top:-10px;right:-8px;z-index:10;gap:4px;background:rgba(255,255,255,0.97);border:1px solid var(--border);border-radius:8px;padding:4px 6px;box-shadow:0 2px 12px rgba(41,128,185,0.15);}
+.owner-mode .eb:hover .eb-bar{display:flex;}
+.eb-btn{width:26px;height:26px;border-radius:6px;border:none;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;transition:all .18s;font-weight:700;}
+.eb-edit{background:rgba(230,126,34,0.12);color:var(--gold);}
+.eb-edit:hover{background:rgba(230,126,34,0.25);}
+.eb-del{background:rgba(192,57,43,0.09);color:var(--red);}
+.eb-del:hover{background:rgba(192,57,43,0.2);}
+.eb-up{background:rgba(41,128,185,0.09);color:var(--sky);}
+.eb-up:hover{background:rgba(41,128,185,0.2);}
+/* inline editable text */
+[contenteditable]{outline:none;border-radius:4px;transition:background .2s;}
+.owner-mode [contenteditable]:hover{background:rgba(41,128,185,0.06);}
+.owner-mode [contenteditable]:focus{background:rgba(41,128,185,0.1);outline:2px solid rgba(41,128,185,0.3);}
+/* section add buttons */
+.sec-add-row{display:none;text-align:center;margin-top:16px;}
+.owner-mode .sec-add-row{display:block;}
+.sec-add-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:8px;background:var(--sky);color:#fff;font-size:11.5px;font-weight:700;border:none;cursor:pointer;box-shadow:0 2px 10px rgba(41,128,185,0.22);transition:all .2s;}
+.sec-add-btn:hover{background:#1f6391;}
+.sec-add-btn.teal{background:var(--teal);}
+.sec-add-btn.teal:hover{background:#138d75;}
 
 /* SECTIONS */
 section{padding:78px 56px;}
@@ -314,7 +338,7 @@ section{padding:78px 56px;}
 #contact .sec-desc{color:var(--muted);margin:0 auto;}
 .gcc-note{display:inline-flex;align-items:center;gap:8px;margin:18px 0 36px;background:rgba(255,255,255,0.8);border:1px solid rgba(41,128,185,0.2);border-radius:10px;padding:11px 20px;font-size:13px;color:var(--navy);box-shadow:0 2px 10px rgba(41,128,185,0.07);}
 .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;max-width:840px;margin:0 auto;}
-.ccard{background:rgba(255,255,255,0.86);border:1px solid rgba(41,128,185,0.17);border-radius:12px;padding:19px 13px;text-align:center;text-decoration:none;transition:all .25s;box-shadow:0 2px 9px rgba(41,128,185,0.07);}
+.ccard{background:rgba(255,255,255,0.86);border:1px solid rgba(41,128,185,0.17);border-radius:12px;padding:19px 13px;text-align:center;text-decoration:none;transition:all .25s;box-shadow:0 2px 9px rgba(41,128,185,0.07);display:block;}.ccard a{text-decoration:none;color:inherit;}
 .ccard:hover{background:#fff;border-color:var(--sky);transform:translateY(-3px);box-shadow:0 7px 22px rgba(41,128,185,0.12);}
 .ccard-icon{font-size:23px;margin-bottom:7px;}
 .ccard-label{font-size:8.5px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
@@ -413,7 +437,14 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><div class="dot"></div>Umair Ahmad</div>
+  <div class="nav-logo">
+  <!-- UA monogram logo -->
+  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+    <rect width="34" height="34" rx="9" fill="#2980b9"/>
+    <text x="17" y="23" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="15" font-weight="700" fill="white" letter-spacing="0.5">UA</text>
+  </svg>
+  <span>Umair Ahmad</span>
+</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -441,13 +472,8 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
     <div>
       <div class="hero-tag">✦ Portfolio — Umair Ahmad</div>
       <h1 class="hero-name">Mechanical<br><span>BIM</span> Engineer</h1>
-      <div class="hero-titles">
-        <div class="hero-title-line"><span class="icon icon-blue">🏗️</span>MEP Revit Modeler & Detailer</div>
-        <div class="hero-title-line"><span class="icon icon-teal">🌬️</span>HVAC Ducting Modeler & Detailer</div>
-        <div class="hero-title-line"><span class="icon icon-gold">🔧</span>HVAC Piping Modeler & Detailer</div>
-        <div class="hero-title-line"><span class="icon icon-blue">📐</span>BIM Coordinator | Clash Detection Expert</div>
-      </div>
-      <p class="hero-desc">Delivering precision <strong style="color:var(--navy)">MEP BIM models</strong>, HVAC ducting & piping layouts, and multidisciplinary coordination for international projects. Open to <strong style="color:var(--sky)">UAE · KSA · Qatar</strong>.</p>
+      <div class="hero-titles" id="heroTitles"></div>
+      <p class="hero-desc eb" id="heroDesc" contenteditable="false">Delivering precision <strong>MEP BIM models</strong>, HVAC ducting & piping layouts, and multidisciplinary coordination for international projects. Open to UAE · KSA · Qatar.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-sky">⟶ Hire Me Now</a>
         <a href="#projects" class="btn btn-outline">View Projects</a>
@@ -472,18 +498,32 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
     <div class="sec-head reveal"><div class="sec-eyebrow">Who I Am</div><h2 class="sec-title">About <em>Umair Ahmad</em></h2><p class="sec-desc">A detail-driven Mechanical BIM Engineer with real international project experience, strong simulation background, and technical depth GCC employers look for.</p></div>
     <div class="about-grid">
       <div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-b"></div>Professional Profile</div><p>I am a <strong>Mechanical BIM Engineer</strong> and <strong>MEP Revit Modeler & Detailer</strong> with professional experience at <strong>BIMSERV | BIMTEQ</strong>, serving American clients in Houston USA. I model, coordinate, and detail full MEP systems — HVAC ducting, chilled water, ventilation, and plumbing — at <strong>LOD 400–450</strong>.</p></div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-t"></div>HVAC Ducting & Piping</div><p>Specialized in <strong>HVAC Ducting Modeling & Detailing</strong> and <strong>Piping Systems Design</strong> using <strong>Revit MEP</strong>. I develop accurate 3D duct layouts, piping networks (chilled water, supply, drainage), and coordinate all systems to eliminate clashes before construction.</p></div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-g"></div>BIM Coordination & Clash Detection</div><p>Using <strong>Navisworks</strong>, I perform full multidisciplinary BIM coordination — identifying and resolving clashes between mechanical, electrical, plumbing, architectural, and structural models.</p></div>
-        <div class="about-block reveal"><div class="about-block-title"><div class="abt-dot dot-l"></div>Simulation & Engineering Analysis</div><p>Beyond BIM — strong skills in <strong>SolidWorks</strong> (Advanced: 3D modeling, FEA), <strong>ANSYS</strong> (Advanced: structural, thermal, CFD/CFX), <strong>ABAQUS</strong> (Intermediate: explicit dynamics), and <strong>COMSOL Multiphysics</strong> (Intermediate: multiphase CFD).</p></div>
-        <div class="info-pills reveal"><span class="info-pill">📍 Peshawar, Pakistan</span><span class="info-pill">🎓 B.Sc. Mechanical Engineering — UET Mardan</span><span class="info-pill">🌐 Open: UAE · KSA · Qatar</span><span class="info-pill">🗣️ English · Urdu · Pashto</span></div>
+        <div class="about-block reveal eb" id="ab1">
+  <div class="eb-bar"><button class="eb-btn eb-edit" onclick="editBlock('ab1')" title="Edit">✏️</button><button class="eb-btn eb-del" onclick="delBlock('ab1')" title="Remove">✕</button></div>
+  <div class="about-block-title"><div class="abt-dot dot-b"></div><span contenteditable="false" id="ab1-title">Professional Profile</span></div>
+  <p contenteditable="false" id="ab1-text">I am a <strong>Mechanical BIM Engineer</strong> and <strong>MEP Revit Modeler & Detailer</strong> with professional experience at <strong>BIMSERV | BIMTEQ</strong>, serving American clients in Houston USA. I model, coordinate, and detail full MEP systems — HVAC ducting, chilled water, ventilation, and plumbing — at <strong>LOD 400–450</strong>.</p>
+</div>
+        <div class="about-block reveal eb" id="ab2">
+  <div class="eb-bar"><button class="eb-btn eb-edit" onclick="editBlock('ab2')" title="Edit">✏️</button><button class="eb-btn eb-del" onclick="delBlock('ab2')" title="Remove">✕</button></div>
+  <div class="about-block-title"><div class="abt-dot dot-t"></div><span contenteditable="false" id="ab2-title">HVAC Ducting & Piping</span></div>
+  <p contenteditable="false" id="ab2-text">Specialized in <strong>HVAC Ducting Modeling & Detailing</strong> and <strong>Piping Systems Design</strong> using <strong>Revit MEP</strong>. I develop accurate 3D duct layouts, piping networks (chilled water, supply, drainage), and coordinate all systems to eliminate clashes before construction.</p>
+</div>
+        <div class="about-block reveal eb" id="ab3">
+  <div class="eb-bar"><button class="eb-btn eb-edit" onclick="editBlock('ab3')" title="Edit">✏️</button><button class="eb-btn eb-del" onclick="delBlock('ab3')" title="Remove">✕</button></div>
+  <div class="about-block-title"><div class="abt-dot dot-g"></div><span contenteditable="false" id="ab3-title">BIM Coordination & Clash Detection</span></div>
+  <p contenteditable="false" id="ab3-text">Using <strong>Navisworks</strong>, I perform full multidisciplinary BIM coordination — identifying and resolving clashes between mechanical, electrical, plumbing, architectural, and structural models.</p>
+</div>
+        <div class="about-block reveal eb" id="ab4">
+  <div class="eb-bar"><button class="eb-btn eb-edit" onclick="editBlock('ab4')" title="Edit">✏️</button><button class="eb-btn eb-del" onclick="delBlock('ab4')" title="Remove">✕</button></div>
+  <div class="about-block-title"><div class="abt-dot dot-l"></div><span contenteditable="false" id="ab4-title">Simulation & Engineering Analysis</span></div>
+  <p contenteditable="false" id="ab4-text">Beyond BIM — strong skills in <strong>SolidWorks</strong> (Advanced: 3D modeling, FEA), <strong>ANSYS</strong> (Advanced: structural, thermal, CFD/CFX), <strong>ABAQUS</strong> (Intermediate: explicit dynamics), and <strong>COMSOL Multiphysics</strong> (Intermediate: multiphase CFD).</p>
+</div>
+        <div class="sec-add-row"><button class="sec-add-btn" onclick="addAboutBlock()">＋ Add About Block</button></div>
+<div class="info-pills reveal"><span class="info-pill">📍 Peshawar, Pakistan</span><span class="info-pill">🎓 B.Sc. Mechanical Engineering — UET Mardan</span><span class="info-pill">🌐 Open: UAE · KSA · Qatar</span><span class="info-pill">🗣️ English · Urdu · Pashto</span></div>
       </div>
       <div class="reveal">
-        <div class="cap-card"><div class="cap-icon" style="background:rgba(41,128,185,0.1)">🏗️</div><div><div class="cap-title">MEP Revit Modeling & Detailing</div><div class="cap-desc">Full MEP system models in Revit MEP — mechanical, electrical, plumbing — developed to LOD 300–450 with accurate families, parameters, and detailing for fabrication and construction.</div></div></div>
-        <div class="cap-card"><div class="cap-icon" style="background:rgba(26,188,156,0.1)">🌬️</div><div><div class="cap-title">HVAC Ducting Modeling & Detailing</div><div class="cap-desc">Layout, sizing, and 3D detailing of supply, return, and exhaust duct systems. Includes VAV boxes, AHU connections, and coordination with ceiling and structural elements.</div></div></div>
-        <div class="cap-card"><div class="cap-icon" style="background:rgba(230,126,34,0.1)">🔧</div><div><div class="cap-title">Piping Modeling & Detailing</div><div class="cap-desc">Chilled water, condenser water, domestic water supply, drainage, and fire protection piping — fully modeled with slopes, hangers, and coordination clearances.</div></div></div>
-        <div class="cap-card"><div class="cap-icon" style="background:rgba(142,68,173,0.1)">🔍</div><div><div class="cap-title">Clash Detection & BIM Coordination</div><div class="cap-desc">Navisworks-based clash detection across all disciplines. Systematic identification, reporting, and resolution of hard and soft clashes for coordinated construction documents.</div></div></div>
-        <div class="cap-card"><div class="cap-icon" style="background:rgba(192,57,43,0.1)">📐</div><div><div class="cap-title">Shop Drawing Preparation</div><div class="cap-desc">MEP shop drawings, spool drawings, and coordination drawings from BIM models — ready for fabrication and site teams, meeting project standards.</div></div></div>
+        <div id="capCardsContainer"></div>
+        <div class="sec-add-row"><button class="sec-add-btn teal" onclick="openCapModal()">＋ Add Capability</button></div>
       </div>
     </div>
   </div>
@@ -553,9 +593,8 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
     <div class="edu-certs">
       <div class="reveal">
         <div class="edu-sub-title">Academic Degrees</div>
-        <div class="edu-card"><div class="edu-deg">B.Sc. Mechanical Engineering — UET Mardan</div><div class="edu-sch">University of Engineering & Technology, Mardan</div><div class="edu-row"><span>2021 – 2025</span><span class="edu-gpa">CGPA: 3.53 / 4.0</span></div></div>
-        <div class="edu-card"><div class="edu-deg">F.Sc. Pre-Engineering</div><div class="edu-sch">Government College Peshawar</div><div class="edu-row"><span>2018 – 2020</span><span class="edu-gpa">881/1100 (80%)</span></div></div>
-        <div class="edu-card"><div class="edu-deg">SSC — Science (Matric)</div><div class="edu-sch">Hira Public School & College, Peshawar</div><div class="edu-row"><span>2016 – 2018</span><span class="edu-gpa">997/1100 (90.63%)</span></div></div>
+        <div id="eduCardsContainer"></div>
+        <div class="sec-add-row"><button class="sec-add-btn" onclick="openEduModal()">＋ Add Degree</button></div>
       </div>
       <div class="reveal">
         <div class="certs-header"><div class="edu-sub-title" style="margin-bottom:0">Certifications & Workshops</div><button class="add-cert-btn" onclick="openCertModal()">＋ Add</button></div>
@@ -573,14 +612,8 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
 <section id="contact">
   <div class="container">
     <div class="reveal"><div class="sec-eyebrow">Get In Touch</div><h2 class="sec-title">Let's <em>Connect</em></h2><p class="sec-desc" style="margin:0 auto">Available for BIM Engineer · MEP Revit Modeler · HVAC Ducting & Piping roles in the GCC region.</p><div style="text-align:center"><div class="gcc-note"><span>🇦🇪 🇸🇦 🇶🇦</span>Actively seeking opportunities in UAE · Saudi Arabia · Qatar</div></div></div>
-    <div class="contact-cards">
-      <a class="ccard reveal" href="mailto:engr.umair.ahamd111@gmail.com"><div class="ccard-icon">✉️</div><div class="ccard-label">Email</div><div class="ccard-val">engr.umair.ahamd111@gmail.com</div></a>
-      <a class="ccard reveal" href="https://wa.me/923088025062" target="_blank"><div class="ccard-icon">💬</div><div class="ccard-label">WhatsApp</div><div class="ccard-val">+92-308-8025062</div></a>
-      <a class="ccard reveal" href="tel:+923088025062"><div class="ccard-icon">📞</div><div class="ccard-label">Phone</div><div class="ccard-val">+92-308-8025062</div></a>
-      <a class="ccard reveal" href="https://www.linkedin.com/in/umair-ahmad-03585b366/" target="_blank"><div class="ccard-icon">🔗</div><div class="ccard-label">LinkedIn</div><div class="ccard-val">umair-ahmad-03585b366</div></a>
-      <a class="ccard reveal" href="#"><div class="ccard-icon">📍</div><div class="ccard-label">Location</div><div class="ccard-val">Peshawar, KPK, Pakistan</div></a>
-      <a class="ccard reveal" href="#"><div class="ccard-icon">🌐</div><div class="ccard-label">Open To</div><div class="ccard-val">UAE · Saudi Arabia · Qatar</div></a>
-    </div>
+    <div class="contact-cards" id="contactCards"></div>
+    <div class="sec-add-row" style="text-align:center;margin-top:16px;"><button class="sec-add-btn" onclick="openContactModal()">＋ Add Contact Box</button></div>
   </div>
 </section>
 <footer><p>© 2026 <span>Umair Ahmad</span> · BIM Engineer · MEP Revit Modeler & Detailer · HVAC Ducting & Piping Specialist</p></footer>
@@ -1327,5 +1360,298 @@ setTimeout(()=>{const sb=document.querySelector('.skill-bars-grid');if(sb)sbo.ob
   <div class="fg"><label>Upload Files (Images, PDF, DOCX, XLSX, PPTX — multiple)</label><div class="upload-zone" onclick="document.getElementById('fypFiles').click()"><p>Click to upload <span>or drag & drop</span></p><div class="file-types">Any file type · Multiple files</div><div class="file-list-preview" id="fypFileList"></div></div><input type="file" id="fypFiles" accept="*/*" multiple style="display:none" onchange="handleFypFiles(this)"></div>
   <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('fypMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveFYP()">Save Changes</button></div>
 </div></div>
+
+<!-- CAP CARD MODAL -->
+<div class="mo" id="capMo"><div class="modal"><h3 id="capMoTitle">Add Capability</h3>
+  <div class="fg"><label>Icon (emoji)</label><input type="text" id="capIcon" placeholder="🏗️" maxlength="4"></div>
+  <div class="fg"><label>Title *</label><input type="text" id="capTitle" placeholder="e.g. MEP Coordination"></div>
+  <div class="fg"><label>Description</label><textarea id="capDescInp" placeholder="Describe this capability..."></textarea></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('capMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveCap()">Save</button></div>
+</div></div>
+
+<!-- EDU MODAL -->
+<div class="mo" id="eduMo"><div class="modal"><h3 id="eduMoTitle">Add Degree</h3>
+  <div class="fg"><label>Degree Title *</label><input type="text" id="eduDeg" placeholder="e.g. B.Sc. Mechanical Engineering"></div>
+  <div class="fg"><label>Institution</label><input type="text" id="eduSch" placeholder="e.g. UET Mardan"></div>
+  <div class="fg"><label>Years</label><input type="text" id="eduYrs" placeholder="e.g. 2021 – 2025"></div>
+  <div class="fg"><label>Grade / CGPA</label><input type="text" id="eduGpa" placeholder="e.g. CGPA: 3.53 / 4.0"></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('eduMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveEdu()">Save</button></div>
+</div></div>
+
+<!-- ABOUT BLOCK MODAL -->
+<div class="mo" id="abMo"><div class="modal"><h3 id="abMoTitle">Edit About Block</h3>
+  <div class="fg"><label>Block Title *</label><input type="text" id="abTitle" placeholder="e.g. Professional Profile"></div>
+  <div class="fg"><label>Content</label><textarea id="abContent" style="min-height:90px;" placeholder="Write your description..."></textarea></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('abMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveAbBlock()">Save</button></div>
+</div></div>
+
+<!-- CONTACT MODAL -->
+<div class="mo" id="contactMo"><div class="modal"><h3 id="contactMoTitle">Add Contact</h3>
+  <div class="fg"><label>Icon (emoji)</label><input type="text" id="ctIcon" placeholder="✉️" maxlength="4"></div>
+  <div class="fg"><label>Label *</label><input type="text" id="ctLabel" placeholder="e.g. Email"></div>
+  <div class="fg"><label>Value *</label><input type="text" id="ctVal" placeholder="e.g. your@email.com"></div>
+  <div class="fg"><label>Link (optional)</label><input type="text" id="ctHref" placeholder="e.g. mailto:your@email.com"></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('contactMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveContact()">Save</button></div>
+</div></div>
+
+<!-- HERO TITLE MODAL -->
+<div class="mo" id="htMo"><div class="modal"><h3 id="htMoTitle">Edit Title Line</h3>
+  <div class="fg"><label>Icon (emoji)</label><input type="text" id="htIcon" placeholder="🏗️" maxlength="4"></div>
+  <div class="fg"><label>Title Text *</label><input type="text" id="htText" placeholder="e.g. MEP Revit Modeler & Detailer"></div>
+  <div class="modal-btns"><button class="mbtn mbtn-cancel" onclick="closeMo('htMo')">Cancel</button><button class="mbtn mbtn-sky" onclick="saveHT()">Save</button></div>
+</div></div>
+
+<script>
+// ══════════════════════════════════════════
+// HERO TITLES – dynamic + editable
+// ══════════════════════════════════════════
+let heroTitles = [
+  {id:1,icon:'🏗️',text:'MEP Revit Modeler & Detailer',cls:'icon-blue'},
+  {id:2,icon:'🌬️',text:'HVAC Ducting Modeler & Detailer',cls:'icon-teal'},
+  {id:3,icon:'🔧',text:'HVAC Piping Modeler & Detailer',cls:'icon-gold'},
+  {id:4,icon:'📐',text:'BIM Coordinator | Clash Detection Expert',cls:'icon-blue'},
+];
+let editHTId=null;
+function renderHeroTitles(){
+  const el=document.getElementById('heroTitles');
+  if(!el)return;
+  el.innerHTML=heroTitles.map(t=>`
+    <div class="hero-title-line eb" id="ht-${t.id}" style="position:relative;">
+      <div class="eb-bar" style="top:-8px;right:0;">
+        <button class="eb-btn eb-edit" onclick="openHTModal(${t.id})" title="Edit">✏️</button>
+        <button class="eb-btn eb-del" onclick="delHT(${t.id})" title="Remove">✕</button>
+      </div>
+      <span class="icon ${t.cls}">${t.icon}</span>${t.text}
+    </div>`).join('')
+  + `<div class="sec-add-row" style="text-align:left;margin-top:8px;"><button class="sec-add-btn" style="font-size:10.5px;padding:5px 12px;" onclick="openHTModal(null)">＋ Add Title Line</button></div>`;
+}
+function openHTModal(id){
+  editHTId=id;
+  document.getElementById('htMoTitle').textContent=id?'Edit Title Line':'Add Title Line';
+  if(id){const t=heroTitles.find(t=>t.id===id);document.getElementById('htIcon').value=t.icon;document.getElementById('htText').value=t.text;}
+  else{document.getElementById('htIcon').value='';document.getElementById('htText').value='';}
+  document.getElementById('htMo').classList.add('open');
+}
+function saveHT(){
+  const txt=document.getElementById('htText').value.trim();
+  if(!txt)return alert('Enter title text.');
+  const icon=document.getElementById('htIcon').value||'▸';
+  if(editHTId){heroTitles=heroTitles.map(t=>t.id===editHTId?{...t,icon,text:txt}:t);}
+  else{heroTitles.push({id:Date.now(),icon,text:txt,cls:'icon-blue'});}
+  closeMo('htMo');renderHeroTitles();
+}
+function delHT(id){heroTitles=heroTitles.filter(t=>t.id!==id);renderHeroTitles();}
+
+// Hero desc toggle contenteditable
+function setupHeroDescEdit(){
+  const el=document.getElementById('heroDesc');
+  if(!el)return;
+  // watch owner mode changes
+  const obs=new MutationObserver(()=>{
+    if(document.body.classList.contains('owner-mode')){el.setAttribute('contenteditable','true');}
+    else{el.setAttribute('contenteditable','false');}
+  });
+  obs.observe(document.body,{attributes:true,attributeFilter:['class']});
+}
+
+// ══════════════════════════════════════════
+// ABOUT BLOCKS
+// ══════════════════════════════════════════
+let aboutBlocks=[
+  {id:'ab1',dot:'dot-b',title:'Professional Profile',text:'I am a Mechanical BIM Engineer and MEP Revit Modeler & Detailer with professional experience at BIMSERV | BIMTEQ, serving American clients in Houston USA. I model, coordinate, and detail full MEP systems — HVAC ducting, chilled water, ventilation, and plumbing — at LOD 400–450.'},
+  {id:'ab2',dot:'dot-t',title:'HVAC Ducting & Piping',text:'Specialized in HVAC Ducting Modeling & Detailing and Piping Systems Design using Revit MEP. I develop accurate 3D duct layouts, piping networks (chilled water, supply, drainage), and coordinate all systems to eliminate clashes before construction.'},
+  {id:'ab3',dot:'dot-g',title:'BIM Coordination & Clash Detection',text:'Using Navisworks, I perform full multidisciplinary BIM coordination — identifying and resolving clashes between mechanical, electrical, plumbing, architectural, and structural models.'},
+  {id:'ab4',dot:'dot-l',title:'Simulation & Engineering Analysis',text:'Beyond BIM — strong skills in SolidWorks (Advanced: 3D modeling, FEA), ANSYS (Advanced: structural, thermal, CFD/CFX), ABAQUS (Intermediate: explicit dynamics), and COMSOL Multiphysics (Intermediate: multiphase CFD).'},
+];
+let editAbId=null;
+const dotCycle=['dot-b','dot-t','dot-g','dot-l'];
+function renderAboutBlocks(){
+  // inject into existing DOM elements or skip (already in HTML as placeholders)
+  // Re-render text for each block
+  aboutBlocks.forEach(b=>{
+    const titleEl=document.getElementById(b.id+'-title');
+    const textEl=document.getElementById(b.id+'-text');
+    if(titleEl)titleEl.textContent=b.title;
+    if(textEl)textEl.textContent=b.text;
+  });
+}
+function openAbModal(id){
+  editAbId=id;
+  const b=aboutBlocks.find(b=>b.id===id);
+  document.getElementById('abMoTitle').textContent='Edit: '+b.title;
+  document.getElementById('abTitle').value=b.title;
+  document.getElementById('abContent').value=b.text;
+  document.getElementById('abMo').classList.add('open');
+}
+function saveAbBlock(){
+  const title=document.getElementById('abTitle').value.trim();
+  const text=document.getElementById('abContent').value.trim();
+  if(!title)return alert('Enter a title.');
+  if(editAbId){aboutBlocks=aboutBlocks.map(b=>b.id===editAbId?{...b,title,text}:b);renderAboutBlocks();}
+  closeMo('abMo');
+}
+function delBlock(id){
+  if(!confirm('Remove this block?'))return;
+  const el=document.getElementById(id);
+  if(el)el.style.display='none';
+  aboutBlocks=aboutBlocks.filter(b=>b.id!==id);
+}
+function editBlock(id){openAbModal(id);}
+function addAboutBlock(){
+  const id='ab'+Date.now();
+  aboutBlocks.push({id,dot:dotCycle[aboutBlocks.length%4],title:'New Block',text:'Add your content here...'});
+  // Create DOM element
+  const container=document.querySelector('.about-grid > div:first-child');
+  const addRow=container.querySelector('.sec-add-row');
+  const div=document.createElement('div');
+  div.className='about-block reveal eb';
+  div.id=id;
+  div.innerHTML=`<div class="eb-bar"><button class="eb-btn eb-edit" onclick="editBlock('${id}')" title="Edit">✏️</button><button class="eb-btn eb-del" onclick="delBlock('${id}')" title="Remove">✕</button></div>
+    <div class="about-block-title"><div class="abt-dot ${aboutBlocks[aboutBlocks.length-1].dot}"></div><span id="${id}-title">New Block</span></div>
+    <p id="${id}-text">Add your content here...</p>`;
+  container.insertBefore(div,addRow);
+  setTimeout(()=>div.classList.add('visible'),50);
+  openAbModal(id);
+}
+
+// ══════════════════════════════════════════
+// CAPABILITY CARDS
+// ══════════════════════════════════════════
+let capCards=[
+  {id:1,icon:'🏗️',color:'rgba(41,128,185,0.1)',title:'MEP Revit Modeling & Detailing',desc:'Full MEP system models in Revit MEP — mechanical, electrical, plumbing — developed to LOD 300–450 with accurate families, parameters, and detailing for fabrication and construction.'},
+  {id:2,icon:'🌬️',color:'rgba(26,188,156,0.1)',title:'HVAC Ducting Modeling & Detailing',desc:'Layout, sizing, and 3D detailing of supply, return, and exhaust duct systems. Includes VAV boxes, AHU connections, and coordination with ceiling and structural elements.'},
+  {id:3,icon:'🔧',color:'rgba(230,126,34,0.1)',title:'Piping Modeling & Detailing',desc:'Chilled water, condenser water, domestic water supply, drainage, and fire protection piping — fully modeled with slopes, hangers, and coordination clearances.'},
+  {id:4,icon:'🔍',color:'rgba(142,68,173,0.1)',title:'Clash Detection & BIM Coordination',desc:'Navisworks-based clash detection across all disciplines. Systematic identification, reporting, and resolution of hard and soft clashes for coordinated construction documents.'},
+  {id:5,icon:'📐',color:'rgba(192,57,43,0.1)',title:'Shop Drawing Preparation',desc:'MEP shop drawings, spool drawings, and coordination drawings from BIM models — ready for fabrication and site teams, meeting project standards.'},
+];
+let editCapId=null;
+function renderCapCards(){
+  const el=document.getElementById('capCardsContainer');
+  if(!el)return;
+  el.innerHTML=capCards.map(c=>`
+    <div class="cap-card eb" id="cap-${c.id}">
+      <div class="eb-bar">
+        <button class="eb-btn eb-edit" onclick="openCapModal(${c.id})" title="Edit">✏️</button>
+        <button class="eb-btn eb-del" onclick="delCap(${c.id})" title="Remove">✕</button>
+      </div>
+      <div class="cap-icon" style="background:${c.color}">${c.icon}</div>
+      <div><div class="cap-title">${c.title}</div><div class="cap-desc">${c.desc}</div></div>
+    </div>`).join('');
+}
+function openCapModal(id){
+  editCapId=id||null;
+  document.getElementById('capMoTitle').textContent=id?'Edit Capability':'Add Capability';
+  if(id){const c=capCards.find(c=>c.id===id);document.getElementById('capIcon').value=c.icon;document.getElementById('capTitle').value=c.title;document.getElementById('capDescInp').value=c.desc;}
+  else{document.getElementById('capIcon').value='';document.getElementById('capTitle').value='';document.getElementById('capDescInp').value='';}
+  document.getElementById('capMo').classList.add('open');
+}
+function saveCap(){
+  const title=document.getElementById('capTitle').value.trim();
+  if(!title)return alert('Enter a title.');
+  const data={icon:document.getElementById('capIcon').value||'🔧',title,desc:document.getElementById('capDescInp').value.trim()};
+  if(editCapId){capCards=capCards.map(c=>c.id===editCapId?{...c,...data}:c);}
+  else{capCards.push({id:Date.now(),color:'rgba(41,128,185,0.1)',...data});}
+  closeMo('capMo');renderCapCards();
+}
+function delCap(id){if(!confirm('Remove?'))return;capCards=capCards.filter(c=>c.id!==id);renderCapCards();}
+
+// ══════════════════════════════════════════
+// EDUCATION CARDS
+// ══════════════════════════════════════════
+let eduData=[
+  {id:1,deg:'B.Sc. Mechanical Engineering — UET Mardan',sch:'University of Engineering & Technology, Mardan',yrs:'2021 – 2025',gpa:'CGPA: 3.53 / 4.0'},
+  {id:2,deg:'F.Sc. Pre-Engineering',sch:'Government College Peshawar',yrs:'2018 – 2020',gpa:'881/1100 (80%)'},
+  {id:3,deg:'SSC — Science (Matric)',sch:'Hira Public School & College, Peshawar',yrs:'2016 – 2018',gpa:'997/1100 (90.63%)'},
+];
+let editEduId=null;
+function renderEduCards(){
+  const el=document.getElementById('eduCardsContainer');
+  if(!el)return;
+  el.innerHTML=eduData.map(e=>`
+    <div class="edu-card eb" id="edu-${e.id}">
+      <div class="eb-bar">
+        <button class="eb-btn eb-edit" onclick="openEduModal(${e.id})" title="Edit">✏️</button>
+        <button class="eb-btn eb-del" onclick="delEdu(${e.id})" title="Remove">✕</button>
+      </div>
+      <div class="edu-deg">${e.deg}</div>
+      <div class="edu-sch">${e.sch}</div>
+      <div class="edu-row"><span>${e.yrs}</span><span class="edu-gpa">${e.gpa}</span></div>
+    </div>`).join('');
+}
+function openEduModal(id){
+  editEduId=id||null;
+  document.getElementById('eduMoTitle').textContent=id?'Edit Degree':'Add Degree';
+  if(id){const e=eduData.find(e=>e.id===id);document.getElementById('eduDeg').value=e.deg;document.getElementById('eduSch').value=e.sch;document.getElementById('eduYrs').value=e.yrs;document.getElementById('eduGpa').value=e.gpa;}
+  else{['eduDeg','eduSch','eduYrs','eduGpa'].forEach(i=>document.getElementById(i).value='');}
+  document.getElementById('eduMo').classList.add('open');
+}
+function saveEdu(){
+  const deg=document.getElementById('eduDeg').value.trim();
+  if(!deg)return alert('Enter degree title.');
+  const data={deg,sch:document.getElementById('eduSch').value.trim(),yrs:document.getElementById('eduYrs').value.trim(),gpa:document.getElementById('eduGpa').value.trim()};
+  if(editEduId){eduData=eduData.map(e=>e.id===editEduId?{...e,...data}:e);}
+  else{eduData.push({id:Date.now(),...data});}
+  closeMo('eduMo');renderEduCards();
+}
+function delEdu(id){if(!confirm('Remove?'))return;eduData=eduData.filter(e=>e.id!==id);renderEduCards();}
+
+// ══════════════════════════════════════════
+// CONTACT CARDS
+// ══════════════════════════════════════════
+let contactData=[
+  {id:1,icon:'✉️',label:'Email',val:'engr.umair.ahamd111@gmail.com',href:'mailto:engr.umair.ahamd111@gmail.com'},
+  {id:2,icon:'💬',label:'WhatsApp',val:'+92-308-8025062',href:'https://wa.me/923088025062'},
+  {id:3,icon:'📞',label:'Phone',val:'+92-308-8025062',href:'tel:+923088025062'},
+  {id:4,icon:'🔗',label:'LinkedIn',val:'umair-ahmad-03585b366',href:'https://www.linkedin.com/in/umair-ahmad-03585b366/'},
+  {id:5,icon:'📍',label:'Location',val:'Peshawar, KPK, Pakistan',href:'#'},
+  {id:6,icon:'🌐',label:'Open To',val:'UAE · Saudi Arabia · Qatar',href:'#'},
+];
+let editCtId=null;
+function renderContactCards(){
+  const el=document.getElementById('contactCards');
+  if(!el)return;
+  el.innerHTML=contactData.map(c=>{
+    const hasLink=c.href&&c.href!=='#';
+    return `<div class="ccard eb" id="ct-${c.id}" style="position:relative;">
+      <div class="eb-bar">
+        <button class="eb-btn eb-edit" onclick="event.stopPropagation();openContactModal(${c.id})" title="Edit">✏️</button>
+        <button class="eb-btn eb-del" onclick="event.stopPropagation();delContact(${c.id})" title="Remove">✕</button>
+      </div>
+      ${hasLink
+        ? `<a href="${c.href}" target="_blank" style="text-decoration:none;display:contents;">`
+        : ''}
+      <div class="ccard-icon">${c.icon}</div>
+      <div class="ccard-label">${c.label}</div>
+      <div class="ccard-val">${c.val}</div>
+      ${hasLink ? '</a>' : ''}
+    </div>`;
+  }).join('');
+}
+function openContactModal(id){
+  editCtId=id||null;
+  document.getElementById('contactMoTitle').textContent=id?'Edit Contact':'Add Contact';
+  if(id){const c=contactData.find(c=>c.id===id);document.getElementById('ctIcon').value=c.icon;document.getElementById('ctLabel').value=c.label;document.getElementById('ctVal').value=c.val;document.getElementById('ctHref').value=c.href;}
+  else{['ctIcon','ctLabel','ctVal','ctHref'].forEach(i=>document.getElementById(i).value='');}
+  document.getElementById('contactMo').classList.add('open');
+}
+function saveContact(){
+  const label=document.getElementById('ctLabel').value.trim();
+  const val=document.getElementById('ctVal').value.trim();
+  if(!label||!val)return alert('Enter label and value.');
+  const data={icon:document.getElementById('ctIcon').value||'📌',label,val,href:document.getElementById('ctHref').value.trim()||'#'};
+  if(editCtId){contactData=contactData.map(c=>c.id===editCtId?{...c,...data}:c);}
+  else{contactData.push({id:Date.now(),...data});}
+  closeMo('contactMo');renderContactCards();
+}
+function delContact(id){if(!confirm('Remove?'))return;contactData=contactData.filter(c=>c.id!==id);renderContactCards();}
+
+// ── INIT NEW RENDERS ───────────────────────────────────────
+renderHeroTitles();
+renderCapCards();
+renderEduCards();
+renderContactCards();
+setupHeroDescEdit();
+</script>
+
 </body>
 </html>
