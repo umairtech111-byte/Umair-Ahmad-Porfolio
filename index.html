@@ -781,6 +781,56 @@ input[type=range]{width:100%;accent-color:var(--sky);margin-top:3px;}
 <!-- preview now uses fullscreen viewer -->
 
 <script>
+// ── LOGO UPLOAD ─────────────────────────────────────────────
+function handleLogoUpload(input) {
+  const file = input.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById('logoImg').src = e.target.result;
+    try { sessionStorage.setItem('ua_logo', e.target.result); } catch(ex){}
+  };
+  reader.readAsDataURL(file);
+}
+(function(){
+  try { const s=sessionStorage.getItem('ua_logo'); if(s){const el=document.getElementById('logoImg');if(el)el.src=s;} } catch(e){}
+})();
+
+// ── PHOTO UPLOAD ─────────────────────────────────────────────
+function handlePhoto(input) {
+  const file = input.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById('photoImg');
+    const ph  = document.getElementById('photoPlaceholder');
+    const rem = document.getElementById('photoRemoveBtn');
+    img.src = e.target.result; img.style.display = 'block';
+    ph.style.display = 'none';
+    rem.classList.add('show');
+    try { sessionStorage.setItem('ua_photo', e.target.result); } catch(ex){}
+  };
+  reader.readAsDataURL(file);
+}
+function removePhoto() {
+  const img = document.getElementById('photoImg');
+  const ph  = document.getElementById('photoPlaceholder');
+  const rem = document.getElementById('photoRemoveBtn');
+  img.src=''; img.style.display='none';
+  ph.style.display='flex';
+  rem.classList.remove('show');
+  try { sessionStorage.removeItem('ua_photo'); } catch(e){}
+}
+(function(){
+  try {
+    const s = sessionStorage.getItem('ua_photo');
+    if(s){
+      const img=document.getElementById('photoImg');
+      const ph=document.getElementById('photoPlaceholder');
+      const rem=document.getElementById('photoRemoveBtn');
+      if(img){img.src=s;img.style.display='block';ph.style.display='none';rem&&rem.classList.add('show');}
+    }
+  } catch(e){}
+})();
+
 // ══════════════════════════════════
 // PASSWORD & OWNER MODE
 // ══════════════════════════════════
@@ -809,6 +859,25 @@ function checkPwd() {
 }
 function closePwdModal() { document.getElementById('pwdMo').classList.remove('open'); document.getElementById('pwdInp').value = ''; document.getElementById('pwdErr').textContent = ''; }
 function togglePwdV() { const i = document.getElementById('pwdInp'); i.type = i.type==='password'?'text':'password'; }
+
+// ── EDITABLE DESC TOGGLE ─────────────────────────────────────
+function toggleEdit(id) {
+  if(!isOwner) return;
+  const el = document.getElementById(id);
+  if(!el) return;
+  const isEditing = el.getAttribute('contenteditable') === 'true';
+  el.setAttribute('contenteditable', isEditing ? 'false' : 'true');
+  if(!isEditing) { el.focus(); el.style.outline='2px solid rgba(41,128,185,0.3)'; el.style.borderRadius='6px'; el.style.padding='4px'; }
+  else { el.style.outline=''; el.style.padding=''; }
+}
+// make ALL editable sec-descs respond to owner mode
+function syncEditableDescs() {
+  ['expDesc','projDesc','aboutDesc','pwDesc2','contactDesc'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el) return;
+    if(!isOwner) el.setAttribute('contenteditable','false');
+  });
+}
 document.getElementById('pwdMo').addEventListener('click', e => { if(e.target===e.currentTarget) closePwdModal(); });
 
 function applyOwnerMode() {
@@ -1004,6 +1073,39 @@ function fileIcon(type){
   if(type.includes('sheet')||type.includes('excel')) return '📊';
   if(type.includes('presentation')||type.includes('powerpoint')) return '📊';
   return '📎';
+}
+
+// ── LANDSCAPE BANNERS per TAB ────────────────────────────────
+let tabBanners = {};  // tabId -> base64 image
+
+function renderTabBanner(tabId) {
+  const img = tabBanners[tabId];
+  return `<div class="tab-banner" id="banner-${tabId}">
+    ${img
+      ? `<img src="${img}" alt="banner">`
+      : `<div class="tab-banner-ph"><div class="bi">🖼️</div><p>Add a landscape banner image for this category</p></div>`}
+    <div class="tab-banner-owner">
+      <label class="banner-upload-btn">
+        📷 ${img?'Replace':'Add'} Banner
+        <input type="file" accept="image/*" style="display:none" onchange="handleBannerUpload(this,'${tabId}')">
+      </label>
+      ${img?`<button class="banner-upload-btn" style="color:var(--red);" onclick="removeBanner('${tabId}')">✕ Remove</button>`:''}
+    </div>
+  </div>`;
+}
+
+function handleBannerUpload(input, tabId) {
+  const file = input.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    tabBanners[tabId] = e.target.result;
+    renderTabs();
+  };
+  reader.readAsDataURL(file);
+}
+function removeBanner(tabId) {
+  delete tabBanners[tabId];
+  renderTabs();
 }
 
 function renderTabs() {
@@ -1304,6 +1406,15 @@ let skills=[
   {id:5,name:'SolidWorks',pct:90},{id:6,name:'ANSYS (FEA/CFD)',pct:85},
   {id:7,name:'AutoCAD',pct:78},{id:8,name:'ABAQUS / COMSOL',pct:72},
 ];
+// ── SKILL BAR NAME EDIT ──────────────────────────────────────
+function editSkillName(id) {
+  if(!isOwner) return;
+  const name = prompt('Edit skill name:', skills.find(s=>s.id===id)?.name||'');
+  if(name===null) return;
+  skills = skills.map(s=>s.id===id?{...s,name}:s);
+  renderSkills();
+}
+
 function renderSkills(){
   document.getElementById('skillBarsGrid').innerHTML=skills.map(s=>`
     <div class="sbar">
@@ -1780,116 +1891,13 @@ function removePhoto() {
 
 
 <script>
-// ── LOGO UPLOAD ─────────────────────────────────────────────
-function handleLogoUpload(input) {
-  const file = input.files[0]; if(!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    document.getElementById('logoImg').src = e.target.result;
-    try { sessionStorage.setItem('ua_logo', e.target.result); } catch(ex){}
-  };
-  reader.readAsDataURL(file);
-}
-(function(){
-  try { const s=sessionStorage.getItem('ua_logo'); if(s){const el=document.getElementById('logoImg');if(el)el.src=s;} } catch(e){}
-})();
+// logo+photo fns moved to main block
 
-// ── PHOTO UPLOAD ─────────────────────────────────────────────
-function handlePhoto(input) {
-  const file = input.files[0]; if(!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    const img = document.getElementById('photoImg');
-    const ph  = document.getElementById('photoPlaceholder');
-    const rem = document.getElementById('photoRemoveBtn');
-    img.src = e.target.result; img.style.display = 'block';
-    ph.style.display = 'none';
-    rem.classList.add('show');
-    try { sessionStorage.setItem('ua_photo', e.target.result); } catch(ex){}
-  };
-  reader.readAsDataURL(file);
-}
-function removePhoto() {
-  const img = document.getElementById('photoImg');
-  const ph  = document.getElementById('photoPlaceholder');
-  const rem = document.getElementById('photoRemoveBtn');
-  img.src=''; img.style.display='none';
-  ph.style.display='flex';
-  rem.classList.remove('show');
-  try { sessionStorage.removeItem('ua_photo'); } catch(e){}
-}
-(function(){
-  try {
-    const s = sessionStorage.getItem('ua_photo');
-    if(s){
-      const img=document.getElementById('photoImg');
-      const ph=document.getElementById('photoPlaceholder');
-      const rem=document.getElementById('photoRemoveBtn');
-      if(img){img.src=s;img.style.display='block';ph.style.display='none';rem&&rem.classList.add('show');}
-    }
-  } catch(e){}
-})();
+// toggleEdit moved
 
-// ── EDITABLE DESC TOGGLE ─────────────────────────────────────
-function toggleEdit(id) {
-  if(!isOwner) return;
-  const el = document.getElementById(id);
-  if(!el) return;
-  const isEditing = el.getAttribute('contenteditable') === 'true';
-  el.setAttribute('contenteditable', isEditing ? 'false' : 'true');
-  if(!isEditing) { el.focus(); el.style.outline='2px solid rgba(41,128,185,0.3)'; el.style.borderRadius='6px'; el.style.padding='4px'; }
-  else { el.style.outline=''; el.style.padding=''; }
-}
-// make ALL editable sec-descs respond to owner mode
-function syncEditableDescs() {
-  ['expDesc','projDesc','aboutDesc','pwDesc2','contactDesc'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(!el) return;
-    if(!isOwner) el.setAttribute('contenteditable','false');
-  });
-}
+// banner functions moved to main script block
 
-// ── LANDSCAPE BANNERS per TAB ────────────────────────────────
-let tabBanners = {};  // tabId -> base64 image
-
-function renderTabBanner(tabId) {
-  const img = tabBanners[tabId];
-  return `<div class="tab-banner" id="banner-${tabId}">
-    ${img
-      ? `<img src="${img}" alt="banner">`
-      : `<div class="tab-banner-ph"><div class="bi">🖼️</div><p>Add a landscape banner image for this category</p></div>`}
-    <div class="tab-banner-owner">
-      <label class="banner-upload-btn">
-        📷 ${img?'Replace':'Add'} Banner
-        <input type="file" accept="image/*" style="display:none" onchange="handleBannerUpload(this,'${tabId}')">
-      </label>
-      ${img?`<button class="banner-upload-btn" style="color:var(--red);" onclick="removeBanner('${tabId}')">✕ Remove</button>`:''}
-    </div>
-  </div>`;
-}
-
-function handleBannerUpload(input, tabId) {
-  const file = input.files[0]; if(!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    tabBanners[tabId] = e.target.result;
-    renderTabs();
-  };
-  reader.readAsDataURL(file);
-}
-function removeBanner(tabId) {
-  delete tabBanners[tabId];
-  renderTabs();
-}
-
-// ── SKILL BAR NAME EDIT ──────────────────────────────────────
-function editSkillName(id) {
-  if(!isOwner) return;
-  const name = prompt('Edit skill name:', skills.find(s=>s.id===id)?.name||'');
-  if(name===null) return;
-  skills = skills.map(s=>s.id===id?{...s,name}:s);
-  renderSkills();
-}
+// editSkillName moved to main block
 
 // Override applyOwnerMode to also sync descs
 const _origApply = applyOwnerMode;
